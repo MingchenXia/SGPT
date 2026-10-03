@@ -1,0 +1,41 @@
+# Local operating-system files
+.DS_Store
+
+# Generated TeX files
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.idx
+*.ind
+*.ilg
+*.synctex.gz
+*.synctex(busy)
+*.glo
+*.gls
+*.glg
+*.acn
+*.acr
+*.alg
+*.nlo
+*.nls
+*.nlg
+*.xdv
+*.dvi
+*.nav
+*.snm
+*.vrb
+*.chktex
+
+# Generated documents; PDF figure sources remain trackable
+/book.pdf
+/book2.pdf
+/output.pdf
+/output.pdf.opt
+/mathematical_revision_log.pdf
