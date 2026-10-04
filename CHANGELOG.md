@@ -2,6 +2,12 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-10-04 — Simplify the proof of Theorem 5.2.2
+
+- Replaced the separate boundary-coordinate computations for parts (2) and (3) of Yao's theorem in `author/chapter_toric_ample.tex` by one argument in a smooth toric affine chart. A tube around the given ray reduces nonintegrability to a one-dimensional exponential integral; part (2) is the case of one ray.
+- The new proof permits the uniform choice `C_0 = 1`, including after replacing the polytope by any positive integer multiple. Removed the figure and auxiliary estimates used only by the previous proof, and retained the integral formula used by the subsequent example.
+- Verification: completed two mathematical and editorial reads of the revised proof, checking the multiplier-ideal reduction, local frame, logarithmic volume factor, tube Jacobian, boundary cases, and scaling. Compiled the full book with XeLaTeX and inspected the rendered review excerpt. The existing undefined citation `PSWZ26` remains; no new unresolved references or citations were introduced.
+
 ## 2026-10-04 — Mathematical review workflow
 
 - Updated `AGENTS.md` and `README.md` to require a pull request and a PDF excerpt for every substantive mathematical change. Only explicit author approval permits merging the reviewed version into `main` and publishing its PDF.
