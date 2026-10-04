@@ -667,23 +667,14 @@ Recall that $\mathrm{H}^0(X,L)$ can be identified with the vector space generate
     Let $\varphi\in \PSH_{\tor}(X,\omega)$. Let $m\in M$.
     \begin{enumerate}
         \item\label{itm:thm:Yao:1} Suppose that $m\in \Delta(\omega,\varphi)$. Then $\chi^m\in \mathrm{H}^0(X,L\otimes \mathcal{I}(\varphi))$.
-        \item\label{itm:thm:Yao:2} There is a constant $C_0>0$ such that if there is $\rho\in \Sigma(1)$ with
-         \begin{equation}\label{eq:mawayC0}
-            \langle m,-u_{\rho}\rangle -\Supp_{\Delta(\omega,\varphi)}(-u_{\rho})> C_0,
+        \item\label{itm:thm:Yao:2} Let $\sigma\in \Sigma$ be a cone of dimension $p$, with rays $\rho_1,\ldots,\rho_p$. Let $c_1,\ldots,c_p>0$ satisfy $\sum_{i=1}^p c_i=1$, and set $u=\sum_{i=1}^p c_i u_{\rho_i}$. If
+        \begin{equation}\label{eq:mawayC1}
+            \langle m,-u\rangle -\Supp_{\Delta(\omega,\varphi)}(-u)>1,
         \end{equation}
         then $\chi^m\not\in \mathrm{H}^0(X,L\otimes \mathcal{I}(\varphi))$.
-
-        Moreover, the constant $C_0$ does not change if we replace $P$ by a positive integer multiple of $P$.
-        \item\label{itm:thm:Yao:3} More generally, there is a constant $C_0>0$ such that if $\sigma\in \Sigma$ is a cone of dimension $p$ and $c_1,\ldots,c_{p}>0$ are such that $\sum_{i=1}^p c_i=1$, and
-        \begin{equation}\label{eq:mawayC1}
-            \langle m,-u\rangle -\Supp_{\Delta(\omega,\varphi)}(-u)> C_0,\quad u=\sum_{i=1}^{p} c_i u_{\rho_i},
-        \end{equation}
-        where $\rho_1,\ldots,\rho_p$ are the rays in $\sigma(1)$, then $\chi^m\not\in \mathrm{H}^0(X,L\otimes \mathcal{I}(\varphi))$.
-
-        Moreover, the constant $C_0$ does not change if we replace $P$ by a positive integer multiple of $P$.
     \end{enumerate}
 \end{theorem}
-In \ref{itm:thm:Yao:3}, there are exactly $p$ rays in $\sigma(1)$ since $\sigma$ is smooth.
+In \ref{itm:thm:Yao:2}, there are exactly $p$ rays in $\sigma(1)$ since $\sigma$ is smooth.
 \begin{proof}
     Put $\Delta=\Delta(\omega,\varphi)$. By \cref{prop:PandPI,prop:GPenvelope}, we may replace $\varphi$ by $P_{\omega}[\varphi]$ without changing its multiplier ideal or Newton body. We may therefore assume that $F_{\varphi}-\Supp_{\Delta}$ is bounded on $N_{\mathbb{R}}$. Set
     \[
@@ -707,7 +698,7 @@ In \ref{itm:thm:Yao:3}, there are exactly $p$ rays in $\sigma(1)$ since $\sigma$
     \end{equation}
     If $m\in\Delta$, its integrand is at most $1$, proving \ref{itm:thm:Yao:1}.
 
-    We prove \ref{itm:thm:Yao:3} with $C_0=1$; \ref{itm:thm:Yao:2} is the case $p=1$. Extend $\sigma$ to a maximal cone $\tau\in\Sigma$. Its primitive ray generators $u_1,\ldots,u_n$ form a basis of $N$, and we may arrange that $u_i=u_{\rho_i}$ for $1\leq i\leq p$. If $e_1,\ldots,e_n$ is the dual basis of $M$, then $z_i=\chi^{e_i}$ are coordinates on the affine chart $U_{\tau}\cong\mathbb{C}^n$.
+    To prove \ref{itm:thm:Yao:2}, extend $\sigma$ to a maximal cone $\tau\in\Sigma$. Its primitive ray generators $u_1,\ldots,u_n$ form a basis of $N$, and we may arrange that $u_i=u_{\rho_i}$ for $1\leq i\leq p$. If $e_1,\ldots,e_n$ is the dual basis of $M$, then $z_i=\chi^{e_i}$ are coordinates on the affine chart $U_{\tau}\cong\mathbb{C}^n$.
 
     Let $v\in P\cap M$ be the vertex corresponding to $\tau$. The character $\chi^v$ is a local frame of $L$ on $U_{\tau}$. Writing
     \[
@@ -737,9 +728,7 @@ In \ref{itm:thm:Yao:3}, there are exactly $p$ rays in $\sigma(1)$ since $\sigma$
     \[
         \int_1^{\infty}\exp\left(s\bigl(H(-u)-1\bigr)\right)\,\mathrm{d}s,
     \]
-    which diverges under \eqref{eq:mawayC1} with $C_0=1$. This proves \ref{itm:thm:Yao:3}.
-
-    Replacing $P$ by $kP$ leaves the fan, the primitive generators and the radial volume factor $\exp(-\sum_i t_i)$ unchanged. Thus the same constant $C_0=1$ works for every positive integer multiple of $P$.
+    which diverges under \eqref{eq:mawayC1}. This proves \ref{itm:thm:Yao:2}.
 \end{proof}
 
 
@@ -785,7 +774,7 @@ In \ref{itm:thm:Yao:3}, there are exactly $p$ rays in $\sigma(1)$ since $\sigma$
     \]
     This is again a convex body, since it can be realized as the Minkowski sum of $K$ with a closed ball of radius $\epsilon$.
 
-    Thanks to \itemref{itm:thm:Yao:3}, and using the fact that the constant $C_0$ in \itemref{itm:thm:Yao:3} is invariant under $P\mapsto kP$, we can find $C>0$ uniform in $k$ such that for each $k\in \mathbb{Z}_{>0}$,
+    Applying \itemref{itm:thm:Yao:2} to the polytope $kP$ and the potential $\widetilde\varphi_k$, we can find $C>0$ uniform in $k$ such that for each $k\in \mathbb{Z}_{>0}$,
     \[
     \bigl\{ m\in M:\chi^m\in\mathrm{H}^0(X,L^k\otimes\mathcal{I}(k\varphi))\bigr\}
     \subseteq \left(k\Delta(\omega,\varphi)\right)^C.
@@ -810,7 +799,7 @@ In \ref{itm:thm:Yao:3}, there are exactly $p$ rays in $\sigma(1)$ since $\sigma$
     &\geq C/\Lambda.
     \end{aligned}
     \]
-    Choosing $C>\Lambda C_0$ makes \eqref{eq:mawayC1} applicable, uniformly in $k$.
+    Choosing $C>\Lambda$ makes \eqref{eq:mawayC1} applicable, uniformly in $k$.
 
     Fix $\epsilon>0$. Then for large enough $k$, we have
     \[
