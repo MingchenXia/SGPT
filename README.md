@@ -31,3 +31,5 @@ Use `latexmk -pdf book2.tex` for the alternative version. The supplied `latexmkr
 Git commits retain the exact file history. [CHANGELOG.md](CHANGELOG.md) records dated summaries of updates, with the affected files or sections and the verification performed. The supplied [mathematical revision log](mathematical_revision_log.tex) remains the detailed historical account of mathematical revisions.
 
 Updates are made when the author requests them or supplies revised files. There is no scheduled folder monitoring or automatic publication. Future assistant sessions should follow [AGENTS.md](AGENTS.md) and update the changelog alongside book changes.
+
+Every substantive mathematical change is proposed through a pull request and accompanied by a PDF excerpt of the modified passages for the author to review. The proposal branch may be committed and pushed to open the PR. Merging into `main` and publishing the revised book require the author's explicit approval of that version. The update log records only actual changes.
