@@ -2,6 +2,12 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-10-04 — Publish the approved revision
+
+- Merged author-approved [PR #1](https://github.com/MingchenXia/SGPT/pull/1) into `main` as `473dba373e1638a825630421dd54e6e8be0c956e`, including the revised Theorem 5.2.2 and the PSWZ26 bibliography entry.
+- Published the compiled 545-page book to [SGPT_final.pdf](https://mingchenxia.github.io/Lectures/SGPT_final.pdf) in website commit `e66816291aa70559317d22025275c49ac94e1ca1`. The cover reads `Updated on October 4, 2026.`
+- Verification: the merged source tree matches the approved PR head, and all 44 book source files match the successful XeLaTeX build. GitHub Pages completed deployment; the downloaded public PDF matches the local compiled PDF with SHA-256 `0fd575dc57ee9030de2bc6005fc5a8be5e24e8d1ed73d233e400330d503d2e61`.
+
 ## 2026-10-04 — State the explicit threshold in Theorem 5.2.2
 
 - Set the exclusion threshold in Theorem 5.2.2 to `1`, removed the separate one-ray assertion and the scaling sentence, and renumbered the former part (3) as part (2). Updated the proof and removed its redundant discussion of the unspecified constant.
