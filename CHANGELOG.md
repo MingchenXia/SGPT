@@ -2,6 +2,12 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-10-05 — Clean up branches after merging
+
+- Enabled GitHub's automatic deletion of merged PR branches and recorded the author's branch-cleanup instruction in `AGENTS.md` and `README.md`.
+- Deleted the remote and local `simplify-theorem-5-2-2` branches for merged PR #1.
+- Verification: confirmed that PR #1 was merged, that both branch tips matched its approved head, and that their commits were incorporated into the synchronized `main`. Checked the documentation diff and confirmed the enabled repository setting and branch deletion.
+
 ## 2026-10-04 — Publish the approved revision
 
 - Merged author-approved [PR #1](https://github.com/MingchenXia/SGPT/pull/1) into `main` as `473dba373e1638a825630421dd54e6e8be0c956e`, including the revised Theorem 5.2.2 and the PSWZ26 bibliography entry.
