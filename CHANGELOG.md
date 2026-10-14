@@ -2,6 +2,11 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-10-14 — Restrict existence of analytic-singularity types to compact manifolds
+
+- Added the compactness hypothesis to the assertion immediately after Definition 1.6.1 (`def:neatanasing`) in `author/chapter_pshfunctions.tex`: if `X` is compact, each potential with analytic singularities has a type.
+- Verification: completed two mathematical and editorial reads of the corrected assertion in its local-definition context. Compiled the full book with XeLaTeX (545 pages), with no unresolved references, citations, or overfull boxes, and inspected both rendered pages of the review excerpt (printed pages 31–32). The source diff changes only this sentence and this log entry.
+
 ## 2026-10-05 — Clean up branches after merging
 
 - Enabled GitHub's automatic deletion of merged PR branches and recorded the author's branch-cleanup instruction in `AGENTS.md` and `README.md`.
