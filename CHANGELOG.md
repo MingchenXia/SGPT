@@ -2,6 +2,12 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-10-14 — Publish the approved compactness correction
+
+- Merged author-approved [PR #2](https://github.com/MingchenXia/SGPT/pull/2) into `main` as `7f8e41a7efb3cfef525d0f52c6d39aaed44b496a` and deleted its remote and local proposal branches.
+- Published the compiled 545-page book to [SGPT_final.pdf](https://mingchenxia.github.io/Lectures/SGPT_final.pdf) in website commit `79507848b12148f5e32f65b2a7fdc32cfe07fa57`. The cover reads `Updated on October 14, 2026.`
+- Verification: the merged source tree matches the approved PR head, and the final XeLaTeX build is up to date. Inspected the cover, confirmed that GitHub Pages completed deployment, and compared the downloaded public PDF with the approved local build; both have SHA-256 `76cae917d8553d1d2bf075aa8e1939e7e7cf27e64a7ce1c327268fe30b8c1806`.
+
 ## 2026-10-14 — Restrict existence of analytic-singularity types to compact manifolds
 
 - Added the compactness hypothesis to the assertion immediately after Definition 1.6.1 (`def:neatanasing`) in `author/chapter_pshfunctions.tex`: if `X` is compact, each potential with analytic singularities has a type.
