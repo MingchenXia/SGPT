@@ -2,6 +2,12 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-10-18 — Publish the approved Kiselman correction
+
+- Merged author-approved [PR #3](https://github.com/MingchenXia/SGPT/pull/3) into `main` as `2da8117122799be6da2962fd7a7af2d81767b4c1` and deleted its remote and local proposal branches.
+- Published the compiled 545-page book to [SGPT_final.pdf](https://mingchenxia.github.io/Lectures/SGPT_final.pdf) in website commit `d122da6b51431d7448f66a6015f2b99765f916d8`. The cover reads `Updated on October 18, 2026.`
+- Verification: the merged source tree matches the approved PR head and the final XeLaTeX build is up to date. Inspected the cover, confirmed successful GitHub Pages deployment, and compared the downloaded public PDF with the approved local build; both have SHA-256 `d505def4126e05ca0c5449d0ec921e5892c65f7f41ce15c87306849abd464b21`.
+
 ## 2026-10-18 — Use the pseudoconvex formulation of Kiselman's principle
 
 - Revised the pending Proposition 1.2.8 proposal to retain the original pseudoconvexity hypothesis and require open convex real fibers, as in Demailly's Theorem (7.5). Removed the separate invariant-exhaustion hypothesis and the product-tube discussion from the proposal: pseudoconvexity and imaginary-translation invariance supply the required exhaustion automatically.
