@@ -493,17 +493,17 @@ denotes the punctured unit disk.
 
 
 \begin{proposition}[Kiselman's principle]\label{prop:Kis}\index{theorem!Kiselman's principle}
-Let $\Omega\subseteq \mathbb{C}^m\times \mathbb{C}^n$ be a pseudoconvex domain. Assume that for each $z\in \mathbb{C}^m$, the set
+Let $\Omega\subseteq \mathbb{C}^m\times \mathbb{C}^n$ be a pseudoconvex domain, and let $\Omega'$ be its projection to $\mathbb{C}^m$. Assume that for each $z\in \Omega'$, the fiber
 \[
     \Omega_z\coloneqq \bigl\{w\in\mathbb{C}^n: (z,w)\in \Omega \bigr\}
 \]
-has the form $E+\mathrm{i}\mathbb{R}^n$, where $E\subseteq \mathbb{R}^n$ is a subset. Let $\varphi\in \PSH(\Omega)$, assume that $\varphi$ is independent of the imaginary part of the variable in $\mathbb{C}^n$. Let $\Omega'$ be the projection of $\Omega$ to $\mathbb{C}^m$. Define $\psi\colon \Omega'\rightarrow [-\infty,\infty)$ as follows:
+has the form $E_z+\mathrm{i}\mathbb{R}^n$, where $E_z\subseteq \mathbb{R}^n$ is a nonempty open convex set. Let $\varphi\in \PSH(\Omega)$ be independent of the imaginary part of $w$, and define
 \[
-    \psi(z)=\inf_{w\in \Omega_z}\varphi(z,w).
+    \psi(z)=\inf_{t\in E_z}\varphi(z,t),\quad z\in \Omega'.
 \]
 Then either $\psi\equiv -\infty$ or $\psi\in \PSH(\Omega')$.
 \end{proposition}
-See \cite[Theorem~7.5]{DemBook} for the proof as well as the notion of pseudoconvex domains.
+See \cite[Chapter~I, Section~7.B, Theorem~(7.5) and its proof, p.~57]{DemBook} for the proof as well as the notion of pseudoconvex domains.
 
 \begin{lemma}\label{lma:gl}
     Let $\Omega\subseteq \mathbb{C}^n$ be a domain and $\Omega'\subseteq \Omega$ be a subdomain. Consider $\varphi\in \PSH(\Omega)$ and $\psi\in \PSH(\Omega')$. Assume that
