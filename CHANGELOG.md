@@ -2,6 +2,12 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-10-18 — Correct the statement of Kiselman's principle
+
+- Restated Proposition 1.2.8 (`prop:Kis`) in `author/chapter_pshfunctions.tex` in the invariant-exhaustion form of Theorem 8.5.1 of [Foundations of pluripotential theory](https://github.com/MingchenXia/foundations-of-pluripotential-theory/blob/da2be417c7b38b386d0b688251cf4978df94d682/chapters/q02-plurisubharmonic-functions.tex#L368). The real fibers are now required to be open and convex, and an invariant plurisubharmonic function with compact sublevel sets on the real slice is explicitly assumed. Mere tube invariance in the previous statement omitted the required fiber convexity.
+- Added the product-tube case and its local exhaustion construction, covering the interval and half-line infima used later in the book. Specified the existing Demailly reference as Chapter I, Section 7.B, Theorem (7.5) and its proof, p. 57.
+- Verification: read the referenced theorem and product-tube corollary with their proofs, and checked the Demailly passage. Completed two mathematical and editorial reads of the revised unit and checked its later applications. Both baseline and revised full XeLaTeX builds have 545 pages and no unresolved references, citations, or overfull boxes. Inspected the rendered before-and-after excerpts on printed page 13 and confirmed that all chapter labels and their order are preserved.
+
 ## 2026-10-14 — Publish the approved compactness correction
 
 - Merged author-approved [PR #2](https://github.com/MingchenXia/SGPT/pull/2) into `main` as `7f8e41a7efb3cfef525d0f52c6d39aaed44b496a` and deleted its remote and local proposal branches.

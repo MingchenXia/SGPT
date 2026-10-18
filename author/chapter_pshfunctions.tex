@@ -493,17 +493,27 @@ denotes the punctured unit disk.
 
 
 \begin{proposition}[Kiselman's principle]\label{prop:Kis}\index{theorem!Kiselman's principle}
-Let $\Omega\subseteq \mathbb{C}^m\times \mathbb{C}^n$ be a pseudoconvex domain. Assume that for each $z\in \mathbb{C}^m$, the set
+Let $m,n\geq 1$ and let $\Omega\subseteq \mathbb{C}^m\times \mathbb{C}^n$ be a domain. Let $\Omega'$ be its projection to $\mathbb{C}^m$. Assume that for each $z\in \Omega'$, the fiber
 \[
-    \Omega_z\coloneqq \bigl\{w\in\mathbb{C}^n: (z,w)\in \Omega \bigr\}
+    \Omega_z\coloneqq \bigl\{w\in\mathbb{C}^n: (z,w)\in \Omega \bigr\}=E_z+\mathrm{i}\mathbb{R}^n
 \]
-has the form $E+\mathrm{i}\mathbb{R}^n$, where $E\subseteq \mathbb{R}^n$ is a subset. Let $\varphi\in \PSH(\Omega)$, assume that $\varphi$ is independent of the imaginary part of the variable in $\mathbb{C}^n$. Let $\Omega'$ be the projection of $\Omega$ to $\mathbb{C}^m$. Define $\psi\colon \Omega'\rightarrow [-\infty,\infty)$ as follows:
+for a nonempty open convex set $E_z\subseteq \mathbb{R}^n$. Suppose that there is $\rho\in \PSH(\Omega)$, independent of the imaginary part of $w$, such that for every $c\in \mathbb{R}$ the set
 \[
-    \psi(z)=\inf_{w\in \Omega_z}\varphi(z,w).
+    \bigl\{(z,t)\in \Omega\cap(\mathbb{C}^m\times\mathbb{R}^n):\rho(z,t)\leq c\bigr\}
+\]
+is compact. Let $\varphi\in \PSH(\Omega)$ be independent of the imaginary part of $w$, and define
+\[
+    \psi(z)=\inf_{t\in E_z}\varphi(z,t),\quad z\in \Omega'.
 \]
 Then either $\psi\equiv -\infty$ or $\psi\in \PSH(\Omega')$.
+
+In particular, for any domain $D\subseteq \mathbb{C}^m$ and nonempty open convex set $E\subseteq \mathbb{R}^n$, the same conclusion holds on $\Omega=D\times(E+\mathrm{i}\mathbb{R}^n)$ for every $\varphi\in \PSH(\Omega)$ independent of the imaginary part of $w$.
 \end{proposition}
-See \cite[Theorem~7.5]{DemBook} for the proof as well as the notion of pseudoconvex domains.
+For the proof with the invariant function $\rho$, see \cite[Chapter~I, Section~7.B, Theorem~(7.5) and its proof, p.~57]{DemBook}. In the product case, work locally on a ball $B(a,r)\Subset D$ and take
+\[
+    \rho(z,w)=\frac{1}{r^2-|z-a|^2}+b(\Real w),
+\]
+where $b$ is a nonnegative continuous convex exhaustion of $E$. For $E\neq\mathbb{R}^n$, one may take $b(t)=|t|^2+\operatorname{dist}(t,\mathbb{R}^n\setminus E)^{-1}$; for $E=\mathbb{R}^n$, take $b(t)=|t|^2$.
 
 \begin{lemma}\label{lma:gl}
     Let $\Omega\subseteq \mathbb{C}^n$ be a domain and $\Omega'\subseteq \Omega$ be a subdomain. Consider $\varphi\in \PSH(\Omega)$ and $\psi\in \PSH(\Omega')$. Assume that
