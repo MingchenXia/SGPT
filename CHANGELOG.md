@@ -2,6 +2,12 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-11-04 — Publish the approved formalization errata corrections
+
+- Merged author-approved [PR #4](https://github.com/MingchenXia/SGPT/pull/4) into `main` as `fb272f80002ab1600cf1ab5d4d8b864d19aa1b81` and deleted its remote and local proposal branches.
+- Published the compiled 547-page book to [SGPT_final.pdf](https://mingchenxia.github.io/Lectures/SGPT_final.pdf) in website commit `d89e8a94f013e4830a1f95726dce49f0aef80358`. The cover reads `Updated on November 4, 2026.`
+- Verified that the merged source tree matches the approved PR head, completed a fresh XeLaTeX build with all references and citations resolved, and inspected the cover. All 27 pages in the approved review excerpt match the release PDF. GitHub Pages deployment succeeded, and the downloaded public PDF matches the local build byte for byte with SHA-256 `7f83880bde9e34587d39980a5eac2ee946465a1c6fbb522e7525288953667d05`.
+
 ## 2026-11-04 — Correct errata from the SGPT formalization review
 
 - Chapter 1 (E04, E06, E07). Add connectedness to the global normalization results and apply compactness on the component containing the divisor's center in the Lelong-number bound. Use a common closed background in the analytic-singularity maximum rule. Include strict transforms in the finite multiplier-ideal test.
