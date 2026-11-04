@@ -2,6 +2,14 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-11-04 — Repair the concave envelope and its applications
+
+- Replaced the recursive construction in Remark 13.4.1 by a finite barycentric formula for the concave envelope regularized in `X`. Its left tail is the maximum of all nodal potentials. Proved that it is decreasing, concave, plurisubharmonic at every level, and piecewise linear on the original intervals.
+- Reworked Lemma 13.4.1 to verify positive mass and compatibility of the projected test curves, and to prove preservation of analytification directly from the finite formula.
+- In Lemma 13.4.8, restricted the generalized Fubini–Study assertion to rational slices and proved the rational-slice supremum identity on the whole analytification. Made the rational coefficient explicit in Definition 1.8.7.
+- Repaired the application in Theorem 13.4.5: use rational slices with analytic singularities and only parameters where the trace is defined. Justified convergence of the restriction endpoints and the Legendre limit, retained an algebraic background after perturbation, and used the approximation parameters supplied by the cited theorem.
+- Verification: completed two mathematical and editorial reads of the changed passages and checked their dependencies. Compiled the full 549-page book with XeLaTeX; all references and citations resolved, with no new layout warnings. Inspected the ten-page review excerpt containing every modified passage (printed pages 43–44, 440–441, 444–449).
+
 ## 2026-11-04 — Publish the approved formalization errata corrections
 
 - Merged author-approved [PR #4](https://github.com/MingchenXia/SGPT/pull/4) into `main` as `fb272f80002ab1600cf1ab5d4d8b864d19aa1b81` and deleted its remote and local proposal branches.
