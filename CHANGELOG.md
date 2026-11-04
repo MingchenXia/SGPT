@@ -2,6 +2,11 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-11-05 — Clarify the concave-envelope proof
+
+- Rewrote the justification in Remark 13.4.1 using explicit concavity inequalities, defined the standard basis vectors, and referred directly to the parameters and values in the construction. Used `polar set` throughout the revised passage. Likewise referred to the numbers `tau_0, ..., tau_N` in Lemma 13.4.8.
+- Verification: completed two mathematical and editorial reads of the revised passage. Recompiled the full 549-page book with all references and citations resolved and no new layout warnings. Checked the November 5 cover date and inspected all ten pages of the updated PR #5 review excerpt.
+
 ## 2026-11-04 — Repair the concave envelope and its applications
 
 - Replaced the recursive construction in Remark 13.4.1 by a finite barycentric formula for the concave envelope regularized in `X`. Its left tail is the maximum of all nodal potentials. Proved that it is decreasing, concave, plurisubharmonic at every level, and piecewise linear on the original intervals.

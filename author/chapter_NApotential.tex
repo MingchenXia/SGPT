@@ -1054,7 +1054,7 @@ Then
 A'_{\tau}=\max_{\lambda\in\Lambda_{\tau}}\sum_{i=0}^N\lambda_i A_i,\quad \tau\leq\tau_0,
 \end{equation}
 where summands with $\lambda_i=0$ are omitted, and $A'_{\tau}\equiv-\infty$ for $\tau>\tau_0$.
-The maximum in \eqref{eq:pwlinhull-simplex} can be taken over the finitely many vertices of $\Lambda_{\tau}$. These are the unit vectors $e_i$ with $\tau_i\geq\tau$, together with
+Let $e_0,\ldots,e_N$ denote the standard basis of $\mathbb R^{N+1}$. The maximum in \eqref{eq:pwlinhull-simplex} can be taken over the finitely many vertices of $\Lambda_{\tau}$. These are the vectors $e_i$ with $\tau_i\geq\tau$, together with
 \[
 \frac{\tau-\tau_j}{\tau_i-\tau_j}e_i+\frac{\tau_i-\tau}{\tau_i-\tau_j}e_j,
 \quad i<j,\quad \tau_j<\tau<\tau_i.
@@ -1064,9 +1064,15 @@ Thus $A'_{\tau}\in\PSH(X,\theta)$, and in particular
 A'_{\tau_0}=A_0,\qquad A'_{\tau}=\max_{0\leq i\leq N}A_i\quad\text{for }\tau\leq\tau_N.
 \]
 
-To justify the formula, observe that its right-hand side majorizes $A$. Convex combinations of feasible vectors show that it is concave, and $\Lambda_{\tau}\subseteq\Lambda_{\sigma}$ for $\sigma\leq\tau$ shows that it is decreasing. Outside the union of the pole sets of the $A_i$'s, every concave majorant of $A$ is decreasing, since it is bounded below on the left half-line. The scalar concave-envelope formula \cref{prop:concavhull} therefore gives \eqref{eq:pwlinhull-simplex} there: the constant left tail allows the barycenter of the knots to be greater than $\tau$. Since the right-hand side is $\theta$-psh and majorizes the pointwise envelope everywhere, regularization gives the same formula on $X$.
+To justify the formula, denote its right-hand side by $B_{\tau}$. If $\sigma,\tau\leq\tau_0$ and $0<t<1$, combining a vector in $\Lambda_{\sigma}$ and a vector in $\Lambda_{\tau}$ with coefficients $1-t$ and $t$ gives a vector in $\Lambda_{(1-t)\sigma+t\tau}$, so $B$ is concave. The inclusion $\Lambda_{\tau}\subseteq\Lambda_{\sigma}$ for $\sigma\leq\tau$ shows that $B$ is decreasing, and its definition gives $B\geq A$. Fix $x$ outside the union of the polar sets $\{A_i=-\infty\}$, and let $f$ be any concave majorant of $\tau\mapsto A_{\tau}(x)$. Since $f$ is bounded below on the left half-line, it is decreasing. For every $\lambda\in\Lambda_{\tau}$, we have
+\[
+f(\tau)\geq f\left(\sum_i\lambda_i\tau_i\right)
+\geq\sum_i\lambda_i f(\tau_i)
+\geq\sum_i\lambda_i A_i(x).
+\]
+Thus $f(\tau)\geq B_{\tau}(x)$, which proves that $B$ agrees with the pointwise upper concave envelope outside these polar sets. Since $B_{\tau}$ is $\theta$-psh and majorizes the pointwise envelope everywhere, upper semicontinuous regularization gives $A'_{\tau}=B_{\tau}$ on $X$.
 
-The scalar envelope is affine on each interval $[\tau_{j+1},\tau_j]$. This identity extends across the pole sets because both sides are $\theta$-psh. Hence $A'$ is itself piecewise linear, with nodal values $A'_{\tau_i}$.
+For each such $x$, the finite maximum defining $B_{\tau}(x)$ consists of a fixed collection of affine functions of $\tau$ on each interval $(\tau_{j+1},\tau_j)$. Hence it is convex as well as concave there, and therefore affine. Its endpoint values are given by continuity. This identity extends across the polar sets because both sides are $\theta$-psh. Hence $A'$ is itself the piecewise linear curve associated with the values $A'_{\tau_i}$ at the parameters $\tau_i$.
 \end{remark}
 
 \begin{lemma}\label{lma:psieqpsiprimeondiv}
@@ -1260,7 +1266,7 @@ for all $\tau\in \mathbb{R}$. Hence $\Gamma\leq \Gamma'$ by the definition of th
 \begin{lemma}\label{lma:gfinimage}
     Let $\phi \in \mathcal{H}^{\gf}_{\mathbb{Q}}(L^{\An})$. Then there is a piecewise linear curve $A$ in $\PSH(X,\theta)$ with $\phi=A^{\An}$. In particular, $\phi$ is in the image of \eqref{eq:analymap}.
 \end{lemma}
-In the construction below, the knots $\tau_i$ are rational, and the regularized concave envelope $A'_{\tau}$ is a generalized Fubini--Study metric for every rational $\tau\leq\tau_0$.
+In the construction below, the numbers $\tau_0,\ldots,\tau_N$ are rational, and the regularized concave envelope $A'_{\tau}$ is a generalized Fubini--Study metric for every rational $\tau\leq\tau_0$.
 \begin{proof}
      Let us write
     \begin{equation}\label{eq:phiintominversemax}
