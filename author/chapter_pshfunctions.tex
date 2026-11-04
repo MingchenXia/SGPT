@@ -1180,12 +1180,12 @@ Conversely, the information of the generic Lelong numbers determines the multipl
                 \ord_E(f)\geq (1+\epsilon) \nu(\varphi,E)-A_X(E).
             \end{equation}
     \end{enumerate}
-    In case $\varphi$ has analytic singularities and $\pi\colon Y\rightarrow X$ is a log resolution of $\varphi$ (see \cref{def:logres} for the definition) with finitely many exceptional divisors $\{E_i\}$ whose centers on $X$ contain $x$, one may replace \eqref{eq:ordfLelonglogdis} by
+    If $\varphi$ has analytic singularities and $\pi\colon Y\rightarrow X$ is a log resolution of $\varphi$ (see \cref{def:logres}), let $\{E_i\}$ be the components of its resolved polar divisor that meet $\pi^{-1}(x)$. In this case \ref{itm:thm:valuativemulti:2} can be replaced by the finite set of inequalities
     \begin{equation}\label{eq:ordfLelonglogdis2}
     \ord_{E_i}(f)> \nu(\varphi,E_i)-A_X(E_i)\quad \forall i.
     \end{equation}
 \end{theorem}
-Here $A_X(\bullet)$ denotes the log discrepancy of prime divisors. Note that in (2), it suffices to consider the prime divisors contained in $\{\pi^*\varphi=-\infty\}$.
+Here $A_X(\bullet)$ denotes the log discrepancy of prime divisors. In \ref{itm:thm:valuativemulti:2} only divisors with $\nu(\varphi,E)>0$ impose a condition. In the finite test, the components $E_i$ include strict transforms of polar divisors on $X$. After change of variables on the resolution, the exponent of $|z_i|^2$ in the integrand is $\ord_{E_i}(f)+A_X(E_i)-1-\nu(\varphi,E_i)$, so integrability requires it to be strictly greater than $-1$.
 We refer to \cite[Corollary~10.18, Proposition~10.12]{Bou17} for the proof and the precise definition of $A_X$.
 
 The notion of analytic singularities is recalled in \cref{sec:anasing}.
@@ -1263,12 +1263,12 @@ It is sometimes convenient to include the constant function $-\infty$ as well. T
 
 When $X$ is not compact, one can still define similar notions, but the generalization is not unique, and we shall not consider them in this book.
 \begin{remark}
-The preceding results concerning plurisubharmonic functions can be extended \emph{mutatis mutandis} to quasi-plurisubharmonic functions. We will apply these extensions without further explanations.
+For a fixed background $\theta$, we will use the local results for plurisubharmonic functions after adding a smooth local potential of $\theta$.
 \end{remark}
 
 
 
-\begin{proposition}\label{prop:L1compa}Assume that $X$ is compact.
+\begin{proposition}\label{prop:L1compa}Assume that $X$ is connected and compact.
     Let $\theta$ be a closed real smooth $(1,1)$-form on $X$. Then for any $a,b\in \mathbb{R}$, $a\leq b$, the set
     \[
         \left\{ \varphi\in \PSH(X,\theta): \sup_X \varphi \in [a,b]\right\}
@@ -1277,42 +1277,25 @@ The preceding results concerning plurisubharmonic functions can be extended \emp
 \end{proposition}
 This is an immediate consequence of \cite[Proposition~8.5, Exercise~1.20]{GZ17}\footnote{In the proof of \cite[Proposition~8.5]{GZ17}, there is a misleading sentence: \emph{This is a dcreasing sequence of $\omega$-psh functions}, which should be removed.}.
 \begin{remark}\label{rmk:L1cpt}
-    More generally, if $K\subseteq X$ is a closed non-pluripolar subset, then
+    Suppose that $X$ is connected and compact and $K\subseteq X$ is a closed non-pluripolar subset. Then
     \[
         \left\{ \varphi\in \PSH(X,\theta): \sup_K \varphi \in [a,b]\right\}
     \]
-    is relatively compact with respect to the $L^1$-topology. See \cite[Corollary~4.3]{GZ05}.
+    is relatively compact with respect to the $L^1$-topology.
 
-    As a consequence, if $\sup_K \varphi\leq C_0$ for some $C_0\in \mathbb{R}$, then $\sup_X \varphi\leq C_1$ for some $C_1\in \mathbb{R}$ as well.
+    In fact, $\sup_X\varphi-\sup_K\varphi$ is uniformly bounded on $\PSH(X,\theta)$. Otherwise we could find $u_j\in\PSH(X,\theta)$ with $\sup_X u_j=0$ and $\sup_K u_j\leq-2^j$. By \cref{prop:L1compa} the $L^1$-norms of the $u_j$ are uniformly bounded, so $\sum_{j\geq 1}2^{-j}u_j$ is locally integrable. On a relatively compact coordinate ball, add to each $u_j$ the same smooth local potential of $\theta$, normalized to be nonpositive. The weighted partial sums are then decreasing and psh. Their limit is psh by \cref{prop:pshfunction_closedseq} and is the original sum plus the local potential, since the weights sum to one. Thus the original sum is $\theta$-psh and equals $-\infty$ on $K$, contradicting non-pluripolarity.
 
-    To see this, we may assume that $C_0>0$. When $\sup_K \varphi \in [0,C_0]$, our assertion follows from the above. If $\sup_K \varphi<0$, it suffices to observe that
-    \[
-        \varphi\leq \varphi-\sup_K \varphi.
-    \]
+    The bound shows that $\sup_K\varphi\leq C_0$ implies a uniform upper bound on $\sup_X\varphi$. If also $\sup_K\varphi\geq a$, then $\sup_X\varphi\geq a$, so relative compactness follows from \cref{prop:L1compa}.
 \end{remark}
 
 \begin{corollary}\label{cor:decreasingnetL1conv}
-    Assume that $X$ is compact. Let $\theta$ be a closed real smooth $(1,1)$-form on $X$, and $(\varphi_i)_{i\in I}$ be a decreasing net in $\PSH(X,\theta)$ such that $\sup_X \varphi_i$ is uniformly bounded from below. Then $\varphi=\inf_{i\in I} \varphi_i$ is a $\theta$-psh function and 
+    Assume that $X$ is connected and compact. Let $\theta$ be a closed real smooth $(1,1)$-form on $X$, and $(\varphi_i)_{i\in I}$ be a decreasing net in $\PSH(X,\theta)$ such that $\sup_X \varphi_i$ is uniformly bounded from below. Then $\varphi=\inf_{i\in I} \varphi_i$ is a $\theta$-psh function and
     \begin{equation}\label{eq:decreasingnetL1conv}
     \adjustlimits\lim_{i\in I}\sup_X \varphi_i=\sup_X \varphi,\quad \varphi_i\xrightarrow{L^1}\varphi.
     \end{equation}
 \end{corollary}
 \begin{proof}
-    We may assume that $X$ is connected.
-
-    It suffices to show that $\varphi\not\equiv -\infty$. From this, it follows that $\varphi\in \PSH(X,\theta)$ and $\varphi_i\to \varphi$ in $L^1$ by \cref{prop:pshfunction_closedseq}. The $L^1$-continuity of $\eta\mapsto \sup_X\eta$ on $\PSH(X,\theta)$ from \cref{prop:L1compa} then gives the first equality in \eqref{eq:decreasingnetL1conv}.
-
-    Fix $i_0\in I$ and replace $I$ by the cofinal tail $I_{\geq i_0}$. This does not change the infimum. On this tail we have
-    \[
-        \sup_X\varphi_i\leq \sup_X\varphi_{i_0},
-    \]
-    while the suprema are bounded from below by assumption. Hence \cref{prop:L1compa} shows that the net $(\varphi_i)_{i\in I}$ is relatively compact with respect to the $L^1$-topology. We may therefore take a subnet $(\varphi_j)_{j\in J}$ converging in $L^1$ to some $\psi\in\PSH(X,\theta)$. Since $(\varphi_j)_{j\in J}$ is a Willard subnet of $(\varphi_i)_{i\in I}$, we know that it is also decreasing. Therefore, $\psi=\inf_{j\in J} \varphi_j$ due to \cref{prop:pshfunction_closedseq} and \cref{prop:pshfuncdetdense}.
-
-    Fix $i_0\in I$. For all sufficiently large $j\in J$, the corresponding index of the subnet dominates $i_0$, hence
-    \[
-        \varphi_j\leq \varphi_{i_0}.
-    \]
-    Therefore, $\psi\leq \varphi_{i_0}$. As $i_0$ was arbitrary, $\psi\leq \varphi$ everywhere. In particular, $\varphi$ is not identically $-\infty$.
+    Choose $a\in\mathbb R$ with $\sup_X\varphi_i\geq a$ for every $i$. The nonempty closed sets $\{\varphi_i\geq a\}$ have the finite intersection property by directedness, so compactness gives a point where $\varphi\geq a$. By \cref{prop:pshfunction_closedseq}, on each connected coordinate ball the limit plus a local potential of $\theta$ is either psh or identically $-\infty$. These alternatives agree on overlapping balls, so connectedness and the point where $\varphi\geq a$ give $\varphi\in\PSH(X,\theta)$. The same proposition gives local $L^1$-convergence, hence $L^1$-convergence on the compact manifold $X$. The continuity of the supremum follows from \cref{prop:L1compa}.
 \end{proof}
 
 
@@ -1325,6 +1308,7 @@ Assume that $X$ is compact.
     \]
 \end{proposition}
 \begin{proof}
+    We may restrict to the connected component of $X$ containing the center of $E$, since the Lelong number along $E$ only depends on the restriction to this component.
     It follows from the proof of \cite[Exercise~2.7]{GZ17} that $\nu(\bullet,E)$ is upper semicontinuous with respect to the $L^1$-topology on $\PSH(X,\theta)$. Since adding a constant does not change Lelong numbers, we may restrict to the compact set $\{\varphi\in \PSH(X,\theta):\sup_X\varphi=0\}$ from \cref{prop:L1compa}. The desired upper bound follows.
 \end{proof}
 
@@ -1384,10 +1368,12 @@ We refer to \cite{Bou02} and \cite{Bou02b} for the details.
 
 Some authors allow $c\in \mathbb{R}_{>0}$ in \eqref{eq:anasinglocal}. We keep $c\in \mathbb{Q}_{>0}$ because the following closure property, which is essential in constructing Demailly approximations, would otherwise fail.
 \begin{proposition}\label{prop:analysingclosed}
-    Let $\varphi,\psi\in \QPSH(X)$ be potentials with analytic singularities. Then so are $\lambda\varphi$ ($\lambda\in \mathbb{Q}_{>0}$), $\varphi+\psi$ and $\varphi\lor \psi$.
+    Let $\varphi,\psi\in \QPSH(X)$ be potentials with analytic singularities. Then so are $\lambda\varphi$ for $\lambda\in \mathbb{Q}_{>0}$ and $\varphi+\psi$. If $\varphi$ and $\psi$ are $\theta$-psh for the same smooth closed real $(1,1)$-form $\theta$, then $\varphi\lor\psi$ is $\theta$-psh and has analytic singularities.
 \end{proposition}
 \begin{proof}
-    The assertion for $\lambda\varphi$ follows by multiplying the rational coefficient in \eqref{eq:anasinglocal}. The assertion for $\lor$ is proved in \cite[Proposition~4.1.8]{Dem15}. For the addition assertion, take local presentations as in \eqref{eq:anasinglocal} and multiply the corresponding finite systems of holomorphic generators.
+    Scaling and addition preserve quasi-plurisubharmonicity by scaling and adding the respective backgrounds. For the maximum, adding a common local potential of $\theta$ reduces $\theta$-plurisubharmonicity to the local maximum property.
+
+    Multiplying the coefficient in \eqref{eq:anasinglocal} gives the assertion for $\lambda\varphi$. For the other two operations, use a common positive rational coefficient in the local presentations, by replacing the generating systems with generators of suitable powers of their ideals. For addition, take all pairwise products of the two systems. For the maximum, take their union, using that the logarithm of the sum of two nonnegative quantities differs from the maximum of their logarithms by at most $\log 2$ wherever the sum is nonzero.
 \end{proof}
 
 \begin{definition}\label{def:pshfunctions:L1393}

@@ -312,15 +312,15 @@ Therefore,
 \]
 So we conclude the $\leq$ direction in \eqref{eq:PthetaKvarphiveq}.
 
-For the reverse direction, take $\eta\in \PSH(X,\theta)_{>0}$ such that
+For the reverse direction, take any candidate $\eta\in \PSH(X,\theta)$ for the right-hand side, so
 \[
 \eta\preceq \varphi,\quad \eta\leq P_{\theta,K}[V_{\theta}](f) \quad \textup{quasi-everywhere}.
 \]
-Then $\eta|_K\leq f$ quasi-everywhere by \cref{prop:partial_env}. Hence
+By \itemref{itm:prop:partial_env:2}, the intermediate envelope is at most $f$ quasi-everywhere on $K$. Combining the two inequalities outside the union of their pluripolar exceptional sets gives $\eta|_K\leq f$ quasi-everywhere. Hence
 \[
 \eta\leq P_{\theta,K}[\varphi](f).
 \]
-By \cref{cor:partial_P_new_def}, the $\geq$ direction in \eqref{eq:PthetaKvarphiveq} follows.
+Taking the upper semicontinuous regularization of the supremum over these candidates gives the reverse inequality in \eqref{eq:PthetaKvarphiveq}.
 \end{proof}
 
 \section{Partial equilibrium measures}\label{sec:pem}
@@ -664,27 +664,28 @@ Therefore, \eqref{eq:defchilimPthetadeltaomega} is an equality.
 \end{proposition}
 
 \begin{proof}
-We only give the proof for the relative $\mathcal{I}$-envelopes; the proof for the relative $P$-envelopes is identical, replacing $P_{\theta}[\bullet]_{\mathcal{I}}$ by $P_{\theta}[\bullet]$ and using \cref{cor:partial_P_new_def} for the final candidate condition.
-
-Set
+Write $Q_{\theta,K}[\cdot]$ for either partial envelope and $Q_\theta[\cdot]$ for the corresponding global envelope. Set
 \[
-    \eta_j\coloneqq P_{\theta,K}[\varphi_j]_{\mathcal{I}}(v),\quad
-    \eta\coloneqq P_{\theta,K}[\varphi]_{\mathcal{I}}(v).
+    \eta_j\coloneqq Q_{\theta,K}[\varphi_j](v),\quad
+    \eta\coloneqq Q_{\theta,K}[\varphi](v).
 \]
-By \cref{lma:same_sing_type}, $d_S(\eta_j,P_{\theta}[\varphi_j]_{\mathcal{I}})=0$ and $d_S(\eta,P_{\theta}[\varphi]_{\mathcal{I}})=0$ for all $j$. Moreover, \cref{thm:contPI} gives
-\[
-    P_{\theta}[\varphi_j]_{\mathcal{I}}\xrightarrow{d_S}P_{\theta}[\varphi]_{\mathcal{I}}
-\]
-in case \ref{itm:prop:conv_of_K_env:1}, and the same convergence holds in case \ref{itm:prop:conv_of_K_env:2} by \cref{cor:incnetdSconv} and \cref{thm:contPI}.
-Consequently, $\eta_j\xrightarrow{d_S}\eta$ in both cases.
+Suppose first that $(\varphi_j)_j$ is decreasing. By \cref{lma:same_sing_type}, $d_S(\eta_j,Q_\theta[\varphi_j])=0$ and $d_S(\eta,Q_\theta[\varphi])=0$. For the $\mathcal I$-envelope, \cref{thm:contPI} gives $Q_\theta[\varphi_j]\xrightarrow{d_S}Q_\theta[\varphi]$. For the ordinary envelope this follows from \cref{prop:ds0char} and $\varphi_j\xrightarrow{d_S}\varphi$. Hence $\eta_j\xrightarrow{d_S}\eta$.
 
-Assume first that $(\varphi_j)_j$ is decreasing. Then $(\eta_j)_j$ is decreasing and $\eta_j\geq \eta$. Let $\eta_\infty\coloneqq \inf_j \eta_j$. The Monge--Amp\`ere masses of $\eta_j$ converge to the mass of $\eta$, by the preceding $d_S$-convergence and \cref{thm:convdS}. Since $\eta_j\geq \eta_\infty\geq \eta$, the monotonicity theorem \cref{thm:mono} gives
+By monotonicity, $\eta_j$ decreases to a $\theta$-psh function $\eta_\infty\geq\eta$. The masses of $\eta_j$ converge to the mass of $\eta$ by \cref{thm:convdS}. Since $\eta_j\geq\eta_\infty\geq\eta$, \cref{thm:mono} gives
 \[
-    \int_X\theta_{\eta_\infty}^n=\int_X\theta_\eta^n.
+    \int_X\theta_{\eta_\infty}^n=\int_X\theta_\eta^n>0.
 \]
-Hence $\eta_j\xrightarrow{d_S}\eta_\infty$ by \cref{cor:decnetdS}. The uniqueness of the $d_S$-limit gives $d_S(\eta_\infty,\eta)=0$. Since $\eta_\infty\geq \eta$, \cref{prop:ds0char} implies $\eta_\infty\sim_P \eta$. In particular, $\eta_\infty\preceq_{\mathcal{I}}\varphi$ by \cref{cor:PimpliesI}. The condition $\eta_\infty\leq v$ on $K$ quasi-everywhere is inherited from the $\eta_j$'s, so $\eta_\infty$ is a candidate for $P_{\theta,K}[\varphi]_{\mathcal{I}}(v)$. Thus $\eta_\infty\leq \eta$, and the reverse inequality was already observed. This proves the $\mathcal{I}$-part of \ref{itm:prop:conv_of_K_env:1}.
+By \cref{cor:decnetdS}, $\eta_j\xrightarrow{d_S}\eta_\infty$, so $\eta_\infty\sim_P\eta$ by \cref{prop:ds0char}. Also $\eta_\infty\leq v$ quasi-everywhere on $K$ since $\eta_\infty\leq\eta_1$. In the ordinary case $\eta_\infty\preceq_P\varphi$ by \cref{lma:same_sing_type}, so \cref{cor:partial_P_new_def} gives $\eta_\infty\leq\eta$. In the $\mathcal I$-case $\eta_\infty\preceq_{\mathcal I}\eta\preceq_{\mathcal I}\varphi$ by \cref{cor:PimpliesI} and \cref{lma:same_sing_type}; hence the same inequality follows from the defining candidates. This proves \ref{itm:prop:conv_of_K_env:1}.
 
-Assume next that $\varphi_j\nearrow\varphi$ almost everywhere. Then $(\eta_j)_j$ is increasing and $\eta_j\leq \eta$. Put $\tilde\eta\coloneqq \uscsup_j \eta_j$. By \cref{cor:Ppartbdd_bdabove} and \cref{cor:incnetdSconv}, we have $\eta_j\xrightarrow{d_S}\tilde\eta$. The $d_S$-convergence above therefore gives $d_S(\tilde\eta,\eta)=0$, hence $\tilde\eta\sim_P \eta$ by \cref{prop:ds0char}. In particular, $\tilde\eta\preceq_{\mathcal{I}}\varphi$ by \cref{cor:PimpliesI}. Also $\tilde\eta\leq v$ on $K$ quasi-everywhere by \cref{prop:supsupstardiff}. Hence $\tilde\eta$ is a candidate for $P_{\theta,K}[\varphi]_{\mathcal{I}}(v)$, so $\tilde\eta\leq \eta$. Since $\eta_j\leq \eta$ for all $j$, this proves $\eta_j\nearrow \eta$ almost everywhere.
+Now suppose that $\varphi_j\nearrow\varphi$ almost everywhere. Then $\varphi_j\leq\varphi$ everywhere by \cref{prop:pshfuncdetdense}, and $\eta_j$ increases with $\eta_j\leq\eta$. By \cref{cor:incseqnppcont} the masses of $\varphi_j$ tend to the positive mass of $\varphi$. Thus \cref{lma:pathoenvelope} supplies $\epsilon_j\in(0,1)$ tending to zero and $\psi_j\in\PSH(X,\theta)_{>0}$ such that
+    \[
+        (1-\epsilon_j)\varphi+\epsilon_j\psi_j\leq\varphi_j.
+    \]
+Set $h_j=Q_{\theta,K}[\psi_j](v)$. Monotonicity and \itemref{itm:prop:partial_env:5} give
+    \[
+        (1-\epsilon_j)\eta+\epsilon_j h_j\leq\eta_j.
+    \]
+By \cref{cor:Ppartbdd_bdabove}, the $h_j$ are uniformly bounded from above. The potential $\psi_j-\sup_X\psi_j+\inf_K v$ is an ordinary candidate for $h_j$, so $\sup_X h_j\geq\inf_K v$. By \cref{prop:L1compa}, the $h_j$ have bounded $L^1$-norms. In particular, $\epsilon_j h_j\to 0$ in $L^1$. Along a subsequence this convergence holds almost everywhere, and the last displayed inequality gives $\eta\leq\sup_j\eta_j$ almost everywhere. This proves \ref{itm:prop:conv_of_K_env:2}.
 \end{proof}
 
 
@@ -750,7 +751,7 @@ A Borel probability measure $\mu$ on $K$ is \emph{Bernstein--Markov}\index{Berns
 for any $s \in \mathrm{H}^0(X,L^k \otimes T)$ and any $k\in \mathbb{Z}_{>0}$.
 We write $\BM(K,v)$\index{$\BM(K,v)$} for the set of Bernstein--Markov measures with respect to $(K,v)$.
 \end{definition}
-As pointed out in \cite{BBWN11}, any volume form on $X$ is Bernstein--Markov with respect to $(X,v)$, with $v \in C^\infty(X)$.
+As pointed out in \cite{BBWN11}, any smooth positive volume form of total mass one on $X$ is Bernstein--Markov with respect to $(X,v)$ for $v\in C^\infty(X)$.
 
 
 \begin{proposition}\label{prop:BMNimplynorm}

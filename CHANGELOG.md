@@ -2,6 +2,15 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-11-04 — Correct errata from the SGPT formalization review
+
+- Chapter 1 (E04, E06, E07). Add connectedness to the global normalization results and apply compactness on the component containing the divisor's center in the Lelong-number bound. Use a common closed background in the analytic-singularity maximum rule. Include strict transforms in the finite multiplier-ideal test.
+- Chapter 2 (E09, C02). Prove local convergence in capacity for monotone nets and use a smooth local potential in the free-envelope balayage bound.
+- Chapters 4 and 9 (E02, E10). Require a nondegenerate interval for endpoint recovery and use a pointwise limsup for the filtration construction.
+- Chapter 10 (E05, E12–E14). Require positive degree for normalized section bodies. Restrict the small-positive slice formula to Kähler classes and supply its proof. Use Kähler approximants for Kähler partial bodies and identify their limits through the I-model representatives. Prove finite-energy transfer for an I-model base and energy equality when the slices are I-model as well.
+- Chapter 14 (E08, P01, I01). Prove the composition of partial envelopes directly from the candidates, supply the missing increasing-envelope comparison and specify total mass one in the Bernstein–Markov volume-form example.
+- Verification included checking the revised proofs and their applications, preserving all source labels and their order, and compiling the 547-page book with XeLaTeX. All references and citations resolved. Visually checked the 27-page review excerpt and the page with the 0.8 pt vertical overflow warning.
+
 ## 2026-10-18 — Publish the approved Kiselman correction
 
 - Merged author-approved [PR #3](https://github.com/MingchenXia/SGPT/pull/3) into `main` as `2da8117122799be6da2962fd7a7af2d81767b4c1` and deleted its remote and local proposal branches.
