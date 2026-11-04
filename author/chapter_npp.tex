@@ -353,7 +353,7 @@ Let $U$ be an open subset of $X$.
         \lim_{i\in I} \Capa_{\theta}\Bigl( \{f_i>f+\delta\} \Bigr)=0,\quad \lim_{i\in I} \Capa_{\theta}\Bigl( \{f_i<f-\delta\} \Bigr)=0\footnotemark.
     \]
     \footnotetext{It is very tempting to write $\lim_{i\in I} \Capa_{\theta}\left( \{|f_i-f|>\delta\} \right)=0$, as in \cite[Definition~4.23]{GZ17} for example. But the set where $f_i-f$ is not defined is not a pluripolar set in general. Hence this abuse of notation is not acceptable.}
-    We sometimes write $f_i\xrightarrow{\mathrm{C}} f$\index{$\xrightarrow{\mathrm{C}}$}.
+    We sometimes write $f_i\xrightarrow{\mathrm{C}} f$\index{$\xrightarrow{\mathrm{C}}$}. We say that the convergence is \emph{locally in capacity} if the two limits hold after intersecting the gap sets with each compact subset of $U$. When $U=X$, the two notions agree.
 \end{definition}
 Note that $f$ is not uniquely determined by the net $(f_i)_{i\in I}$. Thanks to \cref{thm:comp_capa}, the notion of convergence in capacity is independent of the choice of $\theta$.
 
@@ -364,9 +364,13 @@ Let $U$ be an open subset of $X$.
         \item\label{itm:prop:mono_psh_cap:1} $(\varphi_i)_{i\in I}$ is decreasing and $\varphi$ is the limit of the net;
         \item\label{itm:prop:mono_psh_cap:2} $(\varphi_i)_{i\in I}$ is increasing and converges almost everywhere to $\varphi$.
     \end{enumerate}
-    Then $(\varphi_i)_{i\in I}$ converges to $\varphi$ in capacity.
+    Then $(\varphi_i)_{i\in I}$ converges to $\varphi$ locally in capacity on $U$.
 \end{proposition}
-See \cite[Proposition~4.25]{GZ17} for the proof. The reference concerns only the sequence case, but the proof works for nets as well.
+\begin{proof}
+    First suppose that the net is a sequence. On each coordinate ball relatively compact in $U$, add a smooth local potential of $\theta$ to reduce to the psh case. The sequence converges on compact subsets in the local Bedford--Taylor capacity by \cite[Theorem~7.2]{BT82}. To pass to the global capacity on each compact core of the ball, first use a Kähler form $\omega$: its capacity tests lie between $-1$ and $0$, so after adding a bounded local potential of $\omega$ they can be rescaled and translated to admissible Bedford--Taylor tests, with a common scale. Thus local capacity convergence on the core implies convergence there in $\Capa_\omega$, and then in $\Capa_\theta$ by \cref{thm:comp_capa}. Cover a given compact subset of $U$ by finitely many such cores.
+
+    For a decreasing net, for each rational $c$ use second countability to select a countable subcover of $\{\varphi<c\}=\bigcup_i\{\varphi_i<c\}$ from the sets on the right. The selected indices for all $c$ are dominated successively by an increasing sequence of indices, whose potentials still decrease to $\varphi$. For an increasing net, $\varphi_i\leq\varphi$ everywhere by \cref{prop:pshfuncdetdense}. Choquet's lemma \cref{prop:Choquet}, applied after adding smooth local potentials on a countable cover, gives a countable subfamily with the same regularized supremum $\varphi$. Taking successive upper bounds of its indices gives a sequence of potentials increasing to $\varphi$ almost everywhere by \cref{prop:supsupstardiff}. In either case, each gap set of the net is contained, on the tail after a selected index, in the corresponding gap set of that sequence. The sequence case proves the result.
+\end{proof}
 
 
 \begin{theorem}\label{thm:loc_conv_cap}
@@ -672,24 +676,15 @@ This is a consequence of \cref{prop:Choquet} and \cref{prop:supsupstardiff}.
 
     In particular, $P_{\theta}(f)\in \PSH(X,\theta)$. It is therefore bounded from above. By \cref{lma:Vthetalocbdd}, it is locally bounded away from $\nK(\{\theta\})$.
 
-    Now fix $x\in U$, and $\epsilon>0$ so that
-    \[
-        P_{\theta}(f)(x)<f(x)-\epsilon.
-    \]
-    Take holomorphic balls $B\Subset B'\Subset U$ containing $x$. After shrinking $B$, we can guarantee that
+    Fix $x\in U$, put $a=P_{\theta}(f)(x)$, and choose $a<t<f(x)$. Let $\delta=(t-a)/2$. Choose holomorphic balls $B\Subset B'\Subset U$ containing $x$, with a smooth local potential $g$ of $\theta$ on $B'$. Shrink $B$ so that on $\overline{B}$,
     \begin{equation}\label{eq:PthetafBp_temp1}
-        \left.P_{\theta}(f)\right|_{B}<f(x)-\epsilon,\quad f|_B> f(x)-\epsilon.
+        P_{\theta}(f)+g<a+g(x)+\delta,\qquad g>g(x)-\delta,\qquad f>t.
     \end{equation}
-    Let $\varphi\in \PSH(X,\theta)$ be the balayage of $P_{\theta}(f)$ on $B$, as constructed in \cref{prop:bal_general}.
-    By the domination principle \cref{prop:dom_prin_loc}, we find that
+    Let $\varphi$ be the $\theta$-balayage of $P_{\theta}(f)$ on $B$ from \cref{prop:bal_general}. Then $\varphi+g$ is psh on $B'$ and bounded by $a+g(x)+\delta$ on $\partial B$. The maximum principle gives the same bound on $B$. Subtracting $g$ gives
     \[
-        \varphi|_{B}\leq f(x)-\epsilon<f|_{B}.
+        \varphi|_B<t<f|_B.
     \]
-    Since $\varphi=P_{\theta}(f)$ outside $B$, we conclude that
-    \[
-        \varphi\leq f\quad \textup{quasi-everywhere}.
-    \]
-    From this it follows that $\varphi\leq P_{\theta}(f)$, and hence equality holds. But then \eqref{eq:bal_ddcn0} holds automatically on $B$ since $\varphi$ is constructed by balayage. Since $x$ and $B$ are arbitrary, we conclude \eqref{eq:bal_ddcn0}.
+    Since $\varphi=P_{\theta}(f)$ outside $B$, we have $\varphi\leq f$ quasi-everywhere. Thus $\varphi$ is a candidate for $P_{\theta}(f)$, and $\varphi\geq P_{\theta}(f)$ by balayage, so equality holds. This proves \eqref{eq:bal_ddcn0} on $B$, hence on $U$.
 \end{proof}
 
 \begin{theorem}\label{thm:concentration}

@@ -1172,11 +1172,11 @@ Note that $\tau(\mathcal{F})$ is bounded from above by the constant $C$ in \eqre
     \[
     \Gamma^{\mathcal{F},k+k'}_{\tau}\geq \Gamma^{\mathcal{F},k}_{\tau}+\Gamma^{\mathcal{F},k'}_{\tau}.
     \]
-    In particular, by Fekete's lemma,
+    Consequently, for every $\tau<\tau(\mathcal F)$ and $x\in X$,
     \begin{equation}\label{eq:limkGammaFk}
-    \lim_{k\in \mathbb{Z}_{>0}}\frac{1}{k}\Gamma^{\mathcal{F},k}_{\tau}=\sup_{k\in \mathbb{Z}_{>0}}\frac{1}{k}\Gamma^{\mathcal{F},k}_{\tau}
+    \varlimsup_{k\to\infty}\frac{1}{k}\Gamma^{\mathcal{F},k}_{\tau}(x)=\sup_{k\in \mathbb{Z}_{>0}}\frac{1}{k}\Gamma^{\mathcal{F},k}_{\tau}(x).
     \end{equation}
-    exists for any $\tau<\tau(\mathcal{F})$.
+    Indeed, superadditivity gives the lower bound for the $\varlimsup$ along multiples of each degree at which the value is finite. If $\Gamma^{\mathcal{F},k}_{\tau}(x)>-\infty$ for all sufficiently large $k$, then the limit exists by Fekete's lemma: for each fixed degree with finite value, use a finite-valued representative of every residue class in the finite tail. At a point that belongs to the base locus in infinitely many degrees, the $\varlimsup$ is needed in general.
 
     We define $(\Gamma^{\mathcal{F}}_{\tau})_{\tau<\tau(\mathcal{F})}$ as follows:
     \[

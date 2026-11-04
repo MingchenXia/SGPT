@@ -491,7 +491,7 @@ We will adopt the notations of \cref{sec:clo1}.
 \end{aligned}
 \]
 \index{$\Gamma(\theta,\varphi)$}\index{$\Delta_k(\theta,\varphi)$}
-where the second set is defined only for those $k$ such that $\mathrm{H}^0(X,L^k\otimes \mathcal{I}(k\varphi))\neq 0$.
+where the second set is defined only for $k>0$ such that $\mathrm{H}^0(X,L^k\otimes \mathcal{I}(k\varphi))\neq 0$.
 
 When $\varphi=V_{\theta}$, we simply write $\Gamma(L)$ and $\Delta_k(L)$ instead.
 \end{definition}
@@ -1393,13 +1393,17 @@ The results of \cite{DRWNXZ} can be summarized as follows:
         \Delta_{W_{\bullet}}(\pi^*\alpha)=\Delta_{Y_{\bullet}}(\alpha)g;
         \]
         \item\label{itm:thm:Okounkovtranmain:4} the map $\alpha\mapsto \Delta_{Y_{\bullet}}(\alpha)$ is continuous in the big cone with respect to the Hausdorff metric;
-        \item\label{itm:thm:Okounkovtranmain:5} for any small enough $t>0$, we have
+        \item\label{itm:thm:Okounkovtranmain:5} if $\alpha$ is Kähler, then for all sufficiently small $t>0$ we have
         \[
             \left\{ y\in \mathbb{R}^{n-1}: (t,y)\in \Delta_{Y_{\bullet}}(\alpha) \right\}=\Delta_{Y_1\supseteq \cdots \supseteq Y_n}\Bigl((\alpha-t\{Y_1\})|_{Y_1}\Bigr).
         \]
     \end{enumerate}
 \end{theorem}
-See \cref{def:lifting} for the notion of lifting. The proof requires some techniques not covered in the current book; this theorem may be used as a black box.
+See \cref{def:lifting} for the notion of lifting. The proofs of \ref{itm:thm:Okounkovtranmain:1}--\ref{itm:thm:Okounkovtranmain:4} require techniques not covered here.
+
+For \ref{itm:thm:Okounkovtranmain:5}, choose a small rational $s>0$ such that $\alpha-t\{Y_1\}$ is Kähler for $0\leq t\leq s$. A Kähler form in $\alpha$ has first valuation coordinate $0$, and adding $s[Y_1]$ to a Kähler form in $\alpha-s\{Y_1\}$ gives first coordinate $s$. Thus $0<t<s$ lies in the interior of the projection of the body. In dimension one the two bodies in the slice formula are points.
+
+In dimension at least two, take rational $t\in(0,s)$. By \cite[Lemma~7.4 in arXiv:2309.07584v3]{DRWNXZ}, the slice is the closure of the remaining coordinates of valuations of Kähler currents in $\alpha$ with analytic singularities and first coordinate $t$. Subtracting $t[Y_1]$ from such a current leaves a Kähler current with analytic singularities and generic Lelong number zero along $Y_1$. Its restriction to $Y_1$ gives the remaining coordinates. Conversely, a Kähler current with gentle analytic singularities on $Y_1$ in $(\alpha-t\{Y_1\})|_{Y_1}$ extends to a Kähler current with analytic singularities in $\alpha-t\{Y_1\}$ by \cref{thm:CT-thm-refined'}: the exponential of its potential is H\"older continuous by \cref{def:analy-sing}. Adding $t[Y_1]$ gives a current with the desired valuation. Here the closures of valuations for analytic and gentle analytic singularities agree, as in \cite[Section~3]{DRWNXZ}. The formula extends to real $t\in(0,s)$ by continuity of interior slices and \ref{itm:thm:Okounkovtranmain:4} on $Y_1$.
 
 \subsection{Definitions of partial Okounkov bodies}
 \label{subsec:tpob_def}
@@ -1512,19 +1516,21 @@ Let $T\in \mathcal{Z}_{+}(X,\alpha)$ be a Kähler current with analytic singular
 \label{subsubsec:tpob_Kahler}
 
 \begin{definition}\label{def:POBKahcurr}
-     Let $T\in \mathcal{Z}_+(X,\alpha)$ be a Kähler current. Take a quasi-equisingular approximation $(T_j)_j$ of $T$ in $\mathcal{Z}_+(X,\alpha)$. Then we define
+     Let $T\in \mathcal{Z}_+(X,\alpha)$ be a Kähler current. Take a quasi-equisingular approximation $(T_j)_j$ of $T$ by Kähler currents with analytic singularities in $\mathcal{Z}_+(X,\alpha)$. Then we define
     \index{partial Okounkov body!Kähler current case}
     \[
         \Delta_{Y_{\bullet}}(T)\coloneqq \bigcap_{j=1}^{\infty}\Delta_{Y_{\bullet}}(T_j).
     \]
 \end{definition}
 
+To obtain such an approximation, write $T=\theta+\ddc\varphi$ and choose a Kähler form $\omega$ and $\epsilon>0$ with $T\geq 2\epsilon\omega$. Apply \cref{thm:qequi} to $\varphi$ with background $\theta-\epsilon\omega$. On the compact manifold $X$, the error forms are bounded by $\epsilon\omega/2$ for all large $j$. Hence the currents $\theta+\ddc\varphi_j$ are bounded below by $\epsilon\omega/2$. Passing to this tail preserves quasi-equisingularity.
+
 \begin{lemma}\label{lma:Okounkov:L1517}
-    The convex body $\Delta_{Y_{\bullet}}(T)$ in \cref{def:POBKahcurr} is independent of the choices of the $T_j$'s.
+    The convex body $\Delta_{Y_{\bullet}}(T)$ in \cref{def:POBKahcurr} is independent of the chosen approximation by Kähler currents.
 \end{lemma}
 In particular, if $T$ also has analytic singularities, then the $\Delta_{Y_{\bullet}}(T)$'s defined in \cref{def:POBKahcurr} and in \cref{def:POBanalsing} coincide.
 \begin{proof}
-    It is more convenient to use the language of $\theta$-psh functions at this point. Let $\psi_k$ (resp. $\varphi_k$) denote the potentials in $\PSH(X,\theta)$ corresponding to $S_k$ (resp. $T_k$) for each $k\geq 1$. Note that $\psi_k$ and $\varphi_k$ are unique up to additive constants. By \cref{prop:compqequi}, for any small rational $\epsilon>0$, $j>0$, we can find $k>0$ so that
+    Let $(S_k)_k$ and $(T_k)_k$ be two approximations as in \cref{def:POBKahcurr}, with potentials $\psi_k$ and $\varphi_k$ in $\PSH(X,\theta)$. By \cref{prop:compqequi}, for any small rational $\epsilon>0$ and $j>0$, we can find $k>0$ so that
     \[
         \psi_k\preceq (1-\epsilon)\varphi_j.
     \]
@@ -1560,7 +1566,7 @@ The same argument shows that
     \end{equation}
 \end{proposition}
 \begin{proof}
-Take a quasi-equisingular approximation $(T_j)_j$ of $T$ in $\mathcal{Z}_+(X,\alpha)$. Note that $\Delta_{Y_{\bullet}}(T_j)$ is decreasing in $j$, as follows from \cref{lma:Okounkovanalycomp}. Our assertion follows from \eqref{eq:volpobanaly} and \cref{thm:contvolu}.
+Take a quasi-equisingular approximation $(T_j)_j$ by Kähler currents as in \cref{def:POBKahcurr}. The bodies $\Delta_{Y_{\bullet}}(T_j)$ decrease by \cref{lma:Okounkovanalycomp}. By \cref{cor:quasi-equichar}, the potentials converge in $d_S$ to the $\mathcal I$-model representative of the potential of $T$. This representative has the same volume as $T$ by \cref{def:volqpsh}. The formula follows from \eqref{eq:volpobanaly} and \cref{thm:contvolu}.
 \end{proof}
 
 
@@ -1576,7 +1582,7 @@ Take a quasi-equisingular approximation $(T_j)_j$ of $T$ in $\mathcal{Z}_+(X,\al
 \end{lemma}
 \begin{proof}
 We first prove \eqref{eq:DeltaTincreaseomegatemp1}.
-    Taking quasi-equisingular approximations, we reduce immediately to the case where $T$ has analytic singularities. By \cref{lma:liftOkounana}, we may assume that $T$ has log singularities.
+    Taking a quasi-equisingular approximation by Kähler currents as in \cref{def:POBKahcurr} (and adding $\omega$ to its terms for $T+\omega$), we reduce to the case where $T$ has analytic singularities. By \cref{lma:liftOkounana}, we may assume that $T$ has log singularities.
     Take $D$ and $R$ as in \eqref{eq:resolveanalytic}. By definition again, it suffices to show that
     \[
     \Delta_{Y_{\bullet}}(\{R\})\subseteq \Delta_{Y_{\bullet}}(\{R\}+\{\omega\}),
@@ -1656,7 +1662,7 @@ In either monotone case, \ref{itm:thm:pobmain:2} gives monotonicity of the conve
 
 \ref{itm:thm:pobmain:5} We may assume that $T$ is $\mathcal{I}$-good. It follows from \ref{itm:thm:pobmain:4} and \cref{thm:charIgoodasclosure} that we may reduce to the case where $T$ has analytic singularities. Our assertion follows from \cref{lma:liftOkounana}.
 
-\ref{itm:thm:pobmain:6} By \eqref{eq:DeltaTgeneral}, in order to prove \eqref{eq:pobadditiv}, we may assume that $T$ and $S$ are both Kähler currents. Take quasi-equisingular approximations $(T_j)_j$ and $(S_j)_j$ of $T$ and $S$ respectively. By \cref{thm:dSadditivity}, $T_j+S_j\xrightarrow{d_S} T+S$. By \ref{itm:thm:pobmain:4}, we may therefore assume that $T$ and $S$ have analytic singularities. Replacing $X$ by a suitable modification, we may assume that $T$ and $S$ both have log singularities, say
+\ref{itm:thm:pobmain:6} By \eqref{eq:DeltaTgeneral}, in order to prove \eqref{eq:pobadditiv}, we may assume that $T$ and $S$ are both Kähler currents. Choose quasi-equisingular approximations $(T_j)_j$ and $(S_j)_j$ by Kähler currents as in \cref{def:POBKahcurr}. By \cref{cor:quasi-equichar,thm:dSadditivity}, the sums of their potentials converge in $d_S$ to the sum of the two $\mathcal I$-model representatives. This sum is $\mathcal I$-equivalent to the potential of $T+S$ by \cref{prop:Iequivmax}. Therefore \ref{itm:thm:pobmain:2} and \ref{itm:thm:pobmain:4} reduce the inclusion to the case of analytic singularities. Replacing $X$ by a suitable modification, we may assume that $T$ and $S$ both have log singularities, say
 \[
 T=[D]+R,\quad S=[D']+R',
 \]
@@ -1778,7 +1784,7 @@ Note that $\Delta_{Y_1\supseteq \cdots \supseteq Y_n}\left(\Tr^{\alpha|_{Y_1}}_{
     Since $R$ has bounded potential, its cohomology class is nef; it is big because $T$ is a Kähler current. Thus the last identity is exactly \cref{lma:Kahlerclassokounrest}.
 
     \textbf{Step~2}.
-    Next we consider the case where $T$ is a Kähler current. Take a quasi-equisingular approximation $(T_j)_j$ of $T$ in $\mathcal{Z}_+(X,\alpha)$. From Step~1, we know that for large $j\geq 1$,
+    Next we consider the case where $T$ is a Kähler current. Take a quasi-equisingular approximation $(T_j)_j$ by Kähler currents as in \cref{def:POBKahcurr}. From Step~1, we know that for large $j\geq 1$,
     \[
     \left\{y\in \mathbb{R}^{n-1}: (0,y)\in \Delta_{Y_{\bullet}}(T_j)\right\}=\Delta_{Y_1\supseteq \cdots \supseteq Y_n}(\Tr_{Y_1}(T_j)).
     \]
@@ -1868,7 +1874,7 @@ We expect that the closure operation in \eqref{eq:DeltaTequalallval} is not nece
     It follows easily from \cref{thm:Okounkovtranmain} that the volume of the right-hand side is equal to the volume of $\Delta_{Y_{\bullet}}(T)$, so \eqref{eq:DeltaTequalallval} holds.
 
     \textbf{Step~2}.
-    Assume that $T$ is a Kähler current. Take a quasi-equisingular approximation $T_j\in \mathcal{Z}_+(X,\alpha)$ of $T$.
+    Assume that $T$ is a Kähler current. Take a quasi-equisingular approximation $(T_j)_j$ by Kähler currents as in \cref{def:POBKahcurr}.
     Next we use the language of psh functions. Let $\varphi_j,\varphi\in \PSH(X,\theta)$ be the potentials corresponding to $T_j,T$ for each $j\geq 1$.
 
     Fix an integer $N>0$. For large enough $j\geq 1$, we can find $\psi_j\in \PSH(X,\theta)_{>0}$ such that
@@ -2294,9 +2300,12 @@ Let $X$ be a connected compact Kähler manifold and $\theta$ be a closed smooth 
     \[
     (-\infty,\Gamma_{\max})\ni \tau\mapsto \Delta_{Y_{\bullet}}(\theta,\Gamma)_{\tau}\coloneqq \Delta_{Y_{\bullet}}(\theta,\Gamma_{\tau})
     \]
-    defines an Okounkov test curve relative to $\Delta_{Y_{\bullet}}(\theta,\Gamma_{-\infty})$.
+    defines an Okounkov test curve relative to $\Delta=\Delta_{Y_{\bullet}}(\theta,\phi)$, where $\phi=\Gamma_{-\infty}$.
 
-    If furthermore $\Gamma\in \TC^1(X,\theta;\Gamma_{-\infty})$ (resp. $\TC^{\infty}(X,\theta;\Gamma_{-\infty})$), then we have $\Delta_{Y_{\bullet}}(\theta,\Gamma)\in \TC^1(\Delta_{Y_{\bullet}}(\theta,\Gamma_{-\infty}))$ (resp. $\TC^{\infty}(\Delta_{Y_{\bullet}}(\theta,\Gamma_{-\infty}))$).
+    If $\Gamma\in\TC^{\infty}(X,\theta;\phi)$, then $\Delta_{Y_{\bullet}}(\theta,\Gamma)\in\TC^{\infty}(\Delta)$. If $\phi$ is $\mathcal I$-model and $\Gamma\in\TC^1(X,\theta;\phi)$, then $\Delta_{Y_{\bullet}}(\theta,\Gamma)\in\TC^1(\Delta)$. In the latter case, if all $\Gamma_\tau$ for $\tau<\Gamma_{\max}$ are also $\mathcal I$-model, then
+    \[
+        \mathbf{E}^{\phi}(\Gamma)=\mathbf{E}(\Delta_{Y_{\bullet}}(\theta,\Gamma)).
+    \]
 \end{theorem}
 See \cref{def:testcur} and \cref{def:relattestcurv} for the relevant definitions.
 \begin{proof}
@@ -2323,17 +2332,14 @@ See \cref{def:testcur} and \cref{def:relattestcurv} for the relevant definitions
 
     When $\Gamma\in \TC^{\infty}(X,\theta;\Gamma_{-\infty})$, it is clear that $\Delta_{Y_{\bullet}}(\theta,\Gamma)\in \TC^{\infty}(\Delta_{Y_{\bullet}}(\theta,\Gamma_{-\infty}))$.
 
-    When $\Gamma\in \TC^{1}(X,\theta;\Gamma_{-\infty})$, by \itemref{itm:thm:pobmain:1}, \eqref{eq:tcfiniteenergy} and \eqref{eq:Otestcurvenergy}, we have
+    Put $\phi=\Gamma_{-\infty}$ and assume that $\phi$ is $\mathcal I$-model. By \itemref{itm:thm:pobmain:1} and \cref{def:volqpsh},
     \[
-    \mathbf{E}^{\Gamma_{-\infty}}(\Gamma)=\mathbf{E}(\Delta_{Y_{\bullet}}(\theta,\Gamma)).
+        n!\vol\Delta_{Y_{\bullet}}(\theta,\phi)=\int_X\theta_\phi^n,\qquad
+        n!\vol\Delta_{Y_{\bullet}}(\theta,\Gamma_\tau)
+        =\int_X\bigl(\theta+\ddc P_\theta[\Gamma_\tau]_{\mathcal I}\bigr)^n
+        \geq \int_X\theta_{\Gamma_\tau}^n.
     \]
-    Indeed, by \itemref{itm:thm:pobmain:1},
-    \[
-        n!\vol\Delta_{Y_{\bullet}}(\theta,\Gamma_\tau)=\int_X\theta_{\Gamma_\tau}^n
-    \]
-    for every $\tau<\Gamma_{\max}$, and the same identity holds at $\tau=-\infty$. Comparing \eqref{eq:tcfiniteenergy} with \eqref{eq:Otestcurvenergy} gives the asserted equality of energies.
-
-    So $\Delta_{Y_{\bullet}}(\theta,\Gamma)\in \TC^1(\Delta_{Y_{\bullet}}(\theta,\Gamma_{-\infty}))$.
+    The inequality follows from \cref{thm:mono}, since $\Gamma_\tau\preceq P_\theta[\Gamma_\tau]_{\mathcal I}$. Comparing \eqref{eq:tcfiniteenergy} and \eqref{eq:Otestcurvenergy}, the Okounkov energy is at least $\mathbf{E}^\phi(\Gamma)$, which proves the finite-energy assertion. If every $\Gamma_\tau$ is $\mathcal I$-model, the displayed inequality is an equality for each $\tau$, giving equality of the energies.
 \end{proof}
 
 
