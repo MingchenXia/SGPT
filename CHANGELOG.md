@@ -2,6 +2,11 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-11-05 — Include the trivial valuation in the divisorial convention
+
+- Adjoined the trivial valuation `v_triv` to the set denoted by `X^div` in Section 13.4.
+- Verification: checked the revised convention and its zero-dimensional case. Compiled the full 549-page book with all references and citations resolved and no new layout warnings, and inspected the review excerpt on printed pages 437–438.
+
 ## 2026-11-05 — Publish the approved concave-envelope correction
 
 - Merged author-approved [PR #5](https://github.com/MingchenXia/SGPT/pull/5) into `main` as `de08f12f3b715654bc6f9b6657b61d2b4b2ed217` and deleted its remote and local proposal branches.
