@@ -2,6 +2,12 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-11-05 — Publish the approved unibranch hypothesis
+
+- Merged author-approved [PR #7](https://github.com/MingchenXia/SGPT/pull/7) into `main` as `76fde3d1d5a0e8315b14e0144d57cc3de3258889` and deleted its remote and local proposal branches.
+- Published the compiled 549-page book to [SGPT_final.pdf](https://mingchenxia.github.io/Lectures/SGPT_final.pdf) in website commit `74f7457878a44113adc8e5eedde7e9e3331758c1`. The cover reads `Updated on November 5, 2026.`
+- Verified that the merged tree matches the approved PR head and all 43 book-source paths match the review record. Completed a fresh XeLaTeX build with all references and citations resolved, inspected the cover, and confirmed that both reviewed pages match the release render pixel for pixel. GitHub Pages deployment succeeded, and the downloaded public PDF matches the release byte for byte with SHA-256 `5c78bda9d5e2af1bc3bae61420a94cf219ce35cd1c0c669ca02f3116aede060a`.
+
 ## 2026-11-05 — Assume unibranchness in the recap of non-Archimedean psh functions
 
 - Added the standing assumption that `X` is unibranch in Section 13.4.1.2 of `author/chapter_NApotential.tex`.
