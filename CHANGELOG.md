@@ -2,6 +2,12 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-11-05 — Publish the approved concave-envelope correction
+
+- Merged author-approved [PR #5](https://github.com/MingchenXia/SGPT/pull/5) into `main` as `de08f12f3b715654bc6f9b6657b61d2b4b2ed217` and deleted its remote and local proposal branches.
+- Published the compiled 549-page book to [SGPT_final.pdf](https://mingchenxia.github.io/Lectures/SGPT_final.pdf) in website commit `109b23cd0cb033ae7371aff7b7db9d529952945c`. The cover reads `Updated on November 5, 2026.`
+- Verified that the merged tree matches the approved PR head and all 43 book-source paths match the review record. Completed a fresh XeLaTeX build with all references and citations resolved, inspected the cover, and confirmed that all ten reviewed pages match the release render pixel for pixel. GitHub Pages deployment succeeded, and the downloaded public PDF matches the release byte for byte with SHA-256 `4e6e90e5a79eecbdb78e764e8b53b91040a532444fcd3a02064eef1deb43adc8`.
+
 ## 2026-11-05 — Clarify the concave-envelope proof
 
 - Rewrote the justification in Remark 13.4.1 using explicit concavity inequalities, defined the standard basis vectors, and referred directly to the parameters and values in the construction. Used `polar set` throughout the revised passage. Likewise referred to the numbers `tau_0, ..., tau_N` in Lemma 13.4.8.
