@@ -2,6 +2,12 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-11-05 — Assume unibranchness in the recap of non-Archimedean psh functions
+
+- Added the standing assumption that `X` is unibranch in Section 13.4.1.2 of `author/chapter_NApotential.tex`.
+- At Proposition 13.4.2, specified that the decreasing stability property (PSH2) holds for unibranch `X` and added the author's requested footnote: “This will be proved in a forthcoming paper with Y. Fang and J. Han.”
+- Verification: checked the revised scope and subsequent applications using the author's supplied unibranch PSH2 result. Compiled the full 549-page book with XeLaTeX, with all references and citations resolved and no new layout warnings, and inspected the review excerpt on printed pages 437–438.
+
 ## 2026-11-05 — Publish the approved trivial-valuation convention
 
 - Merged author-approved [PR #6](https://github.com/MingchenXia/SGPT/pull/6) into `main` as `69360cfdc1f1d0c0472a4e6fce1f281176ada70b` and deleted its remote and local proposal branches.
