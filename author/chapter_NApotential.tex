@@ -1045,25 +1045,38 @@ We also say $A=(A_{\tau})_{\tau\leq \tau_0}$ is a piecewise linear curve in $\PS
 
 \begin{remark}\label{rmk:pwlinhull}
 Note that $\tau\mapsto A_{\tau}$ is upper semicontinuous, but not necessarily concave.
-Let $(A'_{\tau})_{\tau\in \mathbb{R}}$ be the upper concave envelope of $\tau\mapsto A_{\tau}$. Then it can be inductively constructed as follows:
-\begin{enumerate}
-    \item\label{itm:rmk:pwlinhull:1} For $\tau \in (\tau_0,\infty)$, we let $A'_{\tau}\equiv -\infty$;
-    \item\label{itm:rmk:pwlinhull:2} we set $A'_{\tau_0}=A_{\tau_0}$;
-    \item\label{itm:rmk:pwlinhull:3} define inductively for $j=0,\ldots,N-1$ the following: For $\tau\in [\tau_{j+1},\tau_j)$, we set
-    \[
-    A'_{\tau}=\max_{i=j+1,\ldots,N}\left( \frac{\tau_j-\tau}{\tau_j-\tau_i}A_{\tau_i}+\frac{\tau-\tau_i}{\tau_j-\tau_i}A'_{\tau_j} \right)\lor A'_{\tau_j};
-    \]
-    \item\label{itm:rmk:pwlinhull:4} for $\tau\in (-\infty,\tau_N)$, we set $A'_{\tau}=A_{\tau_N}$.
-\end{enumerate}
-This construction is just a reformulation of the general formula \cref{prop:concavhull}.
+Let $A'_{\tau}$ be its pointwise upper concave envelope, followed by upper semicontinuous regularization in $X$ for each $\tau$. For $\tau\leq\tau_0$, set
+\[
+\Lambda_{\tau}\coloneqq\left\{(\lambda_0,\ldots,\lambda_N)\in[0,1]^{N+1}:\ \sum_{i=0}^N\lambda_i=1,\quad \sum_{i=0}^N\lambda_i\tau_i\geq\tau\right\}.
+\]
+Then
+\begin{equation}\label{eq:pwlinhull-simplex}
+A'_{\tau}=\max_{\lambda\in\Lambda_{\tau}}\sum_{i=0}^N\lambda_i A_i,\quad \tau\leq\tau_0,
+\end{equation}
+where summands with $\lambda_i=0$ are omitted, and $A'_{\tau}\equiv-\infty$ for $\tau>\tau_0$.
+Let $e_0,\ldots,e_N$ denote the standard basis of $\mathbb R^{N+1}$. The maximum in \eqref{eq:pwlinhull-simplex} can be taken over the finitely many vertices of $\Lambda_{\tau}$. These are the vectors $e_i$ with $\tau_i\geq\tau$, together with
+\[
+\frac{\tau-\tau_j}{\tau_i-\tau_j}e_i+\frac{\tau_i-\tau}{\tau_i-\tau_j}e_j,
+\quad i<j,\quad \tau_j<\tau<\tau_i.
+\]
+Thus $A'_{\tau}\in\PSH(X,\theta)$, and in particular
+\[
+A'_{\tau_0}=A_0,\qquad A'_{\tau}=\max_{0\leq i\leq N}A_i\quad\text{for }\tau\leq\tau_N.
+\]
 
-In particular, $A'_{\tau}\in \PSH(X,\theta)$ for all $\tau\leq \tau_0$.
+To justify the formula, denote its right-hand side by $B_{\tau}$. If $\sigma,\tau\leq\tau_0$ and $0<t<1$, combining a vector in $\Lambda_{\sigma}$ and a vector in $\Lambda_{\tau}$ with coefficients $1-t$ and $t$ gives a vector in $\Lambda_{(1-t)\sigma+t\tau}$, so $B$ is concave. The inclusion $\Lambda_{\tau}\subseteq\Lambda_{\sigma}$ for $\sigma\leq\tau$ shows that $B$ is decreasing, and its definition gives $B\geq A$. Fix $x$ outside the union of the polar sets $\{A_i=-\infty\}$, and let $f$ be any concave majorant of $\tau\mapsto A_{\tau}(x)$. Since $f$ is bounded below on the left half-line, it is decreasing. For every $\lambda\in\Lambda_{\tau}$, we have
+\[
+f(\tau)\geq f\left(\sum_i\lambda_i\tau_i\right)
+\geq\sum_i\lambda_i f(\tau_i)
+\geq\sum_i\lambda_i A_i(x).
+\]
+Thus $f(\tau)\geq B_{\tau}(x)$, which proves that $B$ agrees with the pointwise upper concave envelope outside these polar sets. Since $B_{\tau}$ is $\theta$-psh and majorizes the pointwise envelope everywhere, upper semicontinuous regularization gives $A'_{\tau}=B_{\tau}$ on $X$.
 
-Note that $A'$ is not necessarily piecewise linear.
+For each such $x$, the finite maximum defining $B_{\tau}(x)$ consists of a fixed collection of affine functions of $\tau$ on each interval $(\tau_{j+1},\tau_j)$. Hence it is convex as well as concave there, and therefore affine. Its endpoint values are given by continuity. This identity extends across the polar sets because both sides are $\theta$-psh. Hence $A'$ is itself the piecewise linear curve associated with the values $A'_{\tau_i}$ at the parameters $\tau_i$.
 \end{remark}
 
 \begin{lemma}\label{lma:psieqpsiprimeondiv}
-Let $A$ be a piecewise linear curve in $\PSH(X,\theta)$. Let $(A'_{\tau})_{\tau\in \mathbb{R}}$ be the upper concave envelope of $\tau\mapsto A_{\tau}$. Define $\tilde A$ by
+Let $A$ be a piecewise linear curve in $\PSH(X,\theta)$, and let $A'$ be the regularized concave envelope in \cref{rmk:pwlinhull}. Define $\tilde A$ by
 \[
     \tilde{A}^{\theta+\omega}_{\tau}\coloneqq P_{\theta+\omega}[A'_{\tau}]_{\mathcal I}, \quad \omega\in\Kah(X),\ \tau<\tau_0.
 \]
@@ -1074,13 +1087,15 @@ A^{\An}=\tilde{A}^{\An}\quad \text{on }X^{\Div}.
 \end{lemma}
 Here $\tau_0$ is as in \cref{def:piecewiselincurv}.
 \begin{proof}
-We continue to use the notations in \cref{def:piecewiselincurv}. The fact that $\tilde{A}\in \PSH^{\NA}(X,\theta)$ follows from \cref{rmk:pwlinhull} and the cocycle property of the $\mathcal{I}$-projection. In order to prove \eqref{eq:psieqsiprime}, we fix $v\in X^{\Div}$ and $\omega\in\Kah(X)$.
-The inductive construction in \cref{rmk:pwlinhull} uses only finite maxima and positive affine combinations of the potentials $A_{\tau_i}$. On divisorial valuations, analytification commutes with both operations.
-Moreover, $P_{\theta+\omega}[\bullet]_{\mathcal I}$ does not change divisorial valuations. Hence
+We use the notation of \cref{rmk:pwlinhull}. By \cref{prop:PIconc,lma:PIenvmono1}, each component $\tilde A^{\theta+\omega}$ is concave and decreasing. Its slices are $\mathcal I$-model, and its constant left tail is $P_{\theta+\omega}[\max_i A_i]_{\mathcal I}$. This tail has positive mass: $\theta+\omega+\ddc\max_i A_i\geq\omega$, and taking the $\mathcal I$-envelope can only increase the mass. The cocycle property of the $\mathcal I$-projection gives compatibility of the components, so $\tilde A\in\PSH^{\NA}(X,\theta)$ with $\tilde A_{\max}=\tau_0$.
+
+Fix $v\in X^{\Div}$ and put $a_i=A_i^{\An}(v)$. Analytification commutes with finite maxima and positive linear combinations on divisorial valuations. Since $\mathcal I$-projection preserves these valuations, \eqref{eq:pwlinhull-simplex} gives
 \[
-\tau\mapsto \left(P_{\theta+\omega}[A'_\tau]_{\mathcal I}\right)^{\An}(v)= (A'_\tau)^{\An}(v)
+\left(\tilde A^{\theta+\omega}_{\tau}\right)^{\An}(v)+\tau
+=\max_{\lambda\in\Lambda_{\tau}}\sum_i\lambda_i a_i+\tau
+\leq\max_i(a_i+\tau_i),\quad \tau<\tau_0.
 \]
-is the ordinary upper concave envelope of $\tau\mapsto A_\tau^{\An}(v)$. The Legendre-type supremum over $\tau$ is therefore unchanged by passing from $A$ to $A'$, which proves \eqref{eq:psieqsiprime}.
+Conversely, $A'_{\tau}\geq A_i$ whenever $\tau<\tau_i$. Letting $\tau\nearrow\tau_i$ gives the reverse inequality after taking the supremum over $\tau<\tau_0$. Now \eqref{eq:psianvlinear} proves \eqref{eq:psieqsiprime}.
 \end{proof}
 
 
@@ -1251,7 +1266,7 @@ for all $\tau\in \mathbb{R}$. Hence $\Gamma\leq \Gamma'$ by the definition of th
 \begin{lemma}\label{lma:gfinimage}
     Let $\phi \in \mathcal{H}^{\gf}_{\mathbb{Q}}(L^{\An})$. Then there is a piecewise linear curve $A$ in $\PSH(X,\theta)$ with $\phi=A^{\An}$. In particular, $\phi$ is in the image of \eqref{eq:analymap}.
 \end{lemma}
-Note that from the proof below, the test curve $\Gamma$ corresponding to $\phi$ satisfies the following: For any $\tau\leq \Gamma_{\max}$, $\Gamma_{\tau}$ is elementary. See \cref{def:elemetric} for the definition of elementary metrics.
+In the construction below, the numbers $\tau_0,\ldots,\tau_N$ are rational, and the regularized concave envelope $A'_{\tau}$ is a generalized Fubini--Study metric for every rational $\tau\leq\tau_0$.
 \begin{proof}
      Let us write
     \begin{equation}\label{eq:phiintominversemax}
@@ -1272,6 +1287,11 @@ A^{\An}(v)=\max_{i=0,\ldots,N}\left(A_{\tau_i}^{\An}(v)+\tau_i\right)
 where we used the convention $\log|s_j|(v)=-v(s_j)$.
 
 The final assertion follows from \cref{lma:psieqpsiprimeondiv} and \cref{thm:pshdetbydiv}.
+
+For rational $\tau$, all vertices of $\Lambda_{\tau}$ in \cref{rmk:pwlinhull} are rational. Hence $A'_{\tau}$ is obtained from the Fubini--Study potentials $A_i$ by rational convex combinations and finite maxima, so it is a generalized Fubini--Study metric and has analytic singularities. Analytification commutes with these operations on all of $X^{\An}$, as follows by taking products and sums of the corresponding ideals. The estimate in the proof of \cref{lma:psieqpsiprimeondiv}, and rational parameters tending to each $\tau_i$ from below, therefore give
+\begin{equation}\label{eq:gf-rational-hull}
+\phi(v)=\sup_{\substack{\tau\in\mathbb{Q}\\\tau<\tau_0}}\left((A'_{\tau})^{\An}(v)+\tau\right),\quad v\in X^{\An}.
+\end{equation}
 \end{proof}
 
 
@@ -1368,13 +1388,13 @@ The meaning is immediate for all operations except for the trace operator, and t
 Observe that there is a canonical identification $Y^{\Div}=\widetilde{Y}^{\Div}$. Recall that a generalized Fubini--Study metric is defined in \cref{def:gFSmetric}.
 
 \begin{proof}
-    We first reduce to the positive mass case. Choose a K\"ahler form $\omega_0$ on $X$ and set $\widehat{\Gamma}=P_{\theta+\omega_0}[\Gamma]_{\mathcal{I}}$. Replacing $\theta$ by $\theta+\omega_0$ and $\Gamma$ by $\widehat{\Gamma}$ does not change $\Gamma^{\An}$, by \eqref{eq:proj_NA_an_invariance}; it also only replaces $\Tr_Y(\Gamma)$ by the corresponding $\mathcal{I}$-projection on $\widetilde{Y}$, whose analytification is unchanged. Hence we may assume that $\Gamma\in \PSH^{\NA}(X,\theta)_{>0}$.
+    We first reduce to the positive mass case. Choose an ample line bundle $H$ and a K\"ahler form $\omega_0\in c_1(H)$, and set $\widehat{\Gamma}=P_{\theta+\omega_0}[\Gamma]_{\mathcal{I}}$. Replacing $(L,\theta,\Gamma)$ by $(L+H,\theta+\omega_0,\widehat{\Gamma})$ does not change $\Gamma^{\An}$, by \eqref{eq:proj_NA_an_invariance}; it also only replaces $\Tr_Y(\Gamma)$ by the corresponding $\mathcal{I}$-projection on $\widetilde{Y}$, whose analytification is unchanged. Hence we may assume that $\Gamma\in \PSH^{\NA}(X,\theta)_{>0}$.
     Let $\phi=\Gamma^{\An}\in \PSH(L^{\An})$. By \cref{lma:non-trivrest}, $\phi(v_{Y,\triv})\neq -\infty$.
 
     Take an ample line bundle $S$ on $X$ and a K\"ahler form $\omega$ in $c_1(S)$.
-    Write $\phi$ as the decreasing limit of a sequence $(\phi^{i})_i$ of elements in $\mathcal{H}^{\gf}_{\mathbb{Q}}((L+i^{-1}S)^{\An})$ as in \cref{thm:BJappseq}.
+    By \cref{thm:BJappseq}, there are rational numbers $0<\epsilon_i<1$ decreasing to $0$ and a decreasing sequence $\phi^i\in\mathcal{H}^{\gf}_{\mathbb{Q}}((L+\epsilon_i S)^{\An})$ with limit $\phi$.
 
-    Take $\Gamma^{i}\in \PSH^{\NA}(X,\theta+i^{-1}\omega)$ such that $\Gamma^{i,\An}=\phi^{i}$. Note that by \cref{lma:positivemasspart}, $\Gamma^i\in \PSH^{\NA}(X,\theta+i^{-1}\omega)_{>0}$.
+    Take $\Gamma^{i}\in \PSH^{\NA}(X,\theta+\epsilon_i\omega)$ such that $\Gamma^{i,\An}=\phi^{i}$. By \cref{lma:anaorder}, $\Gamma^i\geq P_{\theta+\epsilon_i\omega}[\Gamma]_{\mathcal I}$. Thus $\Gamma^i$ has positive volume, and \cref{lma:positivemasspart} gives $\Gamma^i\in \PSH^{\NA}(X,\theta+\epsilon_i\omega)_{>0}$.
 
     Write $\widehat{\Gamma}^i\coloneqq P_{\theta+\omega}[\Gamma^i]_{\mathcal{I}}$ and $\widehat{\Gamma}\coloneqq P_{\theta+\omega}[\Gamma]_{\mathcal{I}}$. Applying \cref{prop:anpreinf} to the decreasing sequence $(\widehat{\Gamma}^i)_i$ and then using the injectivity in \cref{lma:anaorder}, we get $\inf_i\widehat{\Gamma}^i=\widehat{\Gamma}$. Hence, by the componentwise definition of this infimum, for any $\tau<\Gamma_{\max}$, we have
     \[
@@ -1394,30 +1414,31 @@ Observe that there is a canonical identification $Y^{\Div}=\widetilde{Y}^{\Div}$
     \[
     \Tr_Y \left( \widehat{\Gamma}_{\tau} \right)^{\An}(c\ord_F)=\inf_{i\geq 1}\Tr_Y \left( \widehat{\Gamma}^{i}_{\tau} \right)^{\An}(c\ord_F).
     \]
-    Applying \cref{prop:Legendretranssup} to the Legendre transforms in $\tau$, and using again that $\mathcal{I}$-projection does not change analytification, we get
+    Put $T_i=(\Tr_Y(\Gamma^i))_{\max}$ and $T=(\Tr_Y(\Gamma))_{\max}$. These endpoints satisfy $T_i\searrow T$. Indeed, $T_i\geq T$ by monotonicity. For $T<\tau<\Gamma_{\max}$, the $d_S$-convergence above and \cref{thm:Lelongcont} imply that $\nu(\widehat{\Gamma}^i_{\tau},Y)>0$ for all sufficiently large $i$, so $T_i\leq\tau$. If $T=\Gamma_{\max}$, use $T_i\leq\Gamma^i_{\max}\searrow\Gamma_{\max}$ instead. Thus the extended trace slices converge also for $\tau>T$, where they are eventually $-\infty$; the value at $T$ does not affect the Legendre supremum. Applying \cref{prop:Legendretranssup}, and using again that $\mathcal{I}$-projection does not change analytification, we get
     \[
     \Tr_Y(\Gamma)^{\An}(c\ord_F)=\inf_{i\geq 1}\Tr_Y(\Gamma^i)^{\An}(c\ord_F).
     \]
+    Here the decreasing infimum of the conjugates is finite for every positive dual parameter, hence continuous there; the closure in \cref{prop:Legendretranssup} therefore does not change its value at $1$.
     Since also $\Gamma^{\An}=\inf_i \Gamma^{i,\An}$, it suffices to prove \eqref{eq:Tracena} with $\Gamma^i$ in place of $\Gamma$.
 
     In other words, we have reduced to the case where $\phi\in \mathcal{H}^{\gf}_{\mathbb{Q}}(L^{\An})$ and $L$ is big.
 
-    Let $\Gamma\in \PSH^{\NA}(X,\theta)_{>0}$ with $\Gamma^{\An}=\phi$. By \cref{lma:gfinimage}, we can find a concave curve $(\Gamma'_{\tau})_{\tau\leq \Gamma_{\max}}$ such that $\Gamma'_{\tau}$ is a generalized Fubini--Study metric for each $\tau\leq \Gamma_{\max}$ and such that
+    Let $A$ and $A'$ be the curves constructed in \cref{lma:gfinimage}, write $\Gamma'_{\tau}=A'_{\tau}$, and set $T=(\Tr_Y(\Gamma))_{\max}$. By \cref{lma:psieqpsiprimeondiv,lma:anaorder}, the inverse system obtained from $A'$ is $\Gamma$. Hence $\Gamma_{\max}=\tau_0$ and
     \[
-    \Gamma_{\tau}=P_{\theta}[\Gamma'_{\tau}]_{\mathcal{I}}=P_{\theta}[\Gamma'_{\tau}].
+    \Gamma_{\tau}\sim_{\mathcal I}\Gamma'_{\tau},\qquad
+    \Gamma_{\tau}=P_{\theta}[\Gamma'_{\tau}]_{\mathcal I},\quad \tau<\Gamma_{\max}.
     \]
-    Here the second equality follows from \cref{ex:analyIgood}, since generalized Fubini--Study metrics have analytic singularities.
-    With the convention that $\Tr_Y(-\infty)=-\infty$ and $(-\infty)^{\An}\equiv -\infty$, it follows that for any $c\ord_F\in \widetilde{Y}^{\Div}$,
+    For rational $\tau<\Gamma_{\max}$, the potential $\Gamma'_{\tau}$ is a generalized Fubini--Study metric and has analytic singularities. Consequently, for rational $\tau<T$, its restriction to $\widetilde Y$ is not identically $-\infty$, while for rational $T<\tau<\Gamma_{\max}$ its analytification is $-\infty$ on $Y^{\An}$. The endpoint $T$ can be omitted since $\Gamma'$ is decreasing. Thus \eqref{eq:gf-rational-hull} gives, for any $c\ord_F\in\widetilde Y^{\Div}$,
     \[
     \begin{aligned}
-    \phi|_{Y^{\An}}(c\ord_F)=&\sup_{\tau<\Gamma_{\max}} \left(\Gamma'_{\tau}{}^{\An}(c\ord_F)+\tau\right)\\
-    =& \sup_{\tau<\Gamma_{\max}} \left(\left(\Gamma'_{\tau}|_{\widetilde{Y}}\right)^{\An}(c\ord_F)+\tau\right)\\
-    =& \sup_{\tau<\Gamma_{\max}} \left(\Tr_Y(\Gamma'_{\tau})^{\An}(c\ord_F)+\tau\right)\\
-     =& \sup_{\tau<\Gamma_{\max}} \left(\Tr_Y(\Gamma_{\tau})^{\An}(c\ord_F)+\tau\right)\\
+    \phi|_{Y^{\An}}(c\ord_F)=&\sup_{\substack{\tau\in\mathbb Q\\\tau<T}} \left(\Gamma'_{\tau}{}^{\An}(c\ord_F)+\tau\right)\\
+    =& \sup_{\substack{\tau\in\mathbb Q\\\tau<T}} \left(\left(\Gamma'_{\tau}|_{\widetilde{Y}}\right)^{\An}(c\ord_F)+\tau\right)\\
+    =& \sup_{\substack{\tau\in\mathbb Q\\\tau<T}} \left(\Tr_Y(\Gamma'_{\tau})^{\An}(c\ord_F)+\tau\right)\\
+     =& \sup_{\substack{\tau\in\mathbb Q\\\tau<T}} \left(\Tr_Y(\Gamma_{\tau})^{\An}(c\ord_F)+\tau\right)\\
     =& \Tr_Y(\Gamma)^{\An}(c\ord_F).
     \end{aligned}
     \]
-    The third equality follows from \cref{ex:resanalyt}, since $\Gamma'_{\tau}$ has analytic singularities. The fourth equality follows from $\Gamma_{\tau}=P_{\theta}[\Gamma'_{\tau}]$, \cref{prop:tracelinear} and \cref{cor:PimpliesI}. It remains to justify the second line. Namely, we want to show that for any generalized Fubini--Study metric $\varphi$ whose restriction to $\widetilde{Y}$ is not identically $-\infty$, we have
+    The third equality follows from \cref{ex:resanalyt}, and the fourth from \cref{prop:tracelinear} and $\Gamma_{\tau}\sim_{\mathcal I}\Gamma'_{\tau}$. For the last equality, the supremum defining the analytification of the trace curve can be taken over rational parameters: every real parameter can be approached from below, and the slices are decreasing. The $\mathcal I$-projections in the definition of the trace do not change divisorial valuations. It remains to justify the second line. Namely, for any generalized Fubini--Study metric $\varphi$ whose restriction to $\widetilde{Y}$ is not identically $-\infty$, we have
     \begin{equation}\label{eq:varphiAncordF}
     \varphi^{\An}(c\ord_F)=\left(\varphi|_{\widetilde{Y}}\right)^{\An}(c\ord_F).
     \end{equation}
