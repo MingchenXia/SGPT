@@ -2,6 +2,12 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-11-05 — Publish the approved trivial-valuation convention
+
+- Merged author-approved [PR #6](https://github.com/MingchenXia/SGPT/pull/6) into `main` as `69360cfdc1f1d0c0472a4e6fce1f281176ada70b` and deleted its remote and local proposal branches.
+- Published the compiled 549-page book to [SGPT_final.pdf](https://mingchenxia.github.io/Lectures/SGPT_final.pdf) in website commit `b764d7699e92248a8653cf66957b50b4b163a892`. The cover reads `Updated on November 5, 2026.`
+- Verified that the merged tree matches the approved PR head and all 43 book-source paths match the review record. Completed a fresh XeLaTeX build with all references and citations resolved, inspected the cover, and confirmed that both reviewed pages match the release render pixel for pixel. GitHub Pages deployment succeeded, and the downloaded public PDF matches the release byte for byte with SHA-256 `500963eee246915732e3a875053575b40fabf4e9f7f47cbba4ea1a6f371c2d6d`.
+
 ## 2026-11-05 — Include the trivial valuation in the divisorial convention
 
 - Adjoined the trivial valuation `v_triv` to the set denoted by `X^div` in Section 13.4.
