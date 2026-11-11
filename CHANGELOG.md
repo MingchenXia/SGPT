@@ -2,6 +2,12 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-11-11 — Publish the approved divisorial-order clarification
+
+- Merged author-approved [PR #9](https://github.com/MingchenXia/SGPT/pull/9) into `main` as `bf1ffc8749986d6b8956e949f1623aac31940244` and removed its remote and local proposal branches.
+- Published the 551-page book to [SGPT_final.pdf](https://mingchenxia.github.io/Lectures/SGPT_final.pdf) in website commit `1493ad7d57ba5fa9d9f4845f71b5d7b594ac137f`. The cover reads `Updated on November 11, 2026.`
+- Verified that the merged tree matches the approved PR head, rebuilt with XeLaTeX, and compared all three review pages pixel for pixel. The deployed download matches the release byte for byte with SHA-256 `7fdf36334a767042a070591717a345b290591b02b286b13f9d91c6e9c0039d2c`.
+
 ## 2026-11-11 — Clarify the divisorial order of a holomorphic germ
 
 - I11. In Theorem 1.4.3, define the divisorial order of a holomorphic germ by the minimum of the local vanishing orders above its base point. Explain independence of the model and apply the minimum in the finite log-resolution test.
