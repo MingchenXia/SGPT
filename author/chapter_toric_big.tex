@@ -1487,12 +1487,12 @@ As a corollary, we obtain an elegant characterization of the augmented base locu
     \]
     \footnotetext{Here we understand that $\dim \varnothing=-\infty$.}
 \end{corollary}
-Intuitively, we should think of $n-\dim \tau$ as the \emph{expected} dimension of $Q_{\tau}$. This corollary says that $Q_{\tau}$ fails to attain the expected dimension if and only if it corresponds to a subvariety in the augmented base locus.
-
-With the help of some knowledge of convex geometry, we can also deduce this corollary from \cref{cor:stablebl_toric}.
+We call $n-\dim\tau$ the expected dimension of $Q_\tau$. An orbit closure $V(\tau)$ can also lie in the augmented base locus by being contained in a larger orbit closure whose face has deficient dimension.
 
 \begin{proof}
-Apply \cref{cor:tor_tr_vol} to $\varphi=V_{\theta}$. Together with Nakamaye's theorem \cite[Theorem~5.7]{ELMNP09} and \cref{thm:rest_volume_tr_volume}, this says that $V(\tau)$ lies in the augmented base locus exactly when the $\dim V(\tau)$-dimensional volume of $Q_{\tau}$ is zero, which is equivalent to $\dim Q_{\tau}<n-\dim\tau$.
+Set $d=\dim V(\tau)$. The image of the restriction map of sections of $kD$ to $V(\tau)$ has dimension $\#(kQ_\tau\cap M)$. Indeed, as in \cref{prop:baseloc}, the monomial section indexed by $m\in kP_D\cap M$ restricts nontrivially precisely when its orders along the divisors indexed by $\tau(1)$ all vanish. On the dense orbit of $V(\tau)$ these sections have distinct characters, after translating the indices by $km_\tau$ into $M(\tau)$, so their restrictions are linearly independent.
+
+Thus the restricted volume of $D$ along $V(\tau)$ vanishes exactly when $\dim Q_\tau<d$: if the face is nonempty, the lattice count in sufficiently divisible degrees grows with order $k^{\dim Q_\tau}$. By \cite[Corollary~5.9]{ELMNP09}, every orbit closure of zero restricted volume is contained in the augmented base locus, and every irreducible component of the augmented base locus has zero restricted volume. Since the augmented base locus is torus invariant, each of its irreducible components is an orbit closure. The claimed union follows.
 \end{proof}
 
 

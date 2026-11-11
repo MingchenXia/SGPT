@@ -676,7 +676,9 @@ This is a consequence of \cref{prop:Choquet} and \cref{prop:supsupstardiff}.
 
     In particular, $P_{\theta}(f)\in \PSH(X,\theta)$. It is therefore bounded from above. By \cref{lma:Vthetalocbdd}, it is locally bounded away from $\nK(\{\theta\})$.
 
-    Fix $x\in U$, put $a=P_{\theta}(f)(x)$, and choose $a<t<f(x)$. Let $\delta=(t-a)/2$. Choose holomorphic balls $B\Subset B'\Subset U$ containing $x$, with a smooth local potential $g$ of $\theta$ on $B'$. Shrink $B$ so that on $\overline{B}$,
+    At an isolated point $x$ of $X$, the envelope equals $f(x)$, since the value of a candidate at $x$ can be raised to $f(x)$. Thus every $x\in U$ lies on a positive-dimensional component.
+
+    Fix $x\in U$, put $a=P_{\theta}(f)(x)$, and choose $a<t<f(x)$. Let $\delta=(t-a)/2$. Choose concentric coordinate balls $B\Subset B'\Subset U$ centered at $x$, with a smooth local potential $g$ of $\theta$ on $B'$. Shrink $B$ so that on $\overline{B}$,
     \begin{equation}\label{eq:PthetafBp_temp1}
         P_{\theta}(f)+g<a+g(x)+\delta,\qquad g>g(x)-\delta,\qquad f>t.
     \end{equation}
@@ -1253,20 +1255,7 @@ We claim that for $i=1,2,3$, we have
 \begin{equation}\label{eq:DNTroof_step1claim}
 \Psi_i\textup{ vanishes to second order at almost every point of }\{\Psi_i=0\}.
 \end{equation}
-To prove this, write $\{\Psi_i=0\}$ as the disjoint union $A_i\sqcup B_i\sqcup C_i\sqcup D_i$ of the following four sets:
-\begin{itemize}
-\item $A_i\coloneqq \{\Psi_i=0\}\cap\{\mathrm{d}\Psi_i\neq 0\}$;
-\item $B_i\coloneqq \{\Psi_i=0\}\cap \{\textup{the classical real Hessian of }\Psi_i\textup{ does not exist}\}$;
-\item $C_i\coloneqq \{\Psi_i=0\}\cap\{\mathrm{d}\Psi_i=0\}\cap\{\textup{the classical real Hessian exists and is non-zero}\}$;
-\item $D_i\coloneqq \{\Psi_i=0\}\cap\{\mathrm{d}\Psi_i=0\}\cap\{\textup{the classical real Hessian exists and equals zero}\}$.
-\end{itemize}
-It suffices to prove $A_i$, $B_i$, $C_i$ are Lebesgue null sets.
-
-The set $A_i$ is a $C^1$ real hypersurface in $X$, hence has Lebesgue measure zero.
-
-Since $\Psi_i\in W^{2,1}_{\loc}$, the classical pointwise real Hessian of $\Psi_i$ exists almost everywhere, so $B_i$ is Lebesgue null.
-
-Finally $C_i$ is Lebesgue null by Stampacchia's lemma. This proves \eqref{eq:DNTroof_step1claim}.
+In local coordinates, the bounded Laplacian of $\Psi_i$ gives $\Psi_i\in W^{2,p}_{\loc}$ for every $1<p<\infty$ by interior elliptic regularity. For $p>2n$, Morrey's inequality applied to the gradient, after subtracting the linear part given by the weak Hessian at an $L^p$ Lebesgue point, shows that the gradient is classically differentiable there with derivative equal to that Hessian. By Stampacchia's lemma, $\mathrm{d}\Psi_i=0$ almost everywhere on $\{\Psi_i=0\}$, and its weak derivative is zero almost everywhere on $\{\mathrm{d}\Psi_i=0\}$. This proves \eqref{eq:DNTroof_step1claim}.
 
 Specialising \eqref{eq:DNTroof_step1claim} to $\Psi_1,\Psi_2$, the functions $\varphi$ and $f_i$ agree to order two at almost every point of the contact set $\{\varphi=f_i\}$. Consequently $\omega+\ddc \varphi$ and $\omega+\ddc f_i$ have the same matrix of coefficients almost everywhere on $\{\varphi=f_i\}$, and therefore so do their $n$-fold wedge powers:
 \begin{equation}\label{eq:DNTroof_step1eq}

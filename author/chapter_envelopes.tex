@@ -2035,7 +2035,7 @@ For simplicity, we usually write
 when $\pi$ is obvious from the context.
 
 \begin{proof}
-    \ref{itm:prop:Iequivchar:4} $\iff$ \ref{itm:prop:Iequivchar:5}. This follows from \cref{lma:blowupLelong}.
+    \ref{itm:prop:Iequivchar:4} $\iff$ \ref{itm:prop:Iequivchar:5}. For the forward direction, use a smooth Kähler model realizing $E$ by \cref{cor:primerealization}. For the converse, use \cref{lma:blowupLelong} at each positive-dimensional point. At isolated points the Lelong numbers are zero.
 
     \ref{itm:prop:Iequivchar:3} $\iff$ \ref{itm:prop:Iequivchar:5}. This follows from \cref{cor:primerealization}.
 
@@ -2450,7 +2450,9 @@ We have the following properties of the $\mathcal{I}$-envelope.
     \left.=\int_X \theta_{\psi}^j\wedge \theta_{P_{\theta}[\psi]_{\mathcal{I}}}^{n-j} \right\}.
     \end{split}
     \]
-    Based on the techniques developed in \cref{chap:comp}, one could show that $P_{\theta,j}[\bullet]$ is a projection operator. The cases $j=0$ and $j=n$ recover the $\mathcal{I}$- and $P$-envelopes respectively; the intermediate operators $P_{\theta,j}$ have not, to our knowledge, been systematically studied in the literature.
+    The cases $j=0$ and $j=n$ recover the $\mathcal{I}$- and $P$-envelopes, respectively. If $\varphi$ is $\mathcal{I}$-good, then $P_{\theta,j}[\varphi]=P_\theta[\varphi]$ for every $j$. Indeed, the mixed mass in the definition for $\varphi$ then equals $\int_X\theta_\varphi^n$. For a candidate $\psi$, its mixed mass is at least $\int_X\theta_\psi^n$ by monotonicity, and $\int_X\theta_\psi^n\geq\int_X\theta_\varphi^n$. Thus equality of mixed masses implies equality of top masses, so $\psi\leq P_\theta[\varphi]$ by \cref{thm:Pvarphidiffdef}. The potential $P_\theta[\varphi]$ is itself a candidate by mass preservation and \eqref{eq:PthetaIP_comp}.
+
+    Is $P_{\theta,j}[\bullet]$ a projection operator for $0<j<n$ in general?
 \end{remark}
 
 

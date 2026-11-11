@@ -25,13 +25,15 @@ See \cite[\href{https://stacks.math.columbia.edu/tag/0BPZ}{Tag 0BPZ}]{stacks-pro
 
 The notion of unibranchness coincides with the usual one when $\mathcal{X}$ is an algebraic variety:
 \begin{proposition}\label{prop:unibranch_gaga}
-    Let $\mathcal{X}$ be a reduced scheme of finite type over $\mathbb{C}$, and let $\mathcal{X}^{\mathrm{An}}$ be the associated complex space.
+    Let $\mathcal{X}$ be a reduced separated scheme of finite type over $\mathbb{C}$, and let $\mathcal{X}^{\mathrm{An}}$ be the associated complex space.
     Then $\mathcal{X}^{\An}$ is unibranch in the sense above if and only if $\mathcal{X}$ is unibranch in the algebraic sense (see \cite[\href{https://stacks.math.columbia.edu/tag/0BQ2}{Tag 0BQ2}]{stacks-project}).
 \end{proposition}
 This is \cite[Remark~2.7]{Xia23Mabuchi} in the arXiv version.
 \begin{proof}
     Let $x\in \mathcal{X}(\mathbb{C})$. Then we claim that $\mathcal{X}$ is unibranch at $x$ if and only if $\mathcal{X}^{\An}$ is unibranch at $x$. By GAGA, there is a natural morphism of ringed spaces $(\mathcal{X}^{\An},\mathcal{O}_{\mathcal{X}^{\An}})\rightarrow (\mathcal{X},\mathcal{O}_{\mathcal{X}})$.
 	 Then since $\mathcal{O}_{\mathcal{X},x}$ is excellent, $\mathcal{X}$ is unibranch at $x$ if and only if $\widehat{\mathcal{O}_{\mathcal{X},x}}=\widehat{\mathcal{O}_{\mathcal{X}^{\An},x}}$ is integral (\cite[Théorème~18.9.1]{EGAIV4}). The latter implies that $\mathcal{O}_{\mathcal{X}^{\An},x}$ is unibranch by \cite[Chapitre~5, Exercise~2.8]{AC}. Running the same argument the other way round, we conclude that $\mathcal{O}_{\mathcal{X},x}$ is unibranch if and only if $\mathcal{O}_{\mathcal{X}^{\An},x}$ is.
+
+    It remains to check that unibranchness at all closed points suffices on the algebraic side. Let $\nu\colon \widetilde{\mathcal{X}}\to\mathcal{X}$ be the finite normalization. The number of branches at a point is the number of points in its normalization fiber (see \cite[\href{https://stacks.math.columbia.edu/tag/0C3Z}{Section 0C3Z}]{stacks-project}). The locus of fibers with at least two geometric points is constructible by Chevalley's theorem, since it is the image of the complement of the diagonal in $\widetilde{\mathcal{X}}\times_{\mathcal{X}}\widetilde{\mathcal{X}}$. At closed points geometric points and ordinary points give the same count. If nonempty it contains a closed point, which proves the assertion.
 \end{proof}
 
 \begin{theorem}[Zariski's main theorem]\label{thm:Zariskimain}\index{theorem!Zariski's main theorem}
