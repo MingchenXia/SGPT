@@ -2,6 +2,12 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-11-11 — Publish the approved November errata corrections
+
+- Merged author-approved [PR #8](https://github.com/MingchenXia/SGPT/pull/8) into `main` as `c88c7ff41df1767196f9c48f43254f3acc59c22c` and removed its remote and local proposal branches.
+- Published the 551-page book to [SGPT_final.pdf](https://mingchenxia.github.io/Lectures/SGPT_final.pdf) in website commit `896048785b204462f2b51aa30d83e1beebe118ec`. The cover reads `Updated on November 11, 2026.`
+- Verified that the merged tree matches the approved PR head and rebuilt the book with all references and citations resolved. All 30 review pages match the release pixel for pixel. The GitHub Pages deployment succeeded, and the public download matches the release byte for byte with SHA-256 `da25343eb6317cd1e2c84d07dcf4b89ad41b61dc7c7032c274f6b92d1bea0e68`.
+
 ## 2026-11-11 — Correct the remaining November errata
 
 - E17 and I05/I09. Include the constant branch at slope $-1$ in the canonical Legendre transform and state the normalization relative to the base potential for twisted test curves.
