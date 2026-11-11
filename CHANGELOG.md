@@ -2,6 +2,15 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-11-11 — Correct the remaining November errata
+
+- E17 and I05/I09. Include the constant branch at slope $-1$ in the canonical Legendre transform and state the normalization relative to the base potential for twisted test curves.
+- E18 and C03. Require positive dimension for balayage, give direct arguments at isolated points in its downstream applications, and specify the point-ideal divisor in the blow-up formula for Lelong numbers. Account for the oscillation of the local potential in the partial equilibrium measure proof.
+- E20 and E21. Prove the toric augmented base locus formula by counting restricted monomial sections and using the criterion for irreducible components. Repair the Bergman proofs with smooth approximation of global weights and concave secant bounds from sup-norm quantization.
+- C01, C05 and C06. Require a nonempty polynomial family, justify almost-everywhere Hessian agreement in the rooftop contact proof, and state the known cases and general question for the interpolated envelope.
+- I03, I04, I06, I07 and I10. Specify separatedness in the analytification proposition, the mass factor for Duistermaat–Heckman measures, the compact-space convention for modifications, the Chern class normalization, and the circle action in reverse Bertini.
+- Verification. Checked the affected arguments and applications, compiled the 551-page book with XeLaTeX with all references and citations resolved, and inspected the revised pages in the review excerpt.
+
 ## 2026-11-05 — Publish the approved unibranch hypothesis
 
 - Merged author-approved [PR #7](https://github.com/MingchenXia/SGPT/pull/7) into `main` as `76fde3d1d5a0e8315b14e0144d57cc3de3258889` and deleted its remote and local proposal branches.

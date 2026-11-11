@@ -616,7 +616,7 @@ Note that the boundary condition \eqref{eq:gluecond} enters the proof only throu
 
 Using the ideas of \cref{lma:gl} and the solution of the homogeneous Monge--Ampère equations on a strong pseudoconvex domain, one can prove the following:
 \begin{proposition}\label{prop:BT_balayage}
-Let $\Omega \subseteq \mathbb{C}^n$ be a domain, let $D \Subset \Omega$ be a strongly pseudoconvex domain, and let $\varphi \in \PSH(\Omega)$ be locally bounded.
+Let $\Omega \subseteq \mathbb{C}^n$ be a domain with $n\geq 1$, let $D \Subset \Omega$ be a strongly pseudoconvex domain, and let $\varphi \in \PSH(\Omega)$ be locally bounded.
 Then there exists a unique locally bounded $\psi\in \PSH(\Omega)$
 such that
 \[
@@ -1161,7 +1161,7 @@ Recall that this particular form of the formula is compatible with our conventio
 
 Also observe the following simple lemma:
 \begin{lemma}\label{lma:blowupLelong}
-    Let $x \in X$ and $\varphi\in \PSH(X)$. Let $\pi\colon Y\rightarrow X$ be the blow-up of $X$ at $x$ with exceptional divisor $E$.
+    Let $x \in X$ lie on a positive-dimensional component and let $\varphi\in \PSH(X)$. Let $\pi\colon Y\rightarrow X$ be the blow-up of $X$ at $x$ and $E$ the divisor defined by the pullback of the ideal of $x$.
     Then
     \[
         \nu(\varphi,x)=\nu(\varphi,E),
@@ -1326,7 +1326,7 @@ Since we shall constantly need the balayage argument of \cref{prop:BT_balayage},
 
 \begin{proposition}\label{prop:bal_general}
     Fix a closed smooth real $(1,1)$-form $\theta$ on $X$.
-    Let $\varphi\in \PSH(X,\theta)$, and $B\Subset B' \subseteq X$ be two holomorphic balls. Assume that $\varphi$ is locally bounded on $B'$. Then there is a unique $\psi \in \PSH(X,\theta)$ so that $\psi$ is bounded on an open neighborhood of $\overline{B}$, and
+    Let $\varphi\in \PSH(X,\theta)$, and $B\Subset B' \subseteq X$ be two holomorphic balls of complex dimension $n\geq 1$. Assume that $\varphi$ is locally bounded on $B'$. Then there is a unique $\psi \in \PSH(X,\theta)$ so that $\psi$ is bounded on an open neighborhood of $\overline{B}$, and
     \[
     \begin{cases}
         \left( \theta|_B+\ddc \psi|_B \right)^n = 0,\\
@@ -1337,7 +1337,7 @@ Since we shall constantly need the balayage argument of \cref{prop:BT_balayage},
 \end{proposition}
 We shall call $\psi$ the \emph{balayage}\index{balayage} of $\varphi$ on $B$.
 \begin{proof}
-    By the Dolbeault--Grothendieck lemma, after possibly shrinking $B'$, we may write $\theta=\ddc g$ for some bounded function $g\in C^{\infty}(B')$. We can then use $g$ to translate $\theta$-psh functions to psh functions, and our assertion follows immediately from \cref{prop:BT_balayage}.
+    Choose a smooth potential $g$ of $\theta$ on $B'$ by the Dolbeault--Grothendieck lemma. In the coordinates of $B'$, the domain $B$ is smoothly bounded and biholomorphic to a Euclidean ball, hence strongly pseudoconvex by \cite{Bell81}. Apply \cref{prop:BT_balayage} to $\varphi+g$ on $B'$ with $D=B$. Subtracting $g$ gives the desired function on $B'$, which agrees with $\varphi$ on $B'\setminus B$ and hence glues to $\varphi$ outside $\overline B$. Local boundedness gives boundedness near $\overline B$, and uniqueness follows from \cref{prop:BT_balayage}.
 \end{proof}
 
 
@@ -1418,7 +1418,6 @@ The following proposition follows immediately from the definitions:
     Let $\varphi\in \QPSH(X)$ be a potential with analytic singularities.
     A \emph{log resolution}\index{log resolution} of $\varphi$ is a modification $\pi\colon Y\rightarrow X$ such that $\pi^*\varphi$ has log singularities along a simple normal crossing effective $\mathbb{Q}$-divisor.
 \end{definition}
-See \cref{def:modif} for the notion of modifications.
 
 \begin{theorem}\label{thm:resolvelogsing}
     Assume that $X$ is compact.
@@ -1759,10 +1758,7 @@ Let $X$ be a connected Kähler manifold and $L$ be a holomorphic line bundle on 
         \item\label{itm:def:Hermmetric:2} for each local holomorphic section $s$ of $\mathcal{O}_X(L)$, the map $x\mapsto |s(x)|^2_{h_x}$ is smooth.
     \end{enumerate}
     The pair $(L,h)$ is called a \emph{Hermitian line bundle}\index{Hermitian line bundle}.
-    We shall write $\ddc h=c_1(L,h)$\footnote{The unusual notation $\ddc h$ is sometimes referred to as the \emph{Göteborg notation} because it is widely used by complex geometers in Göteborg (usually spelled as Gothenburg in English, the second largest (yet very poorly known) city in Sweden). As I identify myself as \emph{Göteborgare}, I do not feel guilty about this notation.} for the first Chern form of $h$\footnote{In the literature, people sometimes define the \emph{curvature form} of $(L,h)$ as $\Theta_{h}=-2\pi\mathrm{i}\ddc h$.}, normalized so that
-    \[
-    [c_1(L,h)]=c_1(L).
-    \]
+    We shall write $\ddc h=c_1(L,h)$\footnote{The unusual notation $\ddc h$ is sometimes referred to as the \emph{Göteborg notation} because it is widely used by complex geometers in Göteborg (usually spelled as Gothenburg in English, the second largest (yet very poorly known) city in Sweden). As I identify myself as \emph{Göteborgare}, I do not feel guilty about this notation.} for the first Chern form of $h$\footnote{In the literature, people sometimes define the \emph{curvature form} of $(L,h)$ as $\Theta_{h}=-2\pi\mathrm{i}\ddc h$.}. With the normalization of $\ddc$ fixed in the conventions, $[c_1(L,h)]$ is the image of the topological first Chern class $c_1(L)\in H^2(X,\mathbb{Z})$ in real de Rham cohomology.
     The map $x\mapsto |s(x)|_{h_x}$ will be denoted by $|s|_h$.
 
     To be more precise, if $U\subseteq X$ is an open subset on which $L$ admits a nowhere vanishing holomorphic section $s$, then we define

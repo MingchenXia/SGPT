@@ -813,8 +813,11 @@ It remains to argue \eqref{eq:diff_eq_I}. Fix $t>0$, $N\in \mathbb{Z}_{>0}$ and 
     \]
     Furthermore, we require that $\Gamma_{-\infty}=\Phi$.
 
-    The above results equally work in the twisted setting.
-    The proofs are almost identical to the untwisted case.
+    The Legendre transform and its inverse are defined by the same formulas. The proofs of \cref{lma:LegsendsTCtoR,lma:LegendsRtoTC,prop:Leginvtc} apply with base potential $\Phi$. For $t>0$, the normalization in \cref{lma:suplegenlinear} becomes
+    \[
+        \sup_{\{\Phi>-\infty\}}\bigl(\Gamma^*_t-\Phi\bigr)=t\Gamma_{\max}.
+    \]
+    Indeed, $\Gamma_\tau\leq\Phi$ for every $\tau<\Gamma_{\max}$, and $\sup_{\{\Phi>-\infty\}}(\Gamma_\tau-\Phi)=0$ for each such $\tau$ by the envelope condition above. Taking the supremum in the Legendre formula gives the identity.
 \end{remark}
 
 \begin{corollary}\label{cor:reltestcursuplinear}
@@ -839,17 +842,17 @@ It remains to argue \eqref{eq:diff_eq_I}. Fix $t>0$, $N\in \mathbb{Z}_{>0}$ and 
     \[
     \ell^{\varphi*}_{\tau}\geq (1+\tau)\varphi-\tau V_{\theta}
     \]
-    for all $\tau\in (-1,0)$. By Legendre duality, this is equivalent to
+    for all $\tau\in (-1,0)$, together with $\ell^{\varphi*}_{-1}\geq V_\theta$ for the constant branch of $\Gamma^\varphi$. By Legendre duality and monotonicity of $\ell^{\varphi*}$ in $\tau$, these inequalities are equivalent to
     \begin{equation}\label{eq:lvarphigeq_temp1}
-    \ell^{\varphi}_t\geq \sup_{\tau\in (-1,0)} \Bigl((1+\tau)\varphi-\tau V_{\theta}+t\tau\Bigr)=\varphi\lor (V_{\theta}-t)
+    \ell^{\varphi}_t\geq (V_\theta-t)\lor \sup_{\tau\in (-1,0)} \Bigl((1+\tau)\varphi-\tau V_{\theta}+t\tau\Bigr)=\varphi\lor (V_{\theta}-t)
     \end{equation}
-    for all $t>0$.
+    for all $t>0$. Where $\varphi$ is finite, the expression in the supremum is affine in $\tau$ with endpoint values $V_\theta-t$ and $\varphi$. Where $\varphi=-\infty$, the term $V_\theta-t$ gives the displayed maximum.
 
     Using the notations of \cref{ex:rayasspsh}, we find easily that
     \[
     \ell^{\varphi,C}_t\geq \varphi\lor (V_{\theta}-t)
     \]
-    for any $C>0$ and $t\in [0,C]$, since it holds at $t=0$ and $t=C$. Letting $C\to \infty$, we find \eqref{eq:lvarphigeq_temp1}.
+    for any $C>0$ and $t\in [0,C]$, since $\varphi\lor (V_\theta-t)$ is a candidate for the Perron envelope as in \cref{ex:rayasspsh}. Letting $C\to \infty$, we find \eqref{eq:lvarphigeq_temp1}.
     Therefore, $\ell^{\varphi}\geq \Gamma^{\varphi*}$ follows.
 
     In order to prove the equality in \eqref{eq:RWNsingtype}, it suffices to show that the two sides have the same energy, as a consequence of \eqref{eq:d1rayscompa}. So we compute

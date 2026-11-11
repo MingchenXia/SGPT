@@ -345,10 +345,12 @@ Here $\{P_{\theta,K}[\varphi](v)|_K\neq v\}$ and $\{P_{\theta,K}[\varphi](v)|_K=
 
 
 \begin{proof}
+If $n=0$, then $X=K$ is a point, both envelopes equal $v$, and their zeroth Monge--Ampère measures are the unit mass at that point. Both assertions follow. Assume henceforth that $n\geq 1$.
+
 \textbf{Step~1}. We first prove \eqref{eq:intXminusKthetan_vanish} when $\varphi = V_{\theta}$.
 
 Let $S\subseteq X$ be a proper analytic subset, such that $V_{\theta}$ is locally bounded on $X\setminus S$. Such $S$ exists by \cref{lma:Vthetalocbdd}.
-Fix holomorphic balls $B\Subset B'\Subset X\setminus S$.
+Fix concentric coordinate balls $B\Subset B'\Subset X\setminus S$.
 
 By \cref{prop:Choquet} and \cref{lma:PKoutsidepps}, we can take an increasing sequence $(\eta_j)_j$ in $\PSH(X,\theta)$ such that
 \[
@@ -374,12 +376,12 @@ We next prove the second equality in \eqref{eq:intXminusKthetan_vanish}. The pro
 It suffices to show that $\theta^n_{P_{\theta,K}[V_{\theta}](v)}$ does not charge the set $K\cap \{P_{\theta,K}[V_{\theta}](v)|_K<v\}$.
 
 
-Let $x\in (X\setminus S) \cap K$ be a point such that $P_{\theta,K}[V_{\theta}](v)(x)<v(x)-\epsilon$ for some $\epsilon>0$. We may assume that $x\in B$ and $B'$ is small enough, so that
+Let $x\in (X\setminus S) \cap K$ satisfy $P_{\theta,K}[V_{\theta}](v)(x)<v(x)$. Choose $\epsilon>0$ with $P_{\theta,K}[V_{\theta}](v)(x)<v(x)-2\epsilon$. Choose $B$ and $B'$ centered at $x$, and a smooth local potential $g$ of $\theta$ on $B'$. By shrinking the balls we may assume that $\operatorname{osc}_{\overline B} g<\epsilon$ and that
 \begin{enumerate}
-    \item\label{itm:chapter-Bergman:L380:1} $P_{\theta,K}[V_{\theta}](v)|_{\overline {B'}}<v(x)-\epsilon$.
-    \item\label{itm:chapter-Bergman:L380:2} $v|_{\overline {B'}\cap K}>v(x)-\epsilon$.
+    \item\label{itm:chapter-Bergman:L380:1} $P_{\theta,K}[V_{\theta}](v)|_{\overline B}<v(x)-2\epsilon$.
+    \item\label{itm:chapter-Bergman:L380:2} $v|_{\overline B\cap K}>v(x)-\epsilon$.
 \end{enumerate}
-By \ref{itm:chapter-Bergman:L380:1}, we have $\gamma_j|_{\partial B}\leq v(x)-\epsilon$, hence by \cref{prop:dom_prin_loc}, $\gamma_j|_B\leq v(x)-\epsilon$. By \ref{itm:chapter-Bergman:L380:2}, we have $\gamma_j|_{B\cap K}\leq v|_{B\cap K}$. On the other hand, $\gamma_j|_{K\setminus B}=\eta_{j}|_{K\setminus B}\leq v|_{K\setminus B}$. Therefore, $\gamma_j|_K\leq v$. It follows again that $\gamma_j\leq P_{\theta,K}[V_{\theta}](v)$. Therefore, we conclude as in the previous paragraph that $\gamma_j\nearrow P_{\theta,K}[V_{\theta}](v)$. Thus, testing against non-negative continuous functions supported in $B$, we conclude that $\theta^n_{P_{\theta,K}[V_{\theta}](v)}$ does not charge $B$ again by \cref{thm:semicon}.
+On $\partial B$, we have $\gamma_j+g=\eta_j+g\leq v(x)-2\epsilon+\sup_{\overline B} g$ by \ref{itm:chapter-Bergman:L380:1}. Applying the maximum principle to $\gamma_j+g$ and subtracting $g$ gives $\gamma_j|_B\leq v(x)-2\epsilon+\operatorname{osc}_{\overline B}g<v(x)-\epsilon$. By \ref{itm:chapter-Bergman:L380:2}, we have $\gamma_j|_{B\cap K}\leq v|_{B\cap K}$. On the other hand, $\gamma_j|_{K\setminus B}=\eta_{j}|_{K\setminus B}\leq v|_{K\setminus B}$. Therefore, $\gamma_j|_K\leq v$. It follows again that $\gamma_j\leq P_{\theta,K}[V_{\theta}](v)$. Therefore, we conclude as in the previous paragraph that $\gamma_j\nearrow P_{\theta,K}[V_{\theta}](v)$. Thus, testing against non-negative continuous functions supported in $B$, we conclude that $\theta^n_{P_{\theta,K}[V_{\theta}](v)}$ does not charge $B$ again by \cref{thm:semicon}.
 
 \textbf{Step~2}. We handle the general case.
 
@@ -1038,7 +1040,13 @@ Let $w \in C^0(X)$, $\varphi \in \PSH(X,\theta)$ be a potential with analytic si
 \]
 \end{corollary}
 \begin{proof}
-This follows from \cref{lma:BML} and \cref{prop:quant_I_smooth}: indeed $\omega^n \in \BM(X,0)$, hence $\omega^n\in \BM(X,w)$ as $w$ is bounded.
+For smooth $w$, the smooth volume form $\omega^n$ is Bernstein--Markov for $(X,w)$. The assertion then follows from \cref{lma:BML,prop:quant_I_smooth}. For continuous $w$, choose smooth $w_j\to w$ uniformly. The norm comparison
+\[
+    \mathrm{e}^{-k\|w_j-w\|_{C^0}/2} N^k_{w,X}
+    \leq N^k_{w_j,X}
+    \leq \mathrm{e}^{k\|w_j-w\|_{C^0}/2} N^k_{w,X}
+\]
+gives an error in $\mathcal{L}_{k,\varphi}$ bounded by $\|w_j-w\|_{C^0}$ times the normalized dimension $n!k^{-n}h^0(X,L^k\otimes T\otimes\mathcal{I}(k\varphi))$, which is bounded by \cref{thm:DXmain1}. The energy is continuous for uniform convergence of weights by \cref{prop:differential_P}. Letting first $k\to\infty$ and then $j\to\infty$ proves the assertion.
 \end{proof}
 
 
@@ -1187,11 +1195,11 @@ For $w\in C^0(X)$, let $f_k,g\colon \mathbb{R}\rightarrow \mathbb{R}$ ($k\geq 1$
 \[
 f_k(t)\coloneqq \mathcal{L}_{k,\varphi}(N^k_{v+tw,\mu}),\quad g(t)\coloneqq \mathcal{E}_{\theta,K}^{\varphi}(v+tw).
 \]
-By \cref{cor:LktoI}, for all $t\in \mathbb{R}$, we have
+Since $\mu$ is a probability measure, $N^k_{v+tw,\mu}\leq N^k_{v+tw,K}$, so the corresponding unit balls give
 \[
-\lim_{k\to\infty} f_k(t)= g(t).
+    f_k(t)\geq \mathcal{L}_{k,\varphi}(N^k_{v+tw,K}).
 \]
-Here we use that $\mu\in\BM(K,v+tw)$ for all fixed $t$, which follows from $\mu\in\BM(K,v)$ and the boundedness of $tw$ on $K$. Note that $f_k$ is concave by H\"older's inequality.
+By \cref{prop:quant_I_algebraic_BM}, the right-hand side converges to $g(t)$ for each $t$. Also, $f_k(0)\to g(0)$ by \cref{cor:LktoI}, using $\mu\in\BM(K,v)$. The function $f_k$ is concave by H\"older's inequality.
 For each $k$, the function $f_k$ is differentiable and
 \[
     f_k'(0)=\int_X w\,\beta^k_{v,\varphi,\mu}.
@@ -1200,10 +1208,12 @@ This follows by differentiating the Gram matrix of the Hilbert norm $N^k_{v+tw,\
 \[
     g'(0)=\int_K w\,\theta^n_{P_{\theta,K}[\varphi]_{\mathcal I}(v)}.
 \]
-Applying \cref{lma:conc_lim_der} to the convex functions $-f_k$ and $-g$ gives
+For $t>0$, concavity bounds $f_k'(0)$ below by $(f_k(t)-f_k(0))/t$ and above by $(f_k(0)-f_k(-t))/t$. The preceding bounds therefore give
 \[
-    \lim_{k\to\infty} f_k'(0)=g'(0),
+    \frac{g(t)-g(0)}{t}\leq \varliminf_{k\to\infty} f_k'(0)
+    \leq \varlimsup_{k\to\infty} f_k'(0)\leq \frac{g(0)-g(-t)}{t}.
 \]
+Letting $t\searrow 0$ gives $f_k'(0)\to g'(0)$,
 which is equivalent to $\beta^k_{v, \varphi,\mu} \rightharpoonup \theta_{P_{\theta,K}[\varphi](v)}^n$, by \cref{prop:differential_P}.
 \end{proof}
 
