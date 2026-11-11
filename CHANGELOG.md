@@ -2,6 +2,12 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-11-11 — Clarify the divisorial order of a holomorphic germ
+
+- I11. In Theorem 1.4.3, define the divisorial order of a holomorphic germ by the minimum of the local vanishing orders above its base point. Explain independence of the model and apply the minimum in the finite log-resolution test.
+- In the quasi-equisingularity proof in Chapter 6, test the germ only on polar components meeting the fiber over its base point.
+- Verification. Checked the two applications of the valuative criterion, compiled the full 551-page book with XeLaTeX with all references and citations resolved, and inspected printed pages 27–28 and 226.
+
 ## 2026-11-11 — Publish the approved November errata corrections
 
 - Merged author-approved [PR #8](https://github.com/MingchenXia/SGPT/pull/8) into `main` as `c88c7ff41df1767196f9c48f43254f3acc59c22c` and removed its remote and local proposal branches.
