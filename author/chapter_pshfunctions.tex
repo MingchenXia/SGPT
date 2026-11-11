@@ -1185,7 +1185,9 @@ Conversely, the information of the generic Lelong numbers determines the multipl
     \ord_{E_i}(f)> \nu(\varphi,E_i)-A_X(E_i)\quad \forall i.
     \end{equation}
 \end{theorem}
-Here $A_X(\bullet)$ denotes the log discrepancy of prime divisors. In \ref{itm:thm:valuativemulti:2} only divisors with $\nu(\varphi,E)>0$ impose a condition. In the finite test, the components $E_i$ include strict transforms of polar divisors on $X$. After change of variables on the resolution, the exponent of $|z_i|^2$ in the integrand is $\ord_{E_i}(f)+A_X(E_i)-1-\nu(\varphi,E_i)$, so integrability requires it to be strictly greater than $-1$.
+Here $\ord_E(f)$ denotes the minimum of the local orders of vanishing of $\pi^*f$ along $E$ at the points of $E\cap\pi^{-1}(x)$, on a model $\pi\colon Y\to X$ on which $E$ is realized. At each such point, the local order is the largest power of a local equation of $E$ dividing the pullback germ. It depends only on the germ of $f$ at $x$. On a common resolution, the strict transform of $E$ maps onto $E$ and preserves these local orders, since they are locally constant along the divisor and agree where the models are identified. Thus the minimum is independent of the model.
+
+Here $A_X(\bullet)$ denotes the log discrepancy of prime divisors. In \ref{itm:thm:valuativemulti:2} only divisors with $\nu(\varphi,E)>0$ impose a condition. In the finite test, the components $E_i$ include strict transforms of polar divisors on $X$. Near a point of the fiber where $E_i=\{z_i=0\}$, the exponent of $|z_i|^2$ after change of variables is $m_i+A_X(E_i)-1-\nu(\varphi,E_i)$, where $m_i$ is the local order of $\pi^*f$ along $E_i$. Integrability near the whole fiber requires these exponents to be strictly greater than $-1$ on every local piece, which gives \eqref{eq:ordfLelonglogdis2} after taking the minimum for each $i$.
 We refer to \cite[Corollary~10.18, Proposition~10.12]{Bou17} for the proof and the precise definition of $A_X$.
 
 The notion of analytic singularities is recalled in \cref{sec:anasing}.
