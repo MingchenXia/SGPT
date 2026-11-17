@@ -2,6 +2,13 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-11-17 — Clarify singular-space forms and remove the general Bertini remark
+
+- I12. In Definition B.2.1 (`author/appendix_unibranch.tex`), require a smooth closed real `(1,1)`-form on a singular space to have local ambient representatives that are simultaneously smooth, closed, real and of type `(1,1)`. State the equivalent local smooth `ddc`-potential condition.
+- I13. Remove Remark 8.5.2 (`rmk:generalABT`) from `author/chapter_trace.tex`.
+- Repair its existing use in the reverse Bertini proof (Lemma 8.5.3): obtain multiplier-ideal restriction for almost every fiber by Fubini and local Ohsawa–Takegoshi, identify the sheaf restrictions using generic flatness, and use cohomology and base change and rotation invariance to conclude.
+- Verification. Checked the local-potential convention and its applications, the revised reverse Bertini argument and its use in Chapter 13. Compiled the full 549-page book with XeLaTeX; all references and citations resolved, with no new layout warnings. Confirmed that the deleted remark has no remaining source references and inspected printed pages 271–272, 275–276 and 502–503 in the before-and-after review excerpt.
+
 ## 2026-11-11 — Publish the approved divisorial-order clarification
 
 - Merged author-approved [PR #9](https://github.com/MingchenXia/SGPT/pull/9) into `main` as `bf1ffc8749986d6b8956e949f1623aac31940244` and removed its remote and local proposal branches.
