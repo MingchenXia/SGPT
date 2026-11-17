@@ -970,13 +970,6 @@ Thus, $H\not\in A$. We conclude that $\mathcal{G}$ is co-pluripolar.
 \end{proof}
 
 
-\begin{remark}\label{rmk:generalABT}
-    More generally, the same technique implies the following general result: Let $f\colon X\rightarrow Y$ be a projective morphism between complex manifolds and $(L,h)$ be a Hermitian pseudo-effective line bundle on $X$. Then for quasi-every\footnote{That is, for all $y$ outside a pluripolar subset of $Y$.} $y\in Y$, the fiber $X_y$ is smooth and
-    \[
-    \mathcal{I}(\lambda h|_{X_y})=\Rest_{X_y}\left( \mathcal{I}(\lambda h) \right).
-    \]
-\end{remark}
-
 In the sequel of this section, we fix a base-point free linear system $\Lambda$ on $X$. For the results below that assert connectedness, we assume in addition that the set of connected smooth members of $\Lambda$ is co-pluripolar in $\Lambda$.
 \begin{corollary}\label{cor:qpshgeneralres}
     Let $\varphi\in \QPSH(X)$. Then for quasi-every $H\in \Lambda$, we have $\varphi|_H\not\equiv -\infty$.
@@ -1178,16 +1171,24 @@ It remains to prove \eqref{eq:fstarcoin}. Observe that both sides of \eqref{eq:f
 \begin{equation}\label{eq:fstarcoin2}
 f_*\Bigl(K_{X}\otimes L\otimes \mathcal{I}(h)\Bigr) \otimes \mathbb{C}(z)=f_*\Bigl(K_{X}\otimes L\otimes \mathcal{I}(h')\Bigr) \otimes \mathbb{C}(z)
 \end{equation}
-for quasi-every $z\in \Delta^*$.
-In fact, this implies that the same holds outside a countable subset of $\Delta^*$. But the set where \eqref{eq:fstarcoin2} fails has to be $S^1$-invariant, it has to be empty.
+for almost every $z\in \Delta^*$ with respect to Lebesgue measure.
+Indeed, the two direct images are coherent subsheaves of $f_*(K_X\otimes L)$. If their fibers agree almost everywhere, they agree outside a discrete subset of $\Delta^*$. Their locus of disagreement is $S^1$-invariant, and no nonempty discrete subset of $\Delta^*$ is invariant under rotations. Hence they agree everywhere.
 
 
-By cohomology and base change together with the analytic Bertini theorem \cref{rmk:generalABT}, for quasi-every $z\in \Delta^*$, we have
+For almost every $z\in\Delta^*$, the fiber $X_z$ is smooth and
+\[
+\mathcal I(h|_{X_z})=\Rest_{X_z}\mathcal I(h),\qquad
+\mathcal I(h'|_{X_z})=\Rest_{X_z}\mathcal I(h').
+\]
+To see this, take a countable cover of the smooth locus of $f$ by relatively compact product charts. Applying Fubini's theorem to the weighted squared norms of local generators of $\mathcal I(h)$ gives
+$\Rest_{X_z}\mathcal I(h)\subseteq\mathcal I(h|_{X_z})$ for almost every $z$. The reverse inclusion follows locally from \cref{thm:OT}. The same argument applies to $h'$, and the critical values of $f$ form a discrete subset of $\Delta^*$.
+
+By generic flatness of $\mathcal O_X/\mathcal I(h)$ and $\mathcal O_X/\mathcal I(h')$, the natural map \eqref{eq:pullbacktoinverimage} for each of these two ideal sheaves is an isomorphism on general fibers. Cohomology and base change therefore gives, for almost every $z\in \Delta^*$,
 \[
 \begin{split}
 f_*\Bigl(K_{X}\otimes L\otimes \mathcal{I}(h)\Bigr) \otimes \mathbb{C}(z)=\mathrm{H}^0\Bigl(X_z,K_{X}|_{X_z}\otimes L|_{X_z}\otimes \mathcal{I}(h|_{X_z})\Bigr),\\
 f_*\Bigl(K_{X}\otimes L\otimes \mathcal{I}(h')\Bigr) \otimes \mathbb{C}(z)=\mathrm{H}^0\Bigl(X_z,K_{X}|_{X_z}\otimes L|_{X_z}\otimes \mathcal{I}(h'|_{X_z})\Bigr).
 \end{split}
 \]
-But we assumed that for quasi-every $z$, $h|_{X_z}\sim_{\mathcal{I}}h'|_{X_z}$, it follows that for quasi-every $z\in \Delta^*$, \eqref{eq:fstarcoin2} holds. The proof is complete.
+By hypothesis, $h|_{X_z}\sim_{\mathcal{I}}h'|_{X_z}$ for quasi-every $z$. Since polar subsets of $\Delta^*$ have Lebesgue measure zero, \eqref{eq:fstarcoin2} holds for almost every $z\in\Delta^*$. The proof is complete.
 \end{proof}
