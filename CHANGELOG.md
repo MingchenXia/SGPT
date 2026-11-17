@@ -2,6 +2,12 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-11-17 — Credit the local analytic Bertini theorem
+
+- In the history chapter's comments on Chapter 8, state that the local analogue of the analytic Bertini theorem is proved in `XiaBerII`.
+- Add Mingchen Xia's *Analytic Bertini theorem II — The local case*, arXiv:2607.25230 (2026), to `ComplexGeometry.bib`.
+- Verification. Checked the attribution and bibliography against the paper. Compiled the full 549-page book with XeLaTeX, with all references and citations resolved and no new layout warnings, and inspected printed pages 480 and 533. The six previously reviewed errata pages are unchanged in the render.
+
 ## 2026-11-17 — Clarify singular-space forms and remove the general Bertini remark
 
 - I12. In Definition B.2.1 (`author/appendix_unibranch.tex`), require a smooth closed real `(1,1)`-form on a singular space to have local ambient representatives that are simultaneously smooth, closed, real and of type `(1,1)`. State the equivalent local smooth `ddc`-potential condition.
