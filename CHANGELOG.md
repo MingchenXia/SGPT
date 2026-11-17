@@ -2,6 +2,12 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-11-17 — Publish the approved forms and Bertini updates
+
+- Merged author-approved [PR #10](https://github.com/MingchenXia/SGPT/pull/10) into `main` as `31e08372a69669def4ce7036f46f3e3f4fb8a8b3` and removed its remote and local proposal branches.
+- Published the 549-page book to [SGPT_final.pdf](https://mingchenxia.github.io/Lectures/SGPT_final.pdf) in website commit `13d0a2338959f76b0397cd6f93defb2ffdf56bec`. The cover reads `Updated on November 17, 2026.`
+- Verified that the merged source tree matches the approved PR head and completed a fresh XeLaTeX build with all references and citations resolved and no new layout warnings. Inspected the cover and confirmed that all eight reviewed pages match the release pixel for pixel. GitHub Pages deployment succeeded, and the public download matches the release byte for byte with SHA-256 `7f31e1edd8af106c7fd573775bd4a094c53eb7f03f599608249a48c044831900`.
+
 ## 2026-11-17 — Credit the local analytic Bertini theorem
 
 - In the history chapter's comments on Chapter 8, state that the local analogue of the analytic Bertini theorem is proved in `XiaBerII`.
