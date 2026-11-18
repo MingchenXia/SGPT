@@ -2,6 +2,13 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-11-18 — Remove open problems from Comments and add a conjecture footnote
+
+- Remove the Open problems section from Comments, including Conjecture 14.3.1 and Problems 14.3.1–14.3.6.
+- Remove the sentence about the Dirichlet problem and its page reference from Remark 10.4.2.
+- Add a footnote to Conjecture 13.4.1 stating that it will be proved in the same paper cited in the preceding footnote, the forthcoming paper with Y. Fang and J. Han.
+- Verification. Compiled the full 549-page book with XeLaTeX. All references and citations resolved, and the build produced no new layout warnings. Inspected the before-and-after excerpts on printed pages 353, 438 and 481–482.
+
 ## 2026-11-17 — Publish the approved forms and Bertini updates
 
 - Merged author-approved [PR #10](https://github.com/MingchenXia/SGPT/pull/10) into `main` as `31e08372a69669def4ce7036f46f3e3f4fb8a8b3` and removed its remote and local proposal branches.
