@@ -4,11 +4,11 @@
 \chapter{Plurisubharmonic functions}
 \label{chap:pshfunctions}
 
-The aim of this chapter is to recall the basic theory of plurisubharmonic functions and to fix the conventions used throughout the rest of the book. We assume only standard background in several complex variables and complex geometry, but we record a number of details whose normalization will matter later. General references for the material include \cite{GZ17}, \cite{Dem12} and \cite{DemBook}.
+The aim of this chapter is to recall the basic theory of plurisubharmonic functions and to fix the conventions used throughout the rest of the book. We assume only standard background in several complex variables and complex geometry, but we record a number of details whose normalization will matter later. General references for the material include \cite{GZ17}, \cite{Dem12} and \cite{DemBook}. My companion book \emph{Foundations of pluripotential theory} \cite[Chapters~7--8, 10--14]{FPT} develops this material in detail.
 
 The chapter begins with plurisubharmonic functions on domains in $\mathbb C^n$ and on complex manifolds. We also include the $0$-dimensional case, which is occasionally convenient in inductive arguments. The basic permanence properties of plurisubharmonic functions are recalled: stability under upper envelopes and decreasing limits, Choquet's lemma, local integrability, gluing, extension across analytic subsets, and Kiselman's principle.
 
-We then discuss the plurifine topology. This topology is the natural one for many local arguments in pluripotential theory, especially those involving contact sets and non-pluripolar products. We include the Bedford--Taylor base theorem in a form suited to later applications, following the approach of \cite{BT87} and \cite{EMW06}.
+We then discuss the plurifine topology. This topology is the natural one for many local arguments in pluripotential theory, especially those involving contact sets and non-pluripolar products. We include the Bedford--Taylor base theorem in a form suited to later applications, following the approach of \cite{BT87} and \cite{EMW06}. See also \cite[Proposition~10.3.2]{FPT}.
 
 The next part of the chapter fixes our conventions for Lelong numbers and multiplier ideal sheaves. These conventions differ by harmless but important factors from some common references; the conversions are explained in \cref{rmk:Lelongconv,rmk:misconv}. We also recall Siu's semicontinuity theorem, the strong openness theorem of Guan--Zhou, the Ohsawa--Takegoshi extension theorem, and the valuative characterization of multiplier ideals.
 
@@ -16,7 +16,7 @@ The remaining sections develop the global language used throughout the book. We 
 
 A reader familiar with this material may skim the chapter on a first pass, but the normalizations in \cref{sec:Lelongmis} and the approximation results in \cref{sec:anasing} will be used repeatedly later.
 
-In this book, unlike in many references, we use the language of nets a lot. We remind the readers that subnets in the whole book mean \emph{Willard subnets}. In particular, a subnet of a monotone net is still monotone. The readers can find more details about nets or Moore--Smith convergence in Willard's textbook \cite{Wil70} or Kelley's \cite{Kel75}. But one has to be careful that Willard's notion of subnets is stricter than Kelley's.
+In this book, unlike in many references, we use the language of nets a lot. We remind the readers that subnets in the whole book mean \emph{Willard subnets}. In particular, a subnet of a monotone net is still monotone. The readers can find more details about nets or Moore--Smith convergence in Willard's textbook \cite{Wil70} or Kelley's \cite{Kel75}. The Willard convention and its use in compactness arguments are also discussed in \cite[Section~1.6]{FPT}. But one has to be careful that Willard's notion of subnets is stricter than Kelley's.
 
 
 \section{The definition of plurisubharmonic functions}
@@ -68,7 +68,7 @@ We will fix $n\in \mathbb{N}$ and a domain $\Omega$ (a connected open subset) in
     When $n\geq 1$, a \emph{plurisubharmonic function}\index{plurisubharmonic function} on $\Omega$ is a function $\varphi\colon \Omega\rightarrow [-\infty,\infty)$ satisfying the following three conditions:
     \begin{enumerate}
         \item\label{itm:def:psh:1} $\varphi\not\equiv -\infty$;
-        \item\label{itm:def:psh:2} $\varphi$ is upper semicontinuous;
+        \item\label{itm:def:psh:2} $\varphi$ is upper semicontinuous;\footnote{This condition is redundant by \cite[Theorem~8.1.3]{FPT}.}
         \item\label{itm:def:psh:3} for any complex line $L\subseteq \mathbb{C}^n$ and any connected component $U$ of $L\cap \Omega$, the restriction $\varphi|_U$ is either subharmonic or constantly $-\infty$.\footnote{An extremely common mistake in the literature is to replace \ref{itm:def:psh:3} by the condition that $\varphi$ is locally integrable and $\ddc\varphi\geq 0$ in the sense of currents. For a concrete counterexample, consider a function $\varphi$ that takes a constant value $0$ at all but one single point, at which the value of $\varphi$ is $1$.}
     \end{enumerate}
 
@@ -122,7 +122,7 @@ Here, the operator $\ddc$ is normalized so that
 \[
 \ddc =\frac{\mathrm{i}}{2\pi}\partial \overline{\partial}.
 \]
-For the proof, we refer to \cite[Proposition~1.43]{GZ17}.
+For the proof, we refer to \cite[Proposition~1.43]{GZ17} and \cite[Theorem~8.2.1]{FPT}.
 
 Plurisubharmonic functions have nice functorialities:
 \begin{proposition}\label{prop:func_domain}
@@ -132,7 +132,7 @@ Plurisubharmonic functions have nice functorialities:
         \item\label{itm:prop:func_domain:2} $f^*\varphi\in \PSH(\Omega)$.
     \end{enumerate}
 \end{proposition}
-We refer to \cite[Proposition~1.44]{GZ17} for the proof\footnote{Recall that the statement of \cite[Proposition~1.44]{GZ17} is flawed. One has to reduce to the case where Case~\ref{itm:prop:func_domain:1} does not occur before following their proof.}.
+We refer to \cite[Proposition~1.44]{GZ17} for the proof\footnote{Recall that the statement of \cite[Proposition~1.44]{GZ17} is flawed. One has to reduce to the case where Case~\ref{itm:prop:func_domain:1} does not occur before following their proof.}. See also \cite[Proposition~8.2.3]{FPT}.
 
 For each $n\in \mathbb{N}$, $a\in \mathbb{C}^n$ and $r>0$, we write
 \begin{equation}\label{eq:Bnar}
@@ -145,7 +145,7 @@ B_n(a,r)=\left\{ z\in \mathbb{C}^n: |z-a|<r \right\}.
     \]
     is convex and increasing.
 \end{proposition}
-See \cite[Theorem~4.1.13]{Hor07} for the case $n>1$ and \cite[Corollary~2.4]{Bou17} for the general case.
+See \cite[Theorem~4.1.13]{Hor07} for the case $n>1$ and \cite[Corollary~2.4]{Bou17} for the general case. See also \cite[Proposition~12.1.1]{FPT}.
 
 \begin{proposition}\label{prop:subhimplyconv}
 Let $a<b$ be two real numbers.
@@ -156,7 +156,7 @@ Let $a<b$ be two real numbers.
     Suppose that $g$ is subharmonic. Then $f$ is convex. In particular, $f$ takes real values only.
 \end{proposition}
 
-See \cite[Theorem~2.12]{HK76} for a more general result.
+See \cite[Theorem~2.12]{HK76} for a more general result. For the convexity assertion, see also \cite[Proposition~18.1.5]{FPT}.
 
 \subsection{The manifold case}
 \label{subsec:psh_manifold}
@@ -218,13 +218,13 @@ When $X$ has dimension $1$, a pluripolar set is called a \emph{polar set}. We sa
 \begin{theorem}[Josefson's theorem]\label{thm:Josefson}\index{theorem!Josefson's theorem}
     Let $E\subseteq \mathbb{C}^n$ be a pluripolar set. Then there is $\varphi\in \PSH(\mathbb{C}^n)$ such that $\varphi|_E\equiv -\infty$.
 \end{theorem}
-See \cite[Corollary~4.41]{GZ17} for the proof of a more general result.
+See \cite[Corollary~4.41]{GZ17} for the proof of a more general result, and \cite[Theorem~10.2.1]{FPT} for the result stated here.
 
 There is also a global version of Josefson's theorem:
 \begin{theorem}\label{thm:gloJosefson}
     Assume that $X$ is a compact complex manifold and $E\subseteq X$ is a pluripolar set. Then there is a quasi-plurisubharmonic function $\varphi$ on $X$ with $\varphi|_E\equiv -\infty$.
 \end{theorem}
-For a proof, see \cite{Vu19}. The notion of quasi-plurisubharmonic functions will be recalled in \cref{def:qpsh} below.
+See \cite{Vu19} and \cite[Theorem~14.8.7]{FPT} for proofs. We recall the definition of a quasi-plurisubharmonic function in \cref{def:qpsh}.
 
 
 \section{Properties of plurisubharmonic functions}
@@ -236,7 +236,7 @@ Let $X$ be a complex manifold.
 \begin{proposition}\label{prop:pshlocLp}
     Let $\varphi\in \PSH(X)$. Then for any $p\geq 1$, $\varphi\in L^p_{\loc}(X)$.
 \end{proposition}
-See \cite[Theorem~1.46, Theorem~1.48]{GZ17}.\footnote{We remind the readers that the third displayed formula in the proof of \cite[Theorem~1.48]{GZ17} Step~2 is wrong. But this is irrelevant for our purpose.}
+See \cite[Theorem~1.46, Theorem~1.48]{GZ17} and \cite[Theorem~8.3.7]{FPT}.\footnote{We remind the readers that the third displayed formula in the proof of \cite[Theorem~1.48]{GZ17} Step~2 is wrong. But this is irrelevant for our purpose. See also the discussion in \cite[Section~B.8]{FPT}.}
 
 \begin{proposition}\label{prop:pshfunction_closedseq}
 \leavevmode
@@ -253,7 +253,7 @@ When $I=\{1,\ldots,m\}$, we write
 \[
     \varphi_1\lor \cdots\lor \varphi_m\coloneqq   \sup_{i\in I}\varphi_i.
 \]
-We refer to \cite[Proposition~1.28, Proposition~1.40]{GZ17}\footnote{In \cite[Proposition~1.28]{GZ17}, the second part is only stated for sequences, the net version is obvious using the sub-mean value inequality and the monotone convergence theorem for nets as in \cite[Proposition~7.12]{Fol99}.}\footnote{The proof of \cite[Proposition~1.40]{GZ17} contains a gap: The measurability of $u$ is not established during the proof, so the claim $u \ast \chi_{\epsilon}$ converges to $u$ in $L^1_{\loc}$ is not valid. One needs to choose the sequence $(v_j)_j$ carefully so that $v\leq u$, and use the fact that $v \ast \chi_{\epsilon}$ converges to $v$ in $L^1_{\loc}$ instead.}.
+We refer to \cite[Proposition~1.28, Proposition~1.40]{GZ17} and \cite[Theorems~8.3.1--8.3.2]{FPT}\footnote{In \cite[Proposition~1.28]{GZ17}, the second part is only stated for sequences, the net version is obvious using the sub-mean value inequality and the monotone convergence theorem for nets as in \cite[Proposition~7.12]{Fol99}. For a proof for decreasing nets of psh functions, see \cite[Theorem~8.3.1]{FPT}.}\footnote{The proof of \cite[Proposition~1.40]{GZ17} contains a gap: The measurability of $u$ is not established during the proof, so the claim $u \ast \chi_{\epsilon}$ converges to $u$ in $L^1_{\loc}$ is not valid. One needs to choose the sequence $(v_j)_j$ carefully so that $v\leq u$, and use the fact that $v \ast \chi_{\epsilon}$ converges to $v$ in $L^1_{\loc}$ instead. See also \cite[Theorem~8.3.2]{FPT} for a proof by countable selection.}.
 
 \begin{proposition}[Choquet's lemma]\label{prop:Choquet}\index{theorem!Choquet's lemma}
     Assume that $X$ has countably many connected components.
@@ -265,7 +265,7 @@ We refer to \cite[Proposition~1.28, Proposition~1.40]{GZ17}\footnote{In \cite[Pr
 In the sequel, we say a subset $B\subseteq X$ is a \emph{holomorphic ball}\index{holomorphic ball} if $B$ has smooth boundary in $X$, and $B$ is biholomorphic to an open ball in $\mathbb{C}^n$.
 
 \begin{proof}
-    We may assume that $X$ is connected. Since by our convention, the complex manifold $X$ is paracompact, it can be covered by countably many holomorphic balls, so we can easily reduce to the case where $X$ is an open ball in $\mathbb{C}^n$. In this case, the result is proved in \cite[Lemma~4.31]{GZ17}.
+    We may assume that $X$ is connected. Since by our convention, the complex manifold $X$ is paracompact, it can be covered by countably many holomorphic balls, so we can easily reduce to the case where $X$ is an open ball in $\mathbb{C}^n$. In this case, the result is proved in \cite[Lemma~4.31]{GZ17} and \cite[Lemma~3.4.1]{FPT}.
 \end{proof}
 
 
@@ -284,7 +284,7 @@ In the sequel, we say a subset $B\subseteq X$ is a \emph{holomorphic ball}\index
     \]
     is pluripolar and hence Lebesgue null.
 \end{proposition}
-See \cite[Corollary~4.28]{GZ17}.
+See \cite[Corollary~4.28]{GZ17} and \cite[Corollary~10.2.2]{FPT}.
 
 
 
@@ -335,7 +335,7 @@ See \cite[Corollary~4.28]{GZ17}.
 \begin{proof}
     We may assume that $X$ is connected.
 
-    We first observe that $(\varphi_j)_j$ is locally uniformly bounded from above. This follows from \cite[Exercise~1.20]{GZ17}.
+    We first observe that $(\varphi_j)_j$ is locally uniformly bounded from above. This follows from \cite[Exercise~1.20]{GZ17} and the proof of \cite[Theorem~8.3.7]{FPT}.
 
     For each $j\geq 1$, let
     \[
@@ -353,7 +353,7 @@ See \cite[Corollary~4.28]{GZ17}.
     Z=\bigcup_{j=1}^{\infty} Z_j.
     \]
     Then $Z$ is a pluripolar set by \cref{prop:pluripolarunion}, and for any $x\in X\setminus Z$, we have $\psi(x)=\varlimsup_j \varphi_j(x)$.
-    Moreover, $\psi=\varphi$ almost everywhere by \cite[Theorem~1.46]{GZ17}, and hence everywhere by \cref{prop:pshfuncdetdense}. Hence we conclude \eqref{eq:L1limsup1}.
+    Moreover, $\psi=\varphi$ almost everywhere by \cite[Theorem~1.46]{GZ17} (see also Hartogs' lemma in \cite[Theorem~8.3.4]{FPT}), and hence everywhere by \cref{prop:pshfuncdetdense}. Hence we conclude \eqref{eq:L1limsup1}.
     Moreover, for all $x\in X\setminus Z$,
     \[
         \varphi(x)=\varlimsup_{j\to\infty}  \varphi_j(x).
@@ -479,14 +479,14 @@ Here
 \]
 denotes the punctured unit disk.
 \begin{proof}
-    It clearly suffices to handle the case $n=1$. In this case, by \cite[Theorem~2.12]{HK76}, the map
+    It clearly suffices to handle the case $n=1$. In this case, by \cite[Theorem~2.12]{HK76} (see also \cite[Proposition~18.1.5]{FPT} applied in logarithmic coordinates), the map
     \[
     \log r\mapsto \int_{0}^{1} \varphi\left(r\mathrm{e}^{2\pi\mathrm{i}\theta}\right)\,\mathrm{d}\theta=\varphi(r)
     \]
     is a convex function of $\log r$.
     So, the set $\{r\in (0,1): \varphi(r)=-\infty\}$ is convex.
     But $\varphi$ is almost everywhere finite by \cref{prop:pshlocLp}. Since $\varphi$ is $S^1$-invariant, $\varphi|_{(0,1)}$ is almost everywhere finite.
-    It follows from the convexity that it is everywhere finite.
+    It follows from the convexity that it is everywhere finite. For another proof, see \cite[Corollary~18.1.6]{FPT}.
 \end{proof}
 
 
@@ -503,7 +503,7 @@ has the form $E_z+\mathrm{i}\mathbb{R}^n$, where $E_z\subseteq \mathbb{R}^n$ is 
 \]
 Then either $\psi\equiv -\infty$ or $\psi\in \PSH(\Omega')$.
 \end{proposition}
-See \cite[Chapter~I, Section~7.B, Theorem~(7.5) and its proof, p.~57]{DemBook} for the proof as well as the notion of pseudoconvex domains.
+See \cite[Chapter~I, Section~7.B, Theorem~(7.5) and its proof, p.~57]{DemBook} for the proof as well as the notion of pseudoconvex domains. See also \cite[Corollary~11.2.6]{FPT} for the pseudoconvex tube case.
 
 \begin{lemma}\label{lma:gl}
     Let $\Omega\subseteq \mathbb{C}^n$ be a domain and $\Omega'\subseteq \Omega$ be a subdomain. Consider $\varphi\in \PSH(\Omega)$ and $\psi\in \PSH(\Omega')$. Assume that
@@ -521,7 +521,7 @@ See \cite[Chapter~I, Section~7.B, Theorem~(7.5) and its proof, p.~57]{DemBook} f
     \]
     Then $\eta\in \PSH(\Omega)$.
 \end{lemma}
-This is essentially \cite[Proposition~1.30]{GZ17}. Since the statement in the reference is slightly misleading for our purposes, we include the proof for clarification.
+This is essentially \cite[Proposition~1.30]{GZ17}. See also \cite[Proposition~8.2.5]{FPT}. Since the statement in the reference is slightly misleading for our purposes, we include the proof for clarification.
 \begin{figure}[ht]
 \centering
 \begin{tikzpicture}[scale=0.85, line width=0.6pt]
@@ -599,7 +599,7 @@ See \cref{fig:glue} for the notations used in the proof.
 
 Note that the boundary condition \eqref{eq:gluecond} enters the proof only through \eqref{eq:limsuppsiphitemp1}, therefore, we can formulate a variant of \cref{lma:gl}:
 \begin{corollary}\label{cor:glbdry}
-    Let $\Omega\subseteq \mathbb{C}^n$ be a domain and $\Omega'\subseteq \Omega$ be a subdomain\footnote{In \cite[Proposition~1.30]{GZ17}, Guedj--Zeriahi assumed in addition that $\Omega'$ is relatively compact in $\Omega$. This assumption is not necessary for the proof, and the applications of this proposition in \cite{GZ17} usually do not satisfy this condition.}. Consider $\varphi\in \PSH(\Omega)$ and $\psi\in \PSH(\Omega')$. Assume that
+    Let $\Omega\subseteq \mathbb{C}^n$ be a domain and $\Omega'\subseteq \Omega$ be a subdomain\footnote{In \cite[Proposition~1.30]{GZ17}, Guedj--Zeriahi assumed in addition that $\Omega'$ is relatively compact in $\Omega$. This assumption is not necessary for the proof, and the applications of this proposition in \cite{GZ17} usually do not satisfy this condition. See also the gluing statement in \cite[Proposition~8.2.5]{FPT}.}. Consider $\varphi\in \PSH(\Omega)$ and $\psi\in \PSH(\Omega')$. Assume that
     \[
         \varlimsup_{\Omega'\ni y\to x}\psi(y)\leq \varphi(x)
     \]
@@ -627,7 +627,7 @@ such that
 \]
 Moreover, $\psi\geq \varphi$.
 \end{proposition}
-See \cite[Proposition~9.1]{BT82} for the proof. We sometimes say $\psi$ is the \emph{balayage}\index{balayage} of $\varphi$ on $D$.
+See \cite[Proposition~9.1]{BT82} for the proof, and \cite[Corollary~9.6.4]{FPT} for balayage on balls. We sometimes say $\psi$ is the \emph{balayage}\index{balayage} of $\varphi$ on $D$.
 
 Let us also recall the following domination principle:
 \begin{proposition}\label{prop:dom_prin_loc}
@@ -642,13 +642,13 @@ Let us also recall the following domination principle:
     \end{enumerate}
     Then $\varphi\leq \psi$.
 \end{proposition}
-This is \cite[Corollary~3.31]{GZ17}.\footnote{The statement in the reference is flawed, but the proof is correct.}
+This is \cite[Corollary~3.31]{GZ17}.\footnote{The statement in the reference is flawed, but the proof is correct. See also \cite[Corollary~9.2.9]{FPT}.}
 
 \section{Plurifine topology}\label{sec:plurifine}
 
-In this section, we introduce the notion of plurifine topology. Unlike other sections in this chapter, this section contains full details. This is mainly due to the unfortunate omissions and numerous minor problems in the foundational paper \cite{BT87}. In particular, the key theorem \cref{thm:pf_basis} was claimed by Bedford--Taylor without proof. Our presentation largely follows \cite{EMW06}. We also include enough details so that this section is readable for those who are not familiar with the classical potential theory.
+In this section, we introduce the notion of plurifine topology. Unlike other sections in this chapter, this section contains full details. This is mainly due to the unfortunate omissions and numerous minor problems in the foundational paper \cite{BT87}. In particular, the key theorem \cref{thm:pf_basis} was claimed by Bedford--Taylor without proof. Our presentation largely follows \cite{EMW06}. See also \cite[Proposition~10.3.2 and Section~B.10]{FPT}. We also include enough details so that this section is readable for those who are not familiar with the classical potential theory.
 
-Very recently, El Kadiri--Fuglede published a book \cite{EKF} about classical fine potential theory, containing essentially all results in this section. The interested reader may consult their book for further details.
+Very recently, El Kadiri--Fuglede published a book \cite{EKF} about classical fine potential theory, containing essentially all results in this section. The interested reader may consult their book for further details. See also \cite[Chapters~5 and~10]{FPT}.
 
 \subsection{Plurifine topology on domains}
 \label{subsec:plurifine}
@@ -727,7 +727,7 @@ In the second case, the function $\varphi$ can be very much improved.
     \]
   \end{enumerate}
 \end{proposition}
-\begin{proof}\footnote{The original argument in \cite[Proposition~10.2]{BT82} was quite intriguing: Neither the auxiliary functions $\varphi_j$'s nor the simple computations were correct. However, I believe that Bedford--Taylor had a correct proof in mind. Something more than a typo, but not yet a mistake, could be properly called a \emph{thinkpo}, a terminology invented by R.~Berman.}
+\begin{proof}\footnote{The original argument in \cite[Proposition~10.2]{BT82} was quite intriguing: Neither the auxiliary functions $\varphi_j$'s nor the simple computations were correct. However, I believe that Bedford--Taylor had a correct proof in mind. Something more than a typo, but not yet a mistake, could be properly called a \emph{thinkpo}, a terminology invented by R.~Berman. For a proof of the local base theorem, see also \cite[Proposition~10.3.2]{FPT}.}
 By \cref{rmk:cstthindef}, there is an open neighborhood $U\subseteq \Omega$ of $x$ and $\psi\in \PSH(U)$ such that
 \[
     \psi|_{U\cap (E\setminus\{x\})}=-1 \quad\textup{and}\quad \psi(x)=0.
@@ -861,7 +861,7 @@ We now verify the three claims.
 
 \begin{remark}
     Recall that in general, an $\mathcal{F}$-open set is \emph{not} a \emph{countable} union of sets of the form \eqref{eq:basis_fine}. In fact, an $\mathcal{F}$-open set is not a Borel set in general.
-    See \cite{EK23} for a concrete example.
+    See \cite{EK23} and \cite[Example~10.3.5]{FPT} for concrete examples.
 \end{remark}
 
 \begin{corollary}\label{cor:pf_compatible}
@@ -995,7 +995,7 @@ For a quasi-plurisubharmonic function $\varphi$, we have
 as a consequence of \cref{cor:diffsupinfindeppluripolar}.
 
 \section{Lelong numbers and multiplier ideal sheaves}\label{sec:Lelongmis}
-In this section, we briefly recall the notions of Lelong numbers and multiplier ideal sheaves. Our presentation is by no means intended to be complete. Readers are encouraged to read the textbooks \cite[Section~2.3]{GZ17} and \cite{Dem12}.
+In this section, we briefly recall the notions of Lelong numbers and multiplier ideal sheaves. Our presentation is by no means intended to be complete. Readers are encouraged to read the textbooks \cite[Section~2.3]{GZ17}, \cite{Dem12} and \cite[Chapter~12]{FPT}.
 
 Let $X$ be a complex manifold.
 
@@ -1011,7 +1011,7 @@ Let $X$ be a complex manifold.
     \end{equation}
     \index{$\nu(\varphi,x)$}
 \end{definition}
-Observe that $\nu(\varphi,x)$ does not depend on the choices of $U$ and $F$, see \cite[Page~167, Corollary~7.2]{DemBook}.
+Observe that $\nu(\varphi,x)$ does not depend on the choices of $U$ and $F$, see \cite[Page~167, Corollary~7.2]{DemBook} and \cite[Proposition~12.1.1 and Definition~12.1.2]{FPT}.
 Furthermore, it follows from \cref{prop:Lelongreform} below that the supremum in \eqref{eq:nuvarphix} is a maximum.
 
 \begin{remark}\label{rmk:Lelongconv}
@@ -1054,7 +1054,7 @@ We recall Siu's semicontinuity theorem.
 \begin{theorem}[Siu]\label{thm:Siusemi}\index{theorem!Siu's semicontinuity theorem}
     Let $\varphi\in \PSH(X)$. Then the map $X\ni x\mapsto \nu(\varphi,x)$ is upper semicontinuous with respect to the Zariski topology.
 \end{theorem}
-For an elegant proof we refer to \cite[Theorem~2.10]{Dem12}.
+For an elegant proof we refer to \cite[Theorem~2.10]{Dem12} and \cite[Theorem~12.3.4]{FPT}.
 
 \begin{proposition}\label{prop:Lelongmax}
     Let $\varphi,\psi\in \PSH(X)$, $\lambda\in \mathbb{R}_{\geq 0}$ and $x\in X$. Then
@@ -1138,7 +1138,7 @@ where $z$ is a variable in $\mathbb{C}$ and $\{0\}$ is the divisor defined by $0
 \begin{proposition}[Nadel]\index{theorem!Nadel coherence theorem}
     Let $\varphi\in \PSH(X)$. Then $\mathcal{I}(\varphi)$ is coherent.
 \end{proposition}
-See \cite[Proposition~5.7]{Dem12}.
+See \cite[Proposition~5.7]{Dem12} and \cite[Theorem~12.2.7]{FPT}.
 
 \begin{theorem}\label{thm:multipsubadd}
     Let $\varphi,\psi\in \PSH(X)$. Then
@@ -1146,7 +1146,7 @@ See \cite[Proposition~5.7]{Dem12}.
         \mathcal{I}(\varphi+\psi)\subseteq \mathcal{I}(\varphi)\cdot \mathcal{I}(\psi).
     \]
 \end{theorem}
-See \cite{DEL00}, \cite[Theorem~14.2]{Dem12}.
+See \cite{DEL00}, \cite[Theorem~14.2]{Dem12} and \cite[Theorem~12.4.1]{FPT}.
 
 The two invariants are related by the following simple result:
 \begin{proposition}\label{prop:Lelongnumfrommis}
@@ -1155,7 +1155,7 @@ The two invariants are related by the following simple result:
         \nu(\varphi,E)=\lim_{k\to\infty}\frac{1}{k}\ord_E\mathcal{I}(k\varphi).
     \end{equation}
 \end{proposition}
-See \cite[Proposition~2.14]{DX21}.
+See \cite[Proposition~2.14]{DX21} and \cite[Corollary~12.6.8]{FPT}.
 
 Recall that this particular form of the formula is compatible with our conventions of $\nu$ and $\mathcal{I}$. As a consistency check, consider $\varphi=\log |z|^2$ with $z\in \mathbb{C}$ and let $E$ be the divisor $\{0\}$. Then both sides of \eqref{eq:LelongMIS} are equal to $1$. See \cref{rmk:Lelongconv} and \cref{rmk:misconv}.
 
@@ -1167,7 +1167,7 @@ Also observe the following simple lemma:
         \nu(\varphi,x)=\nu(\varphi,E),
     \]
 \end{lemma}
-See \cite[Corollaire~1.1.8]{Bou02}.
+See \cite[Corollaire~1.1.8]{Bou02} and \cite[Proposition~12.3.6]{FPT}.
 
 Conversely, the information of the generic Lelong numbers determines the multiplier ideal sheaves:
 \begin{theorem}\label{thm:valuativemulti}
@@ -1188,7 +1188,7 @@ Conversely, the information of the generic Lelong numbers determines the multipl
 Here $\ord_E(f)$ denotes the minimum of the local orders of vanishing of $\pi^*f$ along $E$ at the points of $E\cap\pi^{-1}(x)$, on a model $\pi\colon Y\to X$ on which $E$ is realized. At each such point, the local order is the largest power of a local equation of $E$ dividing the pullback germ. It depends only on the germ of $f$ at $x$. On a common resolution, the strict transform of $E$ maps onto $E$ and preserves these local orders, since they are locally constant along the divisor and agree where the models are identified. Thus the minimum is independent of the model.
 
 Here $A_X(\bullet)$ denotes the log discrepancy of prime divisors. In \ref{itm:thm:valuativemulti:2} only divisors with $\nu(\varphi,E)>0$ impose a condition. In the finite test, the components $E_i$ include strict transforms of polar divisors on $X$. Near a point of the fiber where $E_i=\{z_i=0\}$, the exponent of $|z_i|^2$ after change of variables is $m_i+A_X(E_i)-1-\nu(\varphi,E_i)$, where $m_i$ is the local order of $\pi^*f$ along $E_i$. Integrability near the whole fiber requires these exponents to be strictly greater than $-1$ on every local piece, which gives \eqref{eq:ordfLelonglogdis2} after taking the minimum for each $i$.
-We refer to \cite[Corollary~10.18, Proposition~10.12]{Bou17} for the proof and the precise definition of $A_X$.
+We refer to \cite[Corollary~10.18, Proposition~10.12]{Bou17} and \cite[Definition~12.6.3 and Theorem~12.6.9]{FPT} for the proof and the precise definition of $A_X$.
 
 The notion of analytic singularities is recalled in \cref{sec:anasing}.
 
@@ -1200,7 +1200,7 @@ Recall the strong openness theorem:
     \]
     when $j$ is large enough.
 \end{theorem}
-See \cite{GZ15, Hiep14} for the proof.
+See \cite{GZ15, Hiep14} and \cite[Corollary~12.5.4]{FPT} for the proof.
 
 \begin{proposition}\label{prop:pull-backmis}
     Let $\pi\colon Y\rightarrow X$ be a smooth morphism between complex manifolds. Assume that $\varphi\in \PSH(X)$. Then
@@ -1209,7 +1209,7 @@ See \cite{GZ15, Hiep14} for the proof.
     \]
 \end{proposition}
 \begin{proof}
-    It follows from \cite[Théorème~3.10]{SHC6} that locally $\pi$ can be written as the composition of an étale morphism and a projection. It suffices to handle the two cases separately.
+    It follows from \cite[Théorème~3.10]{SHC6} that locally $\pi$ can be written as the composition of an étale morphism and a projection. It suffices to handle the two cases separately. See also the coordinate argument in \cite[Corollary~12.4.2]{FPT}.
 
     Recall that in the complex analytic setting, an étale morphism is locally biholomorphic, so there is nothing to prove in this case.
 
@@ -1217,7 +1217,7 @@ See \cite{GZ15, Hiep14} for the proof.
     \[
     \mathcal{I}(\pi^*\varphi)\supseteq \pi^*\mathcal{I}(\varphi).
     \]
-    The reverse inequality is proved in \cite[Proposition~14.3]{Dem12}\footnote{In \cite[Proposition~14.3]{Dem12}, Demailly used the highly non-standard notation $f^*\mathcal{I}(\varphi)$ to denote the image of $f^*\mathcal{I}(\varphi)\rightarrow \mathcal{O}_X$, even when $f$ is not flat.}.
+    The reverse inequality is proved in \cite[Proposition~14.3]{Dem12} and \cite[Corollary~12.4.2]{FPT}\footnote{In \cite[Proposition~14.3]{Dem12}, Demailly used the highly non-standard notation $f^*\mathcal{I}(\varphi)$ to denote the image of $f^*\mathcal{I}(\varphi)\rightarrow \mathcal{O}_X$, even when $f$ is not flat. See also the convention in \cite[Section~B.12]{FPT}.}.
 \end{proof}
 
 \begin{definition}\label{def:restidealsheaf}
@@ -1241,7 +1241,7 @@ where $i_Y\colon Y\rightarrow X$ is the inclusion.
     \mathcal{I}\left(\varphi|_Y\right)\subseteq \Rest_Y\mathcal{I}(\varphi).
     \]
 \end{theorem}
-See \cite[Theorem~14.1]{Dem12}.
+See \cite[Theorem~14.1]{Dem12} and \cite[Theorems~11.4.4 and~12.4.1]{FPT}.
 
 
 \section{Quasi-plurisubharmonic functions}
@@ -1277,7 +1277,7 @@ For a fixed background $\theta$, we will use the local results for plurisubharmo
     \]
     is compact with respect to the $L^1$-topology. Moreover, $\varphi\mapsto \sup_X \varphi$ is $L^1$-continuous for $\varphi\in \PSH(X,\theta)$.
 \end{proposition}
-This is an immediate consequence of \cite[Proposition~8.5, Exercise~1.20]{GZ17}\footnote{In the proof of \cite[Proposition~8.5]{GZ17}, there is a misleading sentence: \emph{This is a dcreasing sequence of $\omega$-psh functions}, which should be removed.}.
+This is an immediate consequence of \cite[Proposition~8.5, Exercise~1.20]{GZ17}\footnote{In the proof of \cite[Proposition~8.5]{GZ17}, there is a misleading sentence: \emph{This is a dcreasing sequence of $\omega$-psh functions}, which should be removed.}. See also \cite[Proposition~14.2.1]{FPT}.
 \begin{remark}\label{rmk:L1cpt}
     Suppose that $X$ is connected and compact and $K\subseteq X$ is a closed non-pluripolar subset. Then
     \[
@@ -1311,7 +1311,7 @@ Assume that $X$ is compact.
 \end{proposition}
 \begin{proof}
     We may restrict to the connected component of $X$ containing the center of $E$, since the Lelong number along $E$ only depends on the restriction to this component.
-    It follows from the proof of \cite[Exercise~2.7]{GZ17} that $\nu(\bullet,E)$ is upper semicontinuous with respect to the $L^1$-topology on $\PSH(X,\theta)$. Since adding a constant does not change Lelong numbers, we may restrict to the compact set $\{\varphi\in \PSH(X,\theta):\sup_X\varphi=0\}$ from \cref{prop:L1compa}. The desired upper bound follows.
+    It follows from the proof of \cite[Exercise~2.7]{GZ17} that $\nu(\bullet,E)$ is upper semicontinuous with respect to the $L^1$-topology on $\PSH(X,\theta)$, as also shown in \cite[Proposition~14.2.8]{FPT}. Since adding a constant does not change Lelong numbers, we may restrict to the compact set $\{\varphi\in \PSH(X,\theta):\sup_X\varphi=0\}$ from \cref{prop:L1compa}. The desired upper bound follows.
 \end{proof}
 
 \begin{proposition}\label{prop:PSHpullbij}
@@ -1339,7 +1339,7 @@ Since we shall constantly need the balayage argument of \cref{prop:BT_balayage},
 \end{proposition}
 We shall call $\psi$ the \emph{balayage}\index{balayage} of $\varphi$ on $B$.
 \begin{proof}
-    Choose a smooth potential $g$ of $\theta$ on $B'$ by the Dolbeault--Grothendieck lemma. In the coordinates of $B'$, the domain $B$ is smoothly bounded and biholomorphic to a Euclidean ball, hence strongly pseudoconvex by \cite{Bell81}. Apply \cref{prop:BT_balayage} to $\varphi+g$ on $B'$ with $D=B$. Subtracting $g$ gives the desired function on $B'$, which agrees with $\varphi$ on $B'\setminus B$ and hence glues to $\varphi$ outside $\overline B$. Local boundedness gives boundedness near $\overline B$, and uniqueness follows from \cref{prop:BT_balayage}.
+    Choose a smooth potential $g$ of $\theta$ on $B'$ by the Dolbeault--Grothendieck lemma. In the coordinates of $B'$, the domain $B$ is smoothly bounded and biholomorphic to a Euclidean ball, hence strongly pseudoconvex by \cite{Bell81}. Apply \cref{prop:BT_balayage} to $\varphi+g$ on $B'$ with $D=B$. Subtracting $g$ gives the desired function on $B'$, which agrees with $\varphi$ on $B'\setminus B$ and hence glues to $\varphi$ outside $\overline B$. Local boundedness gives boundedness near $\overline B$, and uniqueness follows from \cref{prop:BT_balayage}. See also \cite[Corollary~14.2.9]{FPT} for balayage on coordinate balls.
 \end{proof}
 
 
@@ -1366,7 +1366,7 @@ Let $X$ be a complex manifold.
     Suppose that there is a coherent ideal $\mathcal{I}\subseteq \mathcal{O}_X$ on $X$ such that we can choose $U$ so that the $f_1,\ldots,f_N$ can be chosen as the generators of $\Gamma(U,\mathcal{I})$ and $c$ is independent of the choice of $U$. Then we say $\varphi$ has analytic singularities of \emph{type} $(c,\mathcal{I})$.
 \end{definition}
 If $X$ is compact, each potential with analytic singularities has a type. The type is not uniquely determined.
-We refer to \cite{Bou02} and \cite{Bou02b} for the details.
+We refer to \cite{Bou02} and \cite{Bou02b} for the details. See also \cite[Section~13.1]{FPT}.
 
 Some authors allow $c\in \mathbb{R}_{>0}$ in \eqref{eq:anasinglocal}. We keep $c\in \mathbb{Q}_{>0}$ because the following closure property, which is essential in constructing Demailly approximations, would otherwise fail.
 \begin{proposition}\label{prop:analysingclosed}
@@ -1425,7 +1425,7 @@ The following proposition follows immediately from the definitions:
     Assume that $X$ is compact.
     Suppose that $\varphi\in \QPSH(X)$ has analytic singularities. Then there is a log resolution of $\varphi$.
 \end{theorem}
-For a proof, we refer to the arguments on \cite[Page~104]{MM07}.
+For a proof, we refer to the arguments on \cite[Page~104]{MM07} and to \cite[Proposition~13.1.10]{FPT}.
 
 
 A general quasi-plurisubharmonic function can be nicely approximated by those with analytic singularities. We need a few preliminary definitions.
@@ -1461,7 +1461,7 @@ A general quasi-plurisubharmonic function can be nicely approximated by those wi
 
     Moreover, we can guarantee that for all $j>0$, $\varphi_j$ has gentle analytic singularities of type $\left(2^{-j},\mathcal{I}(2^j\varphi)\right)$.
 \end{theorem}
-We refer to \cite{Dem92reg, DPS01} for the proof.
+We refer to \cite{Dem92reg, DPS01} and \cite[Theorem~13.4.5]{FPT} for the proof.
 
 Quasi-equisingular approximations are essentially unique in the following sense:
 \begin{proposition}\label{prop:compqequi}
@@ -1470,7 +1470,7 @@ Quasi-equisingular approximations are essentially unique in the following sense:
         \psi_k\preceq (1-\epsilon)\varphi_j.
     \]
 \end{proposition}
-See \cite[Corollary~4.1.7]{Dem15}.
+See \cite[Corollary~4.1.7]{Dem15} and \cite[Proposition~13.5.2]{FPT}.
 
 
 \begin{definition}\label{def:Iinfty}
@@ -1531,7 +1531,7 @@ The multiplier ideal sheaf $\mathcal{I}$ and the sheaf $\mathcal{I}_{\infty}$ ar
     \[
     \log |f|^2\leq \alpha \log \left( |g_1|^2 +\cdots+|g_N|^2\right)+\mathcal{O}(1)\leq c^{-1}\alpha \varphi+\mathcal{O}(1).
     \]
-    Hence \eqref{eq:IIinf_temp1} follows.
+    Hence \eqref{eq:IIinf_temp1} follows. For a proof of the asymptotic inclusion using log resolutions, see \cite[Corollary~13.6.3]{FPT}.
 \end{proof}
 
 \begin{theorem}\label{thm:CT-thm-refined'}Let $X$ be a connected compact Kähler manifold and $Y\subseteq X$ be a connected closed submanifold.
@@ -1543,7 +1543,7 @@ The multiplier ideal sheaf $\mathcal{I}$ and the sheaf $\mathcal{I}_{\infty}$ ar
     \end{enumerate}
         In addition, if $\varphi$ has analytic singularities, then so does $\tilde{\varphi}$.
 \end{theorem}
-See \cite[Theorem~6.1]{DRWNXZ}.
+See \cite[Theorem~6.1]{DRWNXZ} and \cite[Theorem~14.7.12]{FPT}.
 
 
 
@@ -1558,7 +1558,7 @@ Let $X$ be a connected compact Kähler manifold of dimension $n$ and $\alpha\in 
     \]
     is positive.
 \end{definition}
-The basic properties of positive currents can be found in \cite[Section~III.1]{DemBook}. Recall that a positive current is necessarily real.
+The basic properties of positive currents can be found in \cite[Section~III.1]{DemBook} and \cite[Section~7.2]{FPT}. Recall that a positive current is necessarily real.
 
 \begin{definition}\label{def:psefclass}
     We say $\alpha$ is \emph{pseudo-effective}\index{cohomology class!pseudo-effective class}\index{line bundle!pseudo-effective line bundle}\index{class!pseudo-effective class} if there is a closed positive $(1,1)$-current in $\alpha$.
@@ -1629,7 +1629,7 @@ It is clear that the polar locus of $T$ is independent of the choices of $\theta
 Assume that $\alpha$ is big.
     There is a Kähler current $T\in \alpha$ with analytic singularities, such that the polar locus of $T$ is exactly $\nK(\alpha)$. In particular, $\nK(\alpha)$ is a proper Zariski closed subset of $X$.
 \end{theorem}
-See \cite[Théorème~2.1.20]{Bou02}.
+See \cite[Théorème~2.1.20]{Bou02} and \cite[Theorem~14.4.4]{FPT}.
 
 \begin{definition}\label{def:nnlocus}
      Assume that $\alpha$ is big. The \emph{non-nef locus}\index{non-nef locus} $\nn(\alpha)$\index{$\nn(\alpha)$} of $\alpha$ is the following set:
@@ -1638,13 +1638,13 @@ See \cite[Théorème~2.1.20]{Bou02}.
      \]
      where $T_{\min}$ is a current with minimal singularities in $\alpha$.
 \end{definition}
-Note that $\nn(\alpha)\subseteq \nK(\alpha)$. Thanks to \cref{thm:Siusemi}, $\nn(\alpha)$ is a countable union of proper Zariski closed subsets of $X$. The non-Kähler locus and non-nef locus are studied in detail in \cite{Bou02}.
+Note that $\nn(\alpha)\subseteq \nK(\alpha)$. Thanks to \cref{thm:Siusemi}, $\nn(\alpha)$ is a countable union of proper Zariski closed subsets of $X$. The non-Kähler locus and non-nef locus are studied in detail in \cite{Bou02} and \cite[Section~14.4]{FPT}.
 
 
 \begin{lemma}[Siu's decomposition]\label{lma:Siudec}\index{theorem!Siu's decomposition}
     Let $E$ be a prime divisor on $X$. Then for any closed positive $(1,1)$-current $T$ on $X$, the difference $T-\nu(T,E)[E]$ is a closed positive $(1,1)$-current.
 \end{lemma}
-Here $[E]$ is the current of integration associated with $E$, while $\{E\}$ denotes the cohomology class of $E$. See \cite[Page~386, Example~1]{GH14} for the precise definition. See \cite[Lemma~2.17]{Dem12} for the proof.
+Here $[E]$ is the current of integration associated with $E$, while $\{E\}$ denotes the cohomology class of $E$. See \cite[Page~386, Example~1]{GH14} and \cite[Section~7.4]{FPT} for the current of integration. See \cite[Lemma~2.17]{Dem12} and \cite[Theorem~14.3.7]{FPT} for the proof.
 
 
 As a consequence, for each closed positive $(1,1)$-current $T$ on $X$, we can write
@@ -1669,10 +1669,10 @@ Next we recall the notion of modified nef classes.
     \end{enumerate}
     This definition is independent of the choice of $\omega$.
 \end{definition}
-These classes are called \emph{nef en codimension $1$} in Boucksom's thesis \cite{Bou02}, where they were introduced for the first time. They are also known as \emph{movable classes} in other references.
+These classes are called \emph{nef en codimension $1$} in Boucksom's thesis \cite{Bou02}, where they were introduced for the first time. They are also known as \emph{movable classes} in other references. See also \cite[Definition~14.3.8]{FPT}.
 Modified nef classes form a closed convex cone in $\mathrm{H}^{1,1}(X,\mathbb{R})$. Note that a modified nef class is necessarily pseudo-effective. A nef class is obviously modified nef.
 
-Recall the multiplicity of a cohomology class as defined in \cite[Section~2.1.3]{Bou02}:
+Recall the multiplicity of a cohomology class as defined in \cite[Section~2.1.3]{Bou02} and \cite[Definition~14.4.1 and Proposition~14.4.2]{FPT}:
 \begin{definition}\label{def:mult_class}
     Let $\alpha\in \mathrm{H}^{1,1}(X,\mathbb{R})$ be a pseudo-effective class and $D$ be a prime divisor on $X$. We define the \emph{Lelong number}\index{Lelong number} $\nu(\alpha,D)$\index{$\nu(\alpha,D)$} as follows:
     \begin{enumerate}
@@ -1777,7 +1777,7 @@ Let $X$ be a connected Kähler manifold and $L$ be a holomorphic line bundle on 
     \end{equation}
     where $Z(s)$ is the zero divisor defined by $s$ and $[\bullet]$ denote the associated current of integration.
 \end{proposition}
-See \cite[(3.11)]{Dem12}. Again, we want to check that our conventions are compatible by investigating the following simple example.
+See \cite[(3.11)]{Dem12} and \cite[Proposition~14.5.4]{FPT}. Again, we want to check that our conventions are compatible by investigating the following simple example.
 \begin{example}\label{ex:LPP1}
     Let $X=\mathbb{P}^1$ and $L=\mathcal{O}_{\mathbb{P}^1}(1)$. The homogeneous coordinates on $\mathbb{P}^1$ will be denoted by $[X_0:X_1]$. At a point $x=[X_0:X_1]\in \mathbb{P}^1$, the fiber $L_x$ is identified with the dual of $[x]$, where $[x]\subseteq \mathbb{C}^2$ is the line represented by $x$.
 
@@ -1921,7 +1921,7 @@ Then there exists $k_0(\delta,h_T)>0$ such that for all $k \geq k_0$ and $s \in 
 \]
 where $C>0$ is an absolute constant, independent of the data $(\varphi,s,k)$.
 \end{theorem}
-This is a special case of \cite[Theorem~1.4]{His12}.
+This is a special case of \cite[Theorem~1.4]{His12}. See also \cite[Corollary~14.7.9]{FPT}.
 
 
 Let us also recall a simple result about the Bergman kernel approximations:

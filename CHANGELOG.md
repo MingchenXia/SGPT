@@ -2,6 +2,14 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-11-18 — Add the Lean 4 formalization and FPT references
+
+- Announce the Lean 4 formalization of the book's statements in the Preface and link to the SGPT-lean repository. Thank Jian Wang and Siqi He for their help with the formalization before the French paragraph in Acknowledgments.
+- Add Mingchen Xia's *Foundations of pluripotential theory* as `[FPT]` with its PDF link. Introduce the companion book in the Preface and the openings of Chapters 1 and 2.
+- Add FPT locators alongside the existing citations throughout Part I. For references outside FPT's scope, point to the relevant special case, background result or alternative proof and indicate its scope in the text.
+- Footnote the upper semicontinuity condition in Definition 1.1.2 with FPT Theorem 8.1.3, which shows that the condition follows from subharmonicity on complex lines.
+- Verification. Checked the locators against the FPT source build and published PDF. Confirmed that all 130 original citation commands at 98 locations in Part I were retained. Compiled the 549-page book with XeLaTeX, with all citations and cross-references resolved and no new layout warnings. Verified the external links and inspected the 74-page review excerpt.
+
 ## 2026-11-18 — Publish the approved Comments and conjecture update
 
 - Merged [PR #11](https://github.com/MingchenXia/SGPT/pull/11) into `main` as `8342ad479d3c8a8f81ff0fb7d019c470cc5e4351` and confirmed that both proposal branches were removed.
