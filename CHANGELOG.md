@@ -2,6 +2,12 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-11-18 — Publish the approved Comments and conjecture update
+
+- Merged [PR #11](https://github.com/MingchenXia/SGPT/pull/11) into `main` as `8342ad479d3c8a8f81ff0fb7d019c470cc5e4351` and confirmed that both proposal branches were removed.
+- Published the 549-page book in website commit `619b584d5b8b548c4f9a525a780c40bbef717938`. The cover reads `Updated on November 18, 2026.` [SGPT_final.pdf](https://mingchenxia.github.io/Lectures/SGPT_final.pdf)
+- Verified that the merged tree matches the approved PR head. Recompiled with XeLaTeX with all references and citations resolved and no new layout warnings. Printed pages 353, 438 and 481 match the approved excerpts pixel for pixel. GitHub Pages deployed successfully, and the public PDF matches the release byte for byte with SHA-256 `db482e57367261cb7de0305ec0e5426ec4eea5012705f04c1e17acb6bbb12d77`.
+
 ## 2026-11-18 — Remove open problems from Comments and add a conjecture footnote
 
 - Remove the Open problems section from Comments, including Conjecture 14.3.1 and Problems 14.3.1–14.3.6.
