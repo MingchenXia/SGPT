@@ -2,6 +2,12 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-11-18 — Publish the approved Lean 4 and FPT update
+
+- Merged [PR #12](https://github.com/MingchenXia/SGPT/pull/12) into `main` as `165a687e6d6bf85885e449cfcc6cd0bd801c97f5` and confirmed removal of the local and remote proposal branches.
+- Published the 549-page book in website commit `436c3adadc214e23691ac06fbeedf8dd255dfc5b`. The cover reads `Updated on November 18, 2026.` [SGPT_final.pdf](https://mingchenxia.github.io/Lectures/SGPT_final.pdf)
+- Verified that the merged source tree matches the approved PR head. Rebuilt with XeLaTeX and checked the Lean and FPT links, the psh definition footnote and all 74 review pages pixel for pixel. GitHub Pages deployed successfully, and the public PDF matches the verified release byte for byte with SHA-256 `5e99374c87629b94e426ad52782efc9ba1a09ffebc43db34e7c44ff3209199b0`.
+
 ## 2026-11-18 — Add the Lean 4 formalization and FPT references
 
 - Announce the Lean 4 formalization of the book's statements in the Preface and link to the SGPT-lean repository. Thank Jian Wang and Siqi He for their help with the formalization before the French paragraph in Acknowledgments.
