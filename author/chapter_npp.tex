@@ -14,7 +14,7 @@ In this book we use the non-pluripolar product. This construction, originating i
 
 The chapter is organized as follows. We first recall the Bedford--Taylor product for locally bounded plurisubharmonic functions. We then introduce the non-pluripolar product and record its basic functorial and locality properties. After a short discussion of quasi-continuous functions and capacity, we prove the convergence and concentration results used later in the theory of envelopes. The key tools extracted from this chapter are the monotonicity theorem, semicontinuity theorem, the concentration theorem for envelopes and the domination principle.
 
-The reader may consult \cite{BEGZ10} and \cite{DDNLsurv} for broader background. Our presentation is adapted to the later use of envelopes and singularity types, so some estimates are stated in a form slightly more specific than in the standard references.
+The reader may consult \cite{BEGZ10} and \cite{DDNLsurv} for broader background. My companion book \emph{Foundations of pluripotential theory} \cite[Chapters~9--10, 15--16]{FPT} gives detailed proofs of the Bedford--Taylor, non-pluripolar product and capacity results used here. Our presentation is adapted to the later use of envelopes and singularity types, so some estimates are stated in a form slightly more specific than in the standard references.
 
 
 \section{Bedford--Taylor theory}\label{sec:BTtheory}
@@ -40,7 +40,7 @@ in a very similar way.
 \begin{proposition}\label{prop:npp:L40}
     The product $\ddc \varphi_1\wedge \cdots \wedge \ddc\varphi_p$ is a closed positive $(p,p)$-current on $X$. Moreover, the product is symmetric in the $\varphi_i$'s.
 \end{proposition}
-See \cite[Proposition~3.3, Corollary~3.12]{GZ17}.\footnote{In \cite[Proposition~3.3]{GZ17}, the authors claim that $\mathrm{d}u\wedge \mathrm{d}^{\mathrm{c}}u\wedge T$ is closed, which is wrong already in the smooth case.} The proof relies crucially on an important estimate, known as the \emph{Chern--Levine--Nirenberg inequality}. See \cite{CLN69} or \cite[Theorem~3.9]{GZ17}.
+See \cite[Proposition~3.3, Corollary~3.12]{GZ17} and \cite[Theorem~9.2.5]{FPT}.\footnote{In \cite[Proposition~3.3]{GZ17}, the authors claim that $\mathrm{d}u\wedge \mathrm{d}^{\mathrm{c}}u\wedge T$ is closed, which is wrong already in the smooth case. See \cite[Lemma~9.13.1 and Section~B.15]{FPT} for the gradient construction.} The proof relies crucially on an important estimate, known as the \emph{Chern--Levine--Nirenberg inequality}. See \cite{CLN69}, \cite[Theorem~3.9]{GZ17} and \cite[Theorem~9.1.3]{FPT}.
 
 The Bedford--Taylor theory has many satisfactory properties.
 
@@ -56,9 +56,9 @@ The Bedford--Taylor theory has many satisfactory properties.
 \end{theorem}
 Here the notation $\rightharpoonup$ denotes the weak-* convergence of currents.
 
-We refer to \cite[Theorem~3.18, Theorem~3.23]{GZ17} for the proofs.
+We refer to \cite[Theorem~3.18, Theorem~3.23]{GZ17} and \cite[Theorems~9.2.5 and~9.5.1]{FPT} for the proofs.
 
-By contrast, we emphasize that the Bedford--Taylor product is not continuous with respect to the $L^1_{\loc}$-convergence in general. A simple example can be found in \cite[Example~3.25]{GZ17}.
+By contrast, we emphasize that the Bedford--Taylor product is not continuous with respect to the $L^1_{\loc}$-convergence in general. A simple example can be found in \cite[Example~3.25]{GZ17}. For the continuity theorem under convergence in capacity, see \cite[Theorem~9.4.8]{FPT}.
 
 \begin{lemma}\label{lma:boundedfibrefubini}
     Let $Q\subseteq\mathbb{C}^n$ and $D\subseteq\mathbb{C}^m$ be domains, let $p_2\colon Q\times D\to D$ be the second projection, and let $\eta$ be a smooth real $(m,m)$-form on $D$. Let $u_1,\ldots,u_n$ be locally bounded psh functions on $Q\times D$, and put
@@ -77,7 +77,7 @@ By contrast, we emphasize that the Bedford--Taylor product is not continuous wit
 \begin{proof}
     By linearity, it suffices to consider $\eta\geq0$.
     We first prove \eqref{eq:boundedfibrefubini} when $h$ is continuous.
-    On a product neighborhood of $\Supp h$, choose smooth psh functions $u_r^{(l)}\searrow u_r$, $1\leq r\leq n$. For the smooth approximants, decompose each $\ddc u_r^{(l)}$ according to the $x$- and $z$-directions. After wedging with $p_2^*\eta$, every term containing a factor $\mathrm{d}z_\alpha$ or $\mathrm{d}\bar z_\beta$ vanishes; hence only the factors $\ddc_x(u_r^{(l)})_z$ remain, and \eqref{eq:boundedfibrefubini} follows from the usual Fubini theorem. As $l\to\infty$, the Bedford--Taylor monotone continuity theorem \cref{thm:contMA} gives convergence on $Q\times D$ and on every fibre. Fix $K\Subset Q$ and $L\Subset D$ containing the projections of $\Supp h$. The Chern--Levine--Nirenberg estimate \cite[Theorem~3.9]{GZ17}, together with the local uniform bounds for $u_r^{(l)}$, bounds the masses of the fibre products on $K$ uniformly for $z\in L$ and $l$. Since $h_z=0$ for $z\notin L$, dominated convergence proves \eqref{eq:boundedfibrefubini}.
+    On a product neighborhood of $\Supp h$, choose smooth psh functions $u_r^{(l)}\searrow u_r$, $1\leq r\leq n$. For the smooth approximants, decompose each $\ddc u_r^{(l)}$ according to the $x$- and $z$-directions. After wedging with $p_2^*\eta$, every term containing a factor $\mathrm{d}z_\alpha$ or $\mathrm{d}\bar z_\beta$ vanishes; hence only the factors $\ddc_x(u_r^{(l)})_z$ remain, and \eqref{eq:boundedfibrefubini} follows from the usual Fubini theorem. As $l\to\infty$, the Bedford--Taylor monotone continuity theorem \cref{thm:contMA} gives convergence on $Q\times D$ and on every fibre. Fix $K\Subset Q$ and $L\Subset D$ containing the projections of $\Supp h$. The Chern--Levine--Nirenberg estimate \cite[Theorem~3.9]{GZ17} (see also \cite[Theorem~9.1.3]{FPT}), together with the local uniform bounds for $u_r^{(l)}$, bounds the masses of the fibre products on $K$ uniformly for $z\in L$ and $l$. Since $h_z=0$ for $z\notin L$, dominated convergence proves \eqref{eq:boundedfibrefubini}.
 
     It remains to pass from continuous to bounded Borel functions. Fix relatively compact open sets $U\Subset Q$ and $V\Subset D$. If $\chi\in C_c(U)$, then
     \[
@@ -123,7 +123,7 @@ By contrast, we emphasize that the Bedford--Taylor product is not continuous wit
 \end{proof}
 
 \section{The non-pluripolar products}\label{sec:npp}
-The proofs of the standard results recalled in this section can be found in \cite{BEGZ10}.
+The proofs of the standard results recalled in this section can be found in \cite{BEGZ10} and \cite[Sections~15.1--15.5]{FPT}.
 
 Let $X$ be a complex manifold.
 
@@ -176,7 +176,7 @@ is well-defined if and only if each product
     \item\label{itm:prop:npp1:2} The current $\ddc \varphi_1\wedge\cdots\wedge \ddc \varphi_p$ and the fact that it is well-defined depend only on the currents $\ddc \varphi_j$, not on the choice of the $\varphi_j$'s nor on the ordering of the $\varphi_j$'s.
     \item\label{itm:prop:npp1:3} When $\varphi_1,\ldots,\varphi_p\in L^{\infty}_{\loc}(X)$, the non-pluripolar product $\ddc \varphi_1\wedge\cdots\wedge \ddc \varphi_p$ is well-defined and is equal to the Bedford--Taylor product. More generally, if $q\leq p$, and we only assume that $\varphi_1,\ldots,\varphi_q\in L^{\infty}_{\loc}(X)$, and that the non-pluripolar product $T\coloneqq \ddc \varphi_{q+1}\wedge \cdots \wedge \ddc \varphi_p$ is well-defined, then the non-pluripolar product $\ddc \varphi_1\wedge\cdots\wedge \ddc \varphi_p$ is also well-defined, and is equal to the Bedford--Taylor product $\ddc \varphi_1\wedge\cdots\wedge \ddc \varphi_q\wedge T$ as in \cref{rmk:extensionBT}.
     \item\label{itm:prop:npp1:4} Assume that $\ddc \varphi_1\wedge\cdots\wedge \ddc \varphi_p$ is well-defined. Then $\ddc \varphi_1\wedge\cdots\wedge \ddc \varphi_p$ puts no mass on pluripolar sets.
-    \item\label{itm:prop:npp1:5} Assume that $\ddc \varphi_1\wedge\cdots\wedge \ddc \varphi_p$ is well-defined. Then $\bigwedge_{j=1}^p \ddc \varphi_j$ is a closed positive $(p,p)$-current on $X$.\footnote{This current is in fact strongly positive, as shown in \cite{Xiabdiv2}.}
+    \item\label{itm:prop:npp1:5} Assume that $\ddc \varphi_1\wedge\cdots\wedge \ddc \varphi_p$ is well-defined. Then $\bigwedge_{j=1}^p \ddc \varphi_j$ is a closed positive $(p,p)$-current on $X$.\footnote{This current is in fact strongly positive, as shown in \cite{Xiabdiv2} and \cite[Proposition~15.1.4]{FPT}.}
     \item\label{itm:prop:npp1:6} The product is multilinear: Let $\psi_1\in \PSH(X)$, $a,b>0$ then
 \begin{equation}\label{eq:ppp6}
 \ddc (a\varphi_1+b\psi_1)\wedge \bigwedge_{j=2}^p \ddc \varphi_j =a\,\ddc \varphi_1\wedge \bigwedge_{j=2}^p \ddc \varphi_j + b\,\ddc \psi_1\wedge \bigwedge_{j=2}^p \ddc \varphi_j
@@ -201,7 +201,7 @@ In view of \ref{itm:prop:npp1:3}, we do not need to specify whether our product 
     \[
         \lim_{k\to\infty} \int_{\Delta^1} \mathds{1}_{\{\varphi>-k\}}f\, \Delta \bigl(\varphi\lor (-k)\bigr)=\int_{\Delta^1} \mathds{1}_{\{\varphi>-\infty\}}f\,\Delta\varphi,
     \]
-    for any subharmonic function $\varphi$ on the unit disk $\Delta^1$, which is a special case of \cite[Proposition~3.3]{EK24}.
+    for any subharmonic function $\varphi$ on the unit disk $\Delta^1$, which is a special case of \cite[Proposition~3.3]{EK24}. See also \cite[Proposition~15.3.6]{FPT}.
 \end{example}
 
 \begin{definition}\label{def:npp:L146}
@@ -224,11 +224,11 @@ The product $T_1\wedge\cdots\wedge T_p$ is independent of the choices we made th
     \[
     T_1\wedge \cdots \wedge T_p\cap T
     \]
-    for any closed positive current $T$. This is the \emph{relative non-pluripolar product} introduced by Vu \cite{Vu20}. Unlike the relative Bedford--Taylor products, the relative non-pluripolar products present some pathological behaviors. For example, they are not linear in general.
+    for any closed positive current $T$. This is the \emph{relative non-pluripolar product} introduced by Vu \cite{Vu20}. For the relative Bedford--Taylor construction, see \cite[Definition~9.1.1]{FPT}. Unlike the relative Bedford--Taylor products, the relative non-pluripolar products present some pathological behaviors. For example, they are not linear in general.
 \end{remark}
 
 \begin{remark}\label{rmk:npp:L169}
-    Another possible generalization of the non-pluripolar products is motivated by \itemref{itm:prop:npp1:1}. One could begin by defining a generalized notion of plurisubharmonic functions on $\mathcal{F}$-open sets, called \emph{$\mathcal{F}$-plurisubharmonic functions} and define their non-pluripolar products. See \cite{EKFW11, EKW14}.
+    Another possible generalization of the non-pluripolar products is motivated by \itemref{itm:prop:npp1:1}. One could begin by defining a generalized notion of plurisubharmonic functions on $\mathcal{F}$-open sets, called \emph{$\mathcal{F}$-plurisubharmonic functions} and define their non-pluripolar products. See \cite{EKFW11, EKW14}. For plurifine locality of the ordinary Bedford--Taylor product, see \cite[Theorem~10.4.3]{FPT}.
 \end{remark}
 
 \begin{proposition}\label{prop:nppwelldef}
@@ -311,7 +311,7 @@ The capacity is not very sensitive to the choice of $\theta$:
     \Capa_{\theta}(E)\leq f\left( \Capa_{\theta'}(E)\right),\quad \Capa_{\theta'}(E)\leq g\left( \Capa_{\theta}(E)\right).
     \]
 \end{theorem}
-A more general result is proved in \cite{Lu21}. Similar comparison results hold between $\theta$-capacity and the classical Bedford--Taylor capacity, see \cite[Section~9.2]{GZ17} for the proof. As a consequence, we can freely apply the results in \cite[Section~4.2]{GZ17}, even though capacity has a different meaning there.
+A more general result is proved in \cite{Lu21}. See also \cite[Theorem~16.9.8]{FPT}. Similar comparison results hold between $\theta$-capacity and the classical Bedford--Taylor capacity, see \cite[Section~9.2]{GZ17} and \cite[Proposition~16.9.9]{FPT} for the proof. As a consequence, we can freely apply the results in \cite[Section~4.2]{GZ17} and \cite[Sections~9.3--9.4]{FPT}, even though capacity has a different meaning there.
 
 \begin{definition}\label{def:qc_fun}
 Let $U$ be an open subset of $X$.
@@ -330,11 +330,11 @@ Thanks to \cref{thm:comp_capa}, the notion of quasi-continuous functions is inde
         \item\label{itm:thm:pp_cap:2} $\Capa_{\theta}(A)=0$.
     \end{enumerate}
 \end{theorem}
-See \cite[Theorem~4.40]{GZ17} for the proof.
+See \cite[Theorem~4.40]{GZ17} for the local result, and \cite[Theorem~10.1.4 and Proposition~16.9.9]{FPT} for the local and global capacity comparisons.
 
 
 \begin{example}\label{ex:psh_qc}
-    A quasi-plurisubharmonic function on an open subset $U\subseteq X$ is always quasi-continuous. See \cite[Theorem~4.20]{GZ17} for the proof.
+    A quasi-plurisubharmonic function on an open subset $U\subseteq X$ is always quasi-continuous. See \cite[Theorem~4.20]{GZ17} and \cite[Theorem~9.4.2 and Proposition~16.9.9]{FPT} for the proof.
 
     More generally, if $\varphi,\psi$ are two quasi-plurisubharmonic functions on $U$, then the following function
     \[
@@ -352,7 +352,7 @@ Let $U$ be an open subset of $X$.
     \[
         \lim_{i\in I} \Capa_{\theta}\Bigl( \{f_i>f+\delta\} \Bigr)=0,\quad \lim_{i\in I} \Capa_{\theta}\Bigl( \{f_i<f-\delta\} \Bigr)=0\footnotemark.
     \]
-    \footnotetext{It is very tempting to write $\lim_{i\in I} \Capa_{\theta}\left( \{|f_i-f|>\delta\} \right)=0$, as in \cite[Definition~4.23]{GZ17} for example. But the set where $f_i-f$ is not defined is not a pluripolar set in general. Hence this abuse of notation is not acceptable.}
+    \footnotetext{It is very tempting to write $\lim_{i\in I} \Capa_{\theta}\left( \{|f_i-f|>\delta\} \right)=0$, as in \cite[Definition~4.23]{GZ17} for example. But the set where $f_i-f$ is not defined is not a pluripolar set in general. Hence this abuse of notation is not acceptable. The two gap sets are also used in \cite[Definition~9.4.5]{FPT}.}
     We sometimes write $f_i\xrightarrow{\mathrm{C}} f$\index{$\xrightarrow{\mathrm{C}}$}. We say that the convergence is \emph{locally in capacity} if the two limits hold after intersecting the gap sets with each compact subset of $U$. When $U=X$, the two notions agree.
 \end{definition}
 Note that $f$ is not uniquely determined by the net $(f_i)_{i\in I}$. Thanks to \cref{thm:comp_capa}, the notion of convergence in capacity is independent of the choice of $\theta$.
@@ -367,7 +367,7 @@ Let $U$ be an open subset of $X$.
     Then $(\varphi_i)_{i\in I}$ converges to $\varphi$ locally in capacity on $U$.
 \end{proposition}
 \begin{proof}
-    First suppose that the net is a sequence. On each coordinate ball relatively compact in $U$, add a smooth local potential of $\theta$ to reduce to the psh case. The sequence converges on compact subsets in the local Bedford--Taylor capacity by \cite[Theorem~7.2]{BT82}. To pass to the global capacity on each compact core of the ball, first use a Kähler form $\omega$: its capacity tests lie between $-1$ and $0$, so after adding a bounded local potential of $\omega$ they can be rescaled and translated to admissible Bedford--Taylor tests, with a common scale. Thus local capacity convergence on the core implies convergence there in $\Capa_\omega$, and then in $\Capa_\theta$ by \cref{thm:comp_capa}. Cover a given compact subset of $U$ by finitely many such cores.
+    First suppose that the net is a sequence. On each coordinate ball relatively compact in $U$, add a smooth local potential of $\theta$ to reduce to the psh case. The sequence converges on compact subsets in the local Bedford--Taylor capacity by \cite[Theorem~7.2]{BT82}. See also \cite[Proposition~15.6.7]{FPT}. To pass to the global capacity on each compact core of the ball, first use a Kähler form $\omega$: its capacity tests lie between $-1$ and $0$, so after adding a bounded local potential of $\omega$ they can be rescaled and translated to admissible Bedford--Taylor tests, with a common scale. Thus local capacity convergence on the core implies convergence there in $\Capa_\omega$, and then in $\Capa_\theta$ by \cref{thm:comp_capa}. Cover a given compact subset of $U$ by finitely many such cores.
 
     For a decreasing net, for each rational $c$ use second countability to select a countable subcover of $\{\varphi<c\}=\bigcup_i\{\varphi_i<c\}$ from the sets on the right. The selected indices for all $c$ are dominated successively by an increasing sequence of indices, whose potentials still decrease to $\varphi$. For an increasing net, $\varphi_i\leq\varphi$ everywhere by \cref{prop:pshfuncdetdense}. Choquet's lemma \cref{prop:Choquet}, applied after adding smooth local potentials on a countable cover, gives a countable subfamily with the same regularized supremum $\varphi$. Taking successive upper bounds of its indices gives a sequence of potentials increasing to $\varphi$ almost everywhere by \cref{prop:supsupstardiff}. In either case, each gap set of the net is contained, on the tail after a selected index, in the corresponding gap set of that sequence. The sequence case proves the result.
 \end{proof}
@@ -380,7 +380,7 @@ Let $U$ be an open subset of $X$.
     \]
     weakly as currents on $U$.
 \end{theorem}
-See \cite[Theorem~4.26]{GZ17}\footnote{In the displayed formula in the statement of \cite[Theorem~4.26]{GZ17}, $1\leq j\leq p$ should be $1\leq i\leq p$ on both sides.}.
+See \cite[Theorem~4.26]{GZ17} and \cite[Theorem~9.4.8]{FPT}\footnote{In the displayed formula in the statement of \cite[Theorem~4.26]{GZ17}, $1\leq j\leq p$ should be $1\leq i\leq p$ on both sides.}.
 
 \section{Properties of non-pluripolar products}\label{sec:nppprop}
 Let $X$ be a connected compact Kähler manifold of dimension $n$ and $\theta,\theta_1,\ldots,\theta_n$ be closed real smooth $(1,1)$-forms on $X$.
@@ -399,7 +399,7 @@ Recall the following basic result:
 \begin{proposition}\label{prop:nppposimpbig}
     Assume that $\PSH(X,\theta)_{>0}$ is non-empty. Then the cohomology class $\{\theta\}$ is big.
 \end{proposition}
-See \cite[Proposition~1.22]{BEGZ10}.
+See \cite[Proposition~1.22]{BEGZ10} and \cite[Theorem~17.4.20]{FPT}.
 
 We recall a few basic facts about the non-pluripolar masses.
 \begin{proposition}\label{prop:nppmassinv}
@@ -429,7 +429,7 @@ Here $\pi^*T_i$ is defined as follows: Write $T_i=\theta_i+\ddc \varphi_i$ for s
         \int_X T_1\wedge \cdots \wedge T_n\geq \prod_{i=1}^n \left( \int_X T_i^n \right)^{1/n}.
     \]
 \end{theorem}
-See \cite{DDNL19log} for the proof.
+See \cite{DDNL19log} and \cite[Theorem~17.4.23]{FPT} for the proof.
 \begin{remark}\label{rmk:linearcompsh}
     Here and in the sequel, when we write expressions like $t\varphi+(1-t)\psi$ for $\varphi,\psi\in \QPSH(X)$, we will follow the convention that when $t=0$, the value is $\psi$ and when $t=1$, the value is $\varphi$.
 \end{remark}
@@ -475,7 +475,7 @@ then
 \]
 weakly as measures\footnote{Recall that the weak convergence of Radon measures is stronger than the weak convergence as currents in general. When the Radon measures have uniformly bounded total variation, they are equivalent.}. In particular, the limit in \eqref{eq:semicon1} exists and equality holds in \eqref{eq:semicon1}.
 \end{theorem}
-See \cite[Theorem~2.6]{DDNLsurv} for the proof.
+See \cite[Theorem~2.6]{DDNLsurv} and \cite[Corollary~15.6.8]{FPT} for the proof.
 
 The non-pluripolar mass is a monotone quantity with respect to the singularity type.
 \begin{theorem}[Monotonicity theorem]\label{thm:mono}\index{theorem!monotonicity theorem (non-pluripolar product)}
@@ -489,7 +489,7 @@ The non-pluripolar mass is a monotone quantity with respect to the singularity t
  \]
  In other words, the non-pluripolar mass increases as the potentials become less singular.
 \end{theorem}
-See \cite[Theorem~1.1]{DDNL18mono}. We will prove a vast extension of this theorem in \cref{prop:mono2}.
+See \cite[Theorem~1.1]{DDNL18mono} and \cite[Theorem~15.7.4 and Corollary~15.7.5]{FPT}. We will prove a vast extension of this theorem in \cref{prop:mono2}.
 
 By this theorem, the non-pluripolar mass $\int_X \theta_{\varphi}^n$ can be used as a rough measure of the singularities of $\varphi\in \PSH(X,\theta)$. In \cref{sec:Penv}, we shall refine this measure by defining the notion of $P$-envelope.
 
@@ -646,7 +646,7 @@ Next we introduce an envelope construction, which will be repeatedly used in the
     P_{\theta}(f)\coloneqq \uscsup \left\{ \varphi\in \PSH(X,\theta): \varphi\leq f\textup{ quasi-everywhere} \right\}\footnotemark.
     \end{equation}
     \index{$P_{\theta}(f)$}
-    \footnotetext{In the original article \cite{DDNLsurv}, the authors required that $\varphi\leq f$ everywhere. But in the proof of their Theorem~2.7 (\cref{thm:concentration} below), they actually relied on the current definition. In the most relevant case, if $f$ is $\mathcal{F}$-upper semicontinuous (for example, if $f$ is upper semicontinuous), then these two definitions coincide. This is due to \cref{lma:pshfunfinitelocuspfdense} and \cref{prop:pshfunFcont}.}
+    \footnotetext{In the original article \cite{DDNLsurv}, the authors required that $\varphi\leq f$ everywhere. But in the proof of their Theorem~2.7 (\cref{thm:concentration} below), they actually relied on the current definition. In the most relevant case, if $f$ is $\mathcal{F}$-upper semicontinuous (for example, if $f$ is upper semicontinuous), then these two definitions coincide. This is due to \cref{lma:pshfunfinitelocuspfdense} and \cref{prop:pshfunFcont}. See also \cite[Definition~16.1.3 and Proposition~16.1.4]{FPT} for the obstacle inequality and its exceptional sets.}
 \end{definition}
 The function $P_{\theta}(f)$ is either constantly $\pm\infty$ or lies in $\PSH(X,\theta)$. Moreover, given another function $g\colon X\rightarrow [-\infty,\infty]$, equal to $f$ quasi-everywhere, we have $P_{\theta}(f)=P_{\theta}(g)$. In particular, it makes sense to talk about $P_{\theta}(f)$ even if $f$ is only defined outside a pluripolar set.
 
@@ -703,7 +703,7 @@ Thanks to \eqref{eq:Pthetafleqfqe}, we can rewrite \eqref{eq:Pthetafconc} as
 \int_{\{P_{\theta}(f)\neq f\}} \theta_{P_{\theta}(f)}^n=0.
 \]
 We shall say that $\theta_{P_{\theta}(f)}^n$ is carried by the contact set $\{P_{\theta}(f)=f\}$.
-\footnote{It is tempting to say that $\theta_{P_{\theta}(f)}^n$ is supported on the contact set $\{P_{\theta}(f)=f\}$, as people are already doing in the literature. It should be mentioned that this is an abuse of the language, since the support of $\theta_{P_{\theta}(f)}^n$ (as a closed subset of $X$) could be much larger in general. One could probably introduce a notion of plurifine support, similar to what Fuglede did in the classical potential theory \cite{Fug72}.}
+\footnote{It is tempting to say that $\theta_{P_{\theta}(f)}^n$ is supported on the contact set $\{P_{\theta}(f)=f\}$, as people are already doing in the literature. It should be mentioned that this is an abuse of the language, since the support of $\theta_{P_{\theta}(f)}^n$ (as a closed subset of $X$) could be much larger in general. One could probably introduce a notion of plurifine support, similar to what Fuglede did in the classical potential theory \cite{Fug72}. See also \cite[Theorem~16.2.5]{FPT} for the contact-set concentration statement.}
 
 
 \begin{proof}
@@ -1190,7 +1190,7 @@ Next we prove a domination principle.
 \end{lemma}
 
 \begin{proof}
-    By \cref{lma:kahcurrentposmass}, there is $\psi\in \PSH(X,\theta)$ with $\theta_{\psi}$ a Kähler current and $\psi\leq\varphi$. Since $\mathcal{I}(k\psi)\subseteq \mathcal{I}(k\varphi)$, it suffices to prove the assertion with $\psi$ in place of $\varphi$. In this case, the result follows from Hörmander's $L^2$-estimate (\cite{Hor66}), see \cite[Theorem~13.21]{Dem12}.
+    By \cref{lma:kahcurrentposmass}, there is $\psi\in \PSH(X,\theta)$ with $\theta_{\psi}$ a Kähler current and $\psi\leq\varphi$. Since $\mathcal{I}(k\psi)\subseteq \mathcal{I}(k\varphi)$, it suffices to prove the assertion with $\psi$ in place of $\varphi$. In this case, the result follows from Hörmander's $L^2$-estimate (\cite{Hor66}), see \cite[Theorem~13.21]{Dem12} and \cite[Lemma~14.6.5 and Theorem~14.6.7]{FPT}.
 \end{proof}
 
 
@@ -1212,14 +1212,14 @@ and there is a constant $C=C(X,\omega,\|f\|_{C^{1,1}})$ such that
 \]
 \end{theorem}
 \index{theorem!Tosatti--Chu--Zhou regularity}
-This is the main result of \cite{Tos18,CZ19}. The proof of this theorem relies on some PDE techniques far beyond the scope of the current book. Weaker results were due to \cite{Ber09, Ber19}.
+This is the main result of \cite{Tos18,CZ19}. For a proof see \cite[Theorem~16.2.26]{FPT}. The proof of this theorem relies on some PDE techniques far beyond the scope of the current book. Weaker results were due to \cite{Ber09, Ber19}. See also \cite[Proposition~16.2.22]{FPT} for the approximation by penalized equations.
 
 
 \begin{proposition}[Darvas--Rubinstein]\label{prop:DR16_C11bar}
 Let $\omega$ be a K\"ahler form on $X$, and let $f_1,f_2\in C^{1,\overline{1}}(X)$. Then $P_\omega(\min\{f_1,f_2\})\in C^{1,\overline{1}}(X)$.
 \end{proposition}
 \index{theorem!Darvas--Rubinstein regularity}
-This is \cite[Theorem~2.5]{DR16}. The original proof relies unfortunately on \cite{BD12}, which can be replaced by \cref{thm:Tos_C11}.
+This is \cite[Theorem~2.5]{DR16}. See also \cite[Theorem~16.2.24]{FPT}. The original proof relies unfortunately on \cite{BD12}, which can be replaced by \cref{thm:Tos_C11}. For a trace estimate for the penalized equation, see \cite[Lemma~16.2.15]{FPT}.
 
 
 
@@ -1483,7 +1483,7 @@ In particular, $V_{\theta}\in C^{1,\overline{1}}\bigl(X\setminus\nK(\{\theta\})\
 \end{theorem}
 \index{theorem!Di Nezza--Trapani regularity}
 
-We refer to \cite{DNT23} for the proof.
+We refer to \cite{DNT23} and \cite[Theorem~16.2.29]{FPT} for the proof.
 
 
 

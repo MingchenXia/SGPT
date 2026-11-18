@@ -18,9 +18,9 @@ is governed by the Euclidean volume of the Newton body. This gives a toric model
 
 The chapter also proves the real Monge--Amp\`ere formula for toric metrics, the toric energy formula, and the expression of the $d_1$-distance in convex terms. These results will be used again in \cref{chap:toric_big}, where the ample assumption is removed and the Newton body is compared with partial Okounkov bodies.
 
-We assume familiarity with basic toric geometry at the level of \cite{CLS11}. Some convex-analytic facts used below are recalled in \cref{chap:convex}. The chapter can be skipped on a first reading if the reader is only interested in the non-toric theory, but it provides useful examples and a guiding model for several later constructions.
+We assume familiarity with basic toric geometry at the level of \cite{CLS11}. For a construction of the ample toric setting, see also \cite[Sections~18.7--18.9]{FPT}. Some convex-analytic facts used below are recalled in \cref{chap:convex}. The chapter can be skipped on a first reading if the reader is only interested in the non-toric theory, but it provides useful examples and a guiding model for several later constructions.
 
-Finally, throughout the book convex functions are understood in the usual sense: the function $\mathbb R\ni x\mapsto x^2$ is convex. This convention is opposite to the convention often used in toric geometry, including parts of \cite{CLS11}; care is therefore needed when comparing formulas.
+Finally, throughout the book convex functions are understood in the usual sense: the function $\mathbb R\ni x\mapsto x^2$ is convex. This convention is opposite to the convention often used in toric geometry, including parts of \cite{CLS11}; care is therefore needed when comparing formulas. See also \cite[Definition~18.1.1]{FPT} for our convexity convention.
 
 \section{Toric setup}\label{sec:toricsetup}
 Let $T$ be a complex torus of dimension $n$\footnote{Namely, an algebraic group defined over $\mathbb{C}$, which is isomorphic to $\mathbb{G}_{\mathrm{m}}^n$.} and let $T_c\subseteq T(\mathbb{C})$ denote the corresponding compact torus.
@@ -28,7 +28,7 @@ Let $T$ be a complex torus of dimension $n$\footnote{Namely, an algebraic group 
 Write $M$ for the character lattice of $T$, which is a free Abelian group of rank $n$. Similarly, let $N$ be the cocharacter lattice of $T$, which is the dual lattice of $M$. Given $m\in M$, the corresponding character of $T$ is denoted by $\chi^m$.
 Write $M_{\mathbb{R}}=M\otimes_{\mathbb{Z}} \mathbb{R}$ and $N_{\mathbb{R}}=N\otimes_{\mathbb{Z}}\mathbb{R}$. The pairing between $M_{\mathbb{R}}$ and $N_{\mathbb{R}}$ is denoted by $\langle \bullet,\bullet \rangle$.
 
-Let $P\subseteq M_{\mathbb{R}}$ be a full-dimensional \emph{smooth}\footnote{Recall that \emph{smooth} means that for every vertex $v\in P$, if $w_E$ denotes the first lattice point after $v$ as one traverses each edge $E$ of $P$ containing $v$, then $\{w_E-v\}_E$ forms a basis of $M$. See \cite[Definition~2.4.2]{CLS11}. We also say $P$ is a \emph{Delzant polytope}\index{polytope!Delzant polytope} in this case.} lattice polytope\footnote{A \emph{lattice polytope}\index{polytope!lattice polytope} in $M_{\mathbb{R}}$ is the convex hull of finitely many points in $M$.}.
+Let $P\subseteq M_{\mathbb{R}}$ be a full-dimensional \emph{smooth}\footnote{Recall that \emph{smooth} means that for every vertex $v\in P$, if $w_E$ denotes the first lattice point after $v$ as one traverses each edge $E$ of $P$ containing $v$, then $\{w_E-v\}_E$ forms a basis of $M$. See \cite[Definition~2.4.2]{CLS11} and \cite[Definition~18.7.1]{FPT}. We also say $P$ is a \emph{Delzant polytope}\index{polytope!Delzant polytope} in this case.} lattice polytope\footnote{A \emph{lattice polytope}\index{polytope!lattice polytope} in $M_{\mathbb{R}}$ is the convex hull of finitely many points in $M$.}.
 
 Given any (closed) facet $F$ of $P$, let $u_F\in N$ denote the unique ray generator (the first non-zero integral element) of the inward normal ray of $F$. Then $P$ can be represented as
 \begin{equation}\label{eq:Pfacetrep}
@@ -54,7 +54,7 @@ Let $\Supp_P\colon N_{\mathbb{R}} \rightarrow \mathbb{R}$ denote the \emph{suppo
 \[
 \Supp_P(n)=\max\left\{ \langle m,n \rangle: m\in P \right\}.
 \]
-Note that our support function differs from \cite[Proposition~4.2.14]{CLS11}, where instead of a maximum, they took the minimum.
+Note that our support function differs from \cite[Proposition~4.2.14]{CLS11}, where instead of a maximum, they took the minimum. The maximum convention is also used in \cite[Definition~18.2.1]{FPT}.
 
 Recall that the \emph{characteristic function} $\chi_P\colon M_{\mathbb{R}}\rightarrow \{0,\infty\}$ of $P$ is defined as in \cref{ex:charconvex}:
 \[
@@ -65,15 +65,15 @@ Recall that the \emph{characteristic function} $\chi_P\colon M_{\mathbb{R}}\righ
     \end{cases}
 \]
 
-Let $X=X_{\Sigma}$ be the smooth projective toric variety corresponding to $\Sigma$. See \cite[Theorem~3.1.5]{CLS11} for the construction of $X$ and \cite[Theorem~3.1.19]{CLS11} for the smoothness of $X$. There is a canonical embedding $T\subseteq X$ as a dense Zariski open subset.
+Let $X=X_{\Sigma}$ be the smooth projective toric variety corresponding to $\Sigma$. See \cite[Theorem~3.1.5]{CLS11} for the construction of $X$ and \cite[Theorem~3.1.19]{CLS11} for the smoothness of $X$. See also \cite[Theorem~18.7.3]{FPT} for both assertions. There is a canonical embedding $T\subseteq X$ as a dense Zariski open subset.
 
 Let $D$ be the Cartier divisor on $X$ defined by $P$:
 \[
 D=\sum_{\rho\in \Sigma(1)} a_{\rho}D_{\rho},
 \]
-where $D_{\rho}$ is the toric prime divisor defined by $\rho$ under the orbit-cone correspondence \cite[Theorem~3.2.6]{CLS11}.
+where $D_{\rho}$ is the toric prime divisor defined by $\rho$ under the orbit-cone correspondence \cite[Theorem~3.2.6]{CLS11}. See also \cite[Proposition~18.8.2]{FPT}.
 
-Let $L$ be the toric line bundle induced by $P$, namely $L=\mathcal{O}_X(D)$. Since $P$ is a smooth (Delzant) lattice polytope, $L$ is very ample by \cite[Proposition~2.4.4, Proposition~6.1.10]{CLS11}; in particular, $L$ is ample.
+Let $L$ be the toric line bundle induced by $P$, namely $L=\mathcal{O}_X(D)$. Since $P$ is a smooth (Delzant) lattice polytope, $L$ is very ample by \cite[Proposition~2.4.4, Proposition~6.1.10]{CLS11} and \cite[Theorems~18.7.3 and~18.8.5]{FPT}; in particular, $L$ is ample.
 
 We will choose the base $\mathrm{e}$ for the logarithm map
 \begin{equation}\label{eq:log}
@@ -181,7 +181,7 @@ F_0=G_0^* \in \mathcal{E}^{\infty}(N_{\mathbb{R}},P).
 \end{equation}
 Here $G_0^*$ is the Legendre transform of $G_0$, as recalled in \cref{def:Legendregeneral}. The set $\mathcal{E}^{\infty}(N_{\mathbb{R}},P)$ is defined in \cref{def:convexPfunctions}.
 
-By Guillemin's theorem \cite{Gui94, CDG03}, $\ddc\Trop^* F_0$ can be extended to a unique K\"ahler form $\omega$ in $c_1(L)$. The K\"ahler form $\omega$ is clearly $T_c$-invariant.
+By Guillemin's theorem \cite{Gui94, CDG03} (see also \cite[Theorem~18.9.1]{FPT}), $\ddc\Trop^* F_0$ can be extended to a unique K\"ahler form $\omega$ in $c_1(L)$. The K\"ahler form $\omega$ is clearly $T_c$-invariant.
 
 For each $\rho\in \Sigma(1)$, we write
 \[
@@ -551,7 +551,7 @@ The complex Monge--Ampère operator is closely related to the real one:
         \int_X  \omega^n=n!\vol P.
     \]
 \end{proposition}
-Here the real Monge--Ampère operator is defined in \cref{def:realMA}. The normalization of the Lebesgue measure $\vol$ on $M_{\mathbb{R}}$ is such that the fundamental lattice cube has measure $1$.\footnote{In some references like \cite{GKZ08}, the normalization is so that the fundamental lattice cube has measure $n!$. Be careful when making comparisons with these references.}
+Here the real Monge--Ampère operator is defined in \cref{def:realMA}. The normalization of the Lebesgue measure $\vol$ on $M_{\mathbb{R}}$ is such that the fundamental lattice cube has measure $1$.\footnote{In some references like \cite{GKZ08}, the normalization is so that the fundamental lattice cube has measure $n!$. Be careful when making comparisons with these references. See \cite[Theorem~18.4.1]{FPT} for the real Monge--Amp\`ere measure with our convention.}
 \begin{proof}
     We only need to prove \eqref{eq:tropMAmea}. By \cref{prop:regularizationconvex}, we can find a decreasing sequence
     \[
@@ -661,7 +661,7 @@ By \cref{prop:gradDomFstar}, we have
 
 \end{proof}
 
-Recall that $\mathrm{H}^0(X,L)$ can be identified with the vector space generated by $\chi^m$ for all $m\in P\cap M$, see \cite[Proposition~4.3.3]{CLS11}. In other words, a character $\chi^m$ of $T$ gives a global section of $L$ if and only if $m\in P$. This gives a beautiful characterization of the lattice points in $P$. The following theorem of Yi Yao gives an analogous characterization of the lattice points in the Newton body.
+Recall that $\mathrm{H}^0(X,L)$ can be identified with the vector space generated by $\chi^m$ for all $m\in P\cap M$, see \cite[Proposition~4.3.3]{CLS11} and \cite[Theorem~18.8.5]{FPT}. In other words, a character $\chi^m$ of $T$ gives a global section of $L$ if and only if $m\in P$. This gives a beautiful characterization of the lattice points in $P$. The following theorem of Yi Yao gives an analogous characterization of the lattice points in the Newton body.
 
 \begin{theorem}[Yao]\label{thm:Yao}\index{theorem!Yao's theorem (toric Riemann--Roch)}
     Let $\varphi\in \PSH_{\tor}(X,\omega)$. Let $m\in M$.
