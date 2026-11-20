@@ -2,6 +2,12 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-11-20 — Publish the approved Fang–Han–Xia references
+
+- Merged author-approved [PR #13](https://github.com/MingchenXia/SGPT/pull/13) into `main` as `e8074e98479e0f309815d6511a39aa4d3148543d` and removed its remote and local proposal branches.
+- Published the 551-page book to [SGPT_final.pdf](https://mingchenxia.github.io/Lectures/SGPT_final.pdf) in website commit `96883f992a34a312aef08c893e5598a274db60ec`. The cover reads `Updated on November 20, 2026.`
+- Verified that the merged tree matches the approved PR head and all 37 recorded book-source hashes match the review record. Rebuilt with XeLaTeX, resolved all references and citations, and confirmed that all four review pages match the release pixel for pixel. GitHub Pages deployed successfully, and the public download matches the release byte for byte with SHA-256 `0c211b58d76adbb0e188a715f8afe96c25a0053dd1a10e7f8d65d13cf7b928e4`.
+
 ## 2026-11-20 — Cite Fang–Han–Xia's envelope theorem
 
 - Add `FHX26` to `ComplexGeometry.bib` for Fang–Han–Xia, *The envelope property for unibranch projective varieties (with an appendix on the singular Yau–Tian–Donaldson conjecture)*, arXiv:2611.26301.
