@@ -2,6 +2,11 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-11-20 — Cite FPT in Example 6.1.3
+
+- Add `[FPT, Proposition 4.2.4]` alongside the existing `[Car83, Page 31]` citation for the polar Cantor set carrying an atom-free probability measure in `author/chapter_comp.tex`.
+- Verification. Checked the proposition against the published FPT PDF. Compiled the full 549-page book with XeLaTeX, with all references and citations resolved, and inspected Example 6.1.3 on printed page 194.
+
 ## 2026-11-18 — Publish the approved Lean 4 and FPT update
 
 - Merged [PR #12](https://github.com/MingchenXia/SGPT/pull/12) into `main` as `165a687e6d6bf85885e449cfcc6cd0bd801c97f5` and confirmed removal of the local and remote proposal branches.
