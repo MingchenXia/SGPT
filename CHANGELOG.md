@@ -2,6 +2,11 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-11-20 — Publish the approved Example 6.1.3 citation
+
+- Published the author-approved FPT citation update from source commit `b213944134dd5548dba056b81c44af13f0df8868` to [SGPT_final.pdf](https://mingchenxia.github.io/Lectures/SGPT_final.pdf) in website commit `8681f23897f1c9cc7a51483a6a3d2e8232352b3b`. The cover reads `Updated on November 20, 2026.`
+- Verified that the 549-page XeLaTeX output is up to date with the approved sources, with all references and citations resolved. Inspected the cover and confirmed that printed page 194 matches the approved excerpt pixel for pixel. GitHub Pages deployed successfully, and the public PDF matches the release byte for byte with SHA-256 `e7ebe939605df72207ff58a9901fb0109a164a523161d4b10d8ac454840be061`.
+
 ## 2026-11-20 — Cite FPT in Example 6.1.3
 
 - Add `[FPT, Proposition 4.2.4]` alongside the existing `[Car83, Page 31]` citation for the polar Cantor set carrying an atom-free probability measure in `author/chapter_comp.tex`.
