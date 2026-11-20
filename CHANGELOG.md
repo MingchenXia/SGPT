@@ -2,6 +2,12 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-11-20 — Cite Fang–Han–Xia's envelope theorem
+
+- Add `FHX26` to `ComplexGeometry.bib` for Fang–Han–Xia, *The envelope property for unibranch projective varieties (with an appendix on the singular Yau–Tian–Donaldson conjecture)*, arXiv:2611.26301.
+- In Section 13.4.1.2, replace the forthcoming-paper footnote after Proposition 13.4.2 with the precise reference to Corollary 8.4. Replace the increasing-net conjecture and its forthcoming-paper footnote with Theorem 13.4.3, citing Theorem A and Proposition 2.3, and update the surrounding account of the envelope property.
+- Verification. Checked the metadata, hypotheses and statements in arXiv version 1. Compiled the full 551-page book with XeLaTeX, with all references and citations resolved and the same layout warning as the baseline. Checked the resulting theorem numbering and inspected printed pages 439–441 and the bibliography entry on page 531.
+
 ## 2026-11-20 — Publish the approved Example 6.1.3 citation
 
 - Published the author-approved FPT citation update from source commit `b213944134dd5548dba056b81c44af13f0df8868` to [SGPT_final.pdf](https://mingchenxia.github.io/Lectures/SGPT_final.pdf) in website commit `8681f23897f1c9cc7a51483a6a3d2e8232352b3b`. The cover reads `Updated on November 20, 2026.`
