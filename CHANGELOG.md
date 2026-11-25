@@ -2,6 +2,11 @@
 
 Entries are listed newest first. Each future update records its date, a concise description, the affected files or sections, and the verification performed. Multiple updates on the same date may have separate entries; Git history identifies their exact commits.
 
+## 2026-11-25 — Correct the German epigraph in Chapter 4
+
+- Set the German quotation in the OpenType italic face so XeLaTeX renders the three instances of `ß` correctly.
+- Rebuilt the homepage and arXiv editions with XeLaTeX. Verified the epigraph on printed page 131, the 551-page totals, and the matching contents, bookmarks, and index pagination.
+
 ## 2026-11-20 — Publish the approved Fang–Han–Xia references
 
 - Merged author-approved [PR #13](https://github.com/MingchenXia/SGPT/pull/13) into `main` as `e8074e98479e0f309815d6511a39aa4d3148543d` and removed its remote and local proposal branches.
